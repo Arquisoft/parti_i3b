@@ -6,13 +6,14 @@ In order to run the application you need to download and install [mongoDB](https
 Besides, you will have to download [kafkaStream 2.11](https://kafka.apache.org/downloads). We will provide a script called startup.bat which you need to copy into the kafka download folder. After executing this script you will be able to execute mvn springboot:run.
 
 To run Gatling tests just run 
+
      $mvn gatling:execute
      
 # Authors
 
-* Gonzalo de la Cruz Fernández (UO244583) @gdelacruzfdez
-* Oriol Invernón Llaneza (UO245303) @OriolInvernonLlaneza
-* Adrian Mirón Cao (UO244843) @mironcao
-* Juan Francisco Piñera (UO244707) @juanfpo96
-* Paula Tuñón Alba (UO244709) @PaulaTAlba
-* Guillermo Rodríguez González (UO245104) @guille
+* Gonzalo de la Cruz FernÃ¡ndez (UO244583) @gdelacruzfdez
+* Oriol InvernÃ³n Llaneza (UO245303) @OriolInvernonLlaneza
+* Adrian MirÃ³n Cao (UO244843) @mironcao
+* Juan Francisco PiÃ±era (UO244707) @juanfpo96
+* Paula TuÃ±Ã³n Alba (UO244709) @PaulaTAlba
+* Guillermo RodrÃ­guez GonzÃ¡lez (UO245104) @guille
