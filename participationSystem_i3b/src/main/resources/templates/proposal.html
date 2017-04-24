@@ -1,0 +1,179 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ParticipationSystem_i3b</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous">
+	
+</script>
+
+<link rel="stylesheet" type="text/css" href="comments.css" />
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-primary text-center" th:text="${prop.getTitle()}">
+				</h1>
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Proposal description:</h3>
+						<p th:text="${prop.getContent()}"></p>
+					</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-5">
+						<h3>Votes</h3>
+						<div class="row" th:with="idProposal=${prop.getId()}">
+							<table id="votesTable" class="table">
+								<thead>
+									<tr>
+										<th class="text-center"><h4>
+												<b>Likes</b>
+											</h4></th>
+										<th class="text-center"><h4>
+												<b>Dislikes</b>
+											</h4></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center" th:text="${prop.getUpvotes()}"
+											id="upVotes"></td>
+										<td class="text-center" th:text="${prop.getDownvotes()}"
+											id="downVotes"></td>
+									</tr>
+
+									<tr>
+										<td><a th:href="${'/upvoteProposal/'+ idProposal}"
+											class="btn btn-block btn-lg btn-success" id="upvote"> <span
+												class="glyphicon glyphicon-thumbs-up"></span></a></td>
+										<td><a th:href="${'/downvoteProposal/' + idProposal}"
+											class="btn btn-block btn-lg btn-danger" id="downvote"> <span
+												class="glyphicon glyphicon-thumbs-down"></span></a></td>
+									</tr>
+
+								</tbody>
+
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Comments:</h3>
+
+							<div class="row">
+
+								<table class="table">
+
+									<tr th:each="com : ${prop.getCommentsList()}">
+										<div class="col-sm-2">
+
+											<div class="thumbnail">
+												<img class="img-responsive user-photo"
+													src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+											</div>
+											<!-- /thumbnail -->
+										</div>
+										<!-- /col-sm-1 -->
+
+										<div class="col-sm-8">
+
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<span class="text-muted" th:text="${com.getUser()}"></span>
+												</div>
+												<div class="panel-body">
+													<p th:text="${com.getContent()}"></p>
+												</div>
+												<!-- /panel-body -->
+											</div>
+											<!-- /panel panel-default -->
+
+										</div>
+
+										<div class="col-sm-2">
+											<table class="table"
+												th:with="idComment=${com.getId()} , idProposal=${prop.getId()} ">
+												<tbody>
+													<tr>
+														<td><a
+															th:href="${'/upvoteComment/'+ idProposal +'/'+idComment}"
+															class="btn btn-xs btn-success"
+															th:id="${idComment+'upVote'}"><span
+																class="glyphicon glyphicon-thumbs-up"></span> </a></td>
+														<td class="text-center" th:text="${com.getUpvotes()}"
+															th:id="${idComment+'upVotes'}"></td>
+
+													</tr>
+
+													<tr>
+														<td><a
+															th:href="${'/downvoteComment/'+ idProposal +'/'+idComment}"
+															class="btn btn-xs btn-danger"><span
+																class="glyphicon glyphicon-thumbs-down"
+																th:id="${idComment+'downVote'}"></span> </a></td>
+														<td class="text-center" th:text="${com.getDownvotes()}"
+															th:id="${idComment+'downVotes'}"></td>
+
+
+
+
+													</tr>
+
+												</tbody>
+												<!-- /thumbnail -->
+
+											</table>
+											<br /> <br /> <br />
+
+
+										</div>
+
+
+										<!-- /col-sm-10 -->
+
+									</tr>
+								</table>
+							</div>
+							<!-- /row -->
+
+
+						</div>
+						<div class="col-md-6"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-6" th:with="idProposal=${prop.getId()}">
+							<h3>New Comment</h3>
+							<form role="form" th:action="@{/createComment/} + ${idProposal}"
+								th:object="${createComment}" method="POST">
+
+								<textarea class="form-control" rows="5" id="contentInput"
+									th:field="*{content}" placeholder="Write here your comment"></textarea>
+								<!-- <input type="hidden" id="author" th:field="*{author}" value="${author}"/> -->
+								<button value="Comment" type="submit" class="btn btn-default"
+									id="SubmitComment">Send comment</button>
+							</form>
+						</div>
+						<div class="col-md-6"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

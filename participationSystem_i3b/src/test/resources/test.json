@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "58de2252958e54c628660788",
+    "name": "user",
+    "password": "password",
+    "isAdmin": "false",
+    "age": "21"
+  },
+  {
+    "_id": "58de2252958e54c214660788",
+    "name": "admin",
+    "password": "admin",
+    "isAdmin": "true",
+    "age": "21"
+  }
+]
