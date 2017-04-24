@@ -21,7 +21,7 @@ public class SingletonParserTest {
 	@Test
 	public void testGetExcelParserWord() {
 		assertNotNull(SingletonParser.getInstance().
-				getWorldLetterExcelReadList());
+				getWordLetterExcelReadList());
 	}
 	
 	@Test

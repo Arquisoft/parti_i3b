@@ -50,7 +50,7 @@ public class SingletonParser {
 		return excelRL;
 	}
 	
-	public ReadList getWorldLetterExcelReadList() {
+	public ReadList getWordLetterExcelReadList() {
 		return excelRLWordLetter;
 	}
 	
