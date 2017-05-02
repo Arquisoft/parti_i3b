@@ -133,11 +133,11 @@ public class MainController {
 		return "login";
 	}
 
-	@RequestMapping("/register")
+	/*@RequestMapping("/register")
 	public String register(Model model, @ModelAttribute CreateUser createUser) {
 		registration.registrate(createUser);
 		return "login";
-	}
+	}*/
 
 	@RequestMapping("/createProposal")
 	public String createProposal(Model model,
