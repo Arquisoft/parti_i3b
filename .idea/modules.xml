@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/citizensLoader/src/main/main.iml" filepath="$PROJECT_DIR$/citizensLoader/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/participationSystem_i3b/src/main/main1.iml" filepath="$PROJECT_DIR$/participationSystem_i3b/src/main/main1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/citizensLoader/src/test/test.iml" filepath="$PROJECT_DIR$/citizensLoader/src/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/participationSystem_i3b/src/test/test1.iml" filepath="$PROJECT_DIR$/participationSystem_i3b/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/citizensLoader/citizensLoader_i3b.iml" filepath="$PROJECT_DIR$/citizensLoader/citizensLoader_i3b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dashboard_i3b/dashboardi3b.iml" filepath="$PROJECT_DIR$/dashboard_i3b/dashboardi3b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/participants_i3b/participants_i3b.iml" filepath="$PROJECT_DIR$/participants_i3b/participants_i3b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/participationSystem_i3b/participationSystem0.iml" filepath="$PROJECT_DIR$/participationSystem_i3b/participationSystem0.iml" />
     </modules>
   </component>
 </project>

@@ -22,7 +22,6 @@ public class DashboardController {
     DashboardController(DBService service) {
         this.service = service;
         createMockDatabaseContent();
-
     }
 
     private void createMockDatabaseContent() {
