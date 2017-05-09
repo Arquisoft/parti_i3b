@@ -68,7 +68,7 @@ public class MainController {
 			prop.upvote(user.getName());
 			dbService.updateProposal(prop);
 		}
-		kafkaProducer.send("upvotedProposal", "upvoted proposal");
+		kafkaProducer.send("councilStaff", "Upvoted proposal [" + id + "]");
 		return "redirect:/selectProposal/" + id;
 
 	}
@@ -83,7 +83,7 @@ public class MainController {
 			dbService.updateProposal(prop);
 		}
 
-		kafkaProducer.send("downvotedProposal", "downvoted proposal");
+		kafkaProducer.send("councilStaff", "Downvoted proposal [" + id + "]");
 
 		return "redirect:/selectProposal/" + id;
 	}
@@ -99,7 +99,7 @@ public class MainController {
 			com.upvote(user.getName());
 			dbService.updateComment(proposalId, com);
 		}
-		kafkaProducer.send("upvotedComment", "upvoted comment");
+		kafkaProducer.send("councilStaff", "Upvoted comment [" + id + "]");
 		return "redirect:/selectProposal/" + proposalId;
 	}
 
@@ -114,7 +114,7 @@ public class MainController {
 			com.downvote(user.getName());
 			dbService.updateComment(proposalId, com);
 		}
-		kafkaProducer.send("downvotedComment", "downvoted comment");
+		kafkaProducer.send("councilStaff", "Downvoted comment [" + id  + "]");
 		return "redirect:/selectProposal/" + proposalId;
 	}
 
@@ -144,7 +144,7 @@ public class MainController {
 
 		if (!result.hasErrors()) {
 			dbService.insertProposal(proposal);
-			kafkaProducer.send("createdProposal", "created proposal");
+			kafkaProducer.send("councilStaff", "New proposal");
 		}
 
 		return "redirect:/userHome";
@@ -164,7 +164,7 @@ public class MainController {
 		comment.setIdProposal(id);
 		Proposal prop = dbService.findProposalById(id);
 		dbService.insertComment(comment, prop);
-		kafkaProducer.send("createdComment", "created comment");
+		kafkaProducer.send("councilStaff", "New comment [" + id + "]");
 		return "redirect:/selectProposal/" + id;
 	}
 
