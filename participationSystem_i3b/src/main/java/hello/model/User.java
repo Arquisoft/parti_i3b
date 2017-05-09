@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 /**
  * @author Oriol. Class use to represent the citizens and parse their data.
  */
-@Document(collection = "user")
+@Document(collection = "users")
 public class User implements UserDetails {
 	/**
 	 * 
@@ -21,7 +21,7 @@ public class User implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
-	private String name;
+	private String email;
 	private Date birthDate;
 	private String address;
 	private String ID;
@@ -31,13 +31,16 @@ public class User implements UserDetails {
 	private int pollingStation;
 	private boolean isAdmin = false;
 
+	public User() {
+	}
+
 	public User(String firstName, String lastName, String email,
 			String birthDate, String address, String nationality, String ID,
 			String NIF, int pollingStation) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.name = email;
+		this.email = email;
 		setbirthDate(birthDate);
 		this.address = address;
 		this.nationality = nationality;
@@ -52,7 +55,7 @@ public class User implements UserDetails {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.name = email;
+		this.email = email;
 		this.birthDate = birthDate;
 		this.address = address;
 		this.nationality = nationality;
@@ -64,7 +67,7 @@ public class User implements UserDetails {
 	public User(String[] data) {
 		this.firstName = data[0];
 		this.lastName = data[1];
-		this.name = data[2];
+		this.email = data[2];
 		setbirthDate(data[3]);
 		this.address = data[4];
 		this.nationality = data[5];
@@ -152,7 +155,7 @@ public class User implements UserDetails {
 	@Override
 	public String toString() {
 		return "Citizen [firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + name + ", birthDate=" + birthDate + ", address="
+				+ ", email=" + email + ", birthDate=" + birthDate + ", address="
 				+ address + ", ID=" + ID + ", nationality=" + nationality + ","
 				+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
 	}
@@ -185,7 +188,7 @@ public class User implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return name;
+		return email;
 	}
 
 	public boolean isAdmin() {
@@ -228,10 +231,6 @@ public class User implements UserDetails {
 		return serialVersionUID;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
@@ -250,6 +249,14 @@ public class User implements UserDetails {
 
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
