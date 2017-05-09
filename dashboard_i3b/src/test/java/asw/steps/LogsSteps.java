@@ -62,9 +62,7 @@ public class LogsSteps {
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
 	public void logWeb(String str) throws Throwable {
 		result = rs.andReturn();
-        //System.out.println(result.getResponse().getContentAsString().equals(""));
-        //System.out.println(result.getResponse().getContentAsString());
-		assertTrue(result.getResponse().getContentAsString().contains(str));
+        assertTrue(result.getResponse().getContentAsString().contains(str));
 	}
 
 	@Then("^there is not a log of \"([^\"]*)\" on the webpage$")
