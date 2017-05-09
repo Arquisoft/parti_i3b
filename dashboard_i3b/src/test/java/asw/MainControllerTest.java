@@ -39,6 +39,5 @@ public class MainControllerTest {
 		mvc.perform(get("/"))
 				.andExpect(status().isOk())
 				.andExpect(content().string(containsString("Dashboard")));
-		assertTrue(true);
 	}
 }
