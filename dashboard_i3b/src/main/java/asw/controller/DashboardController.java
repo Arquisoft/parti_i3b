@@ -5,6 +5,7 @@ import asw.repository.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -43,5 +44,11 @@ public class DashboardController {
     public String dashboardOtherAuthoritiesController(Model model) {
         model.addAttribute("proposals", service.getAllProposal());
         return "otherAuthorities";
+    }
+
+    @RequestMapping(path = "/proposals/{propID}")
+    public String viewProposalInfoController(Model model, @PathVariable(value="propID") String id) {
+        model.addAttribute("proposal", service.getProposal(id));
+        return "proposal";
     }
 }

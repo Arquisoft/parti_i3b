@@ -20,11 +20,13 @@ public class Proposal {
     private int downvotes;
     private List<Comment> comments;
 
+    public String getId() { return id; }
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
     public int getVotes() { return upvotes - downvotes; }
     public int getUpvotes() { return upvotes; }
     public int getDownvotes() { return downvotes; }
+    public List<Comment> getComments() { return comments; }
 
 
     public Proposal() {
