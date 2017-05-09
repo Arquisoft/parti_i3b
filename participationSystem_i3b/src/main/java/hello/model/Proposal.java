@@ -108,21 +108,12 @@ public class Proposal extends AbstractVotable {
 				Configuration.getInstance().getExpirationDays());
 	}
 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((author == null) ? 0 : author.hashCode());
-		result = prime * result
-				+ ((category == null) ? 0 : category.hashCode());
-		result = prime * result
-				+ ((comments == null) ? 0 : comments.hashCode());
-		result = prime * result + ((content == null) ? 0 : content.hashCode());
-		result = prime * result
-				+ ((expirationDate == null) ? 0 : expirationDate.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + (isAccepted ? 1231 : 1237);
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
 
@@ -135,42 +126,10 @@ public class Proposal extends AbstractVotable {
 		if (getClass() != obj.getClass())
 			return false;
 		Proposal other = (Proposal) obj;
-		if (author == null) {
-			if (other.author != null)
-				return false;
-		} else if (!author.equals(other.author))
-			return false;
-		if (category == null) {
-			if (other.category != null)
-				return false;
-		} else if (!category.equals(other.category))
-			return false;
-		if (comments == null) {
-			if (other.comments != null)
-				return false;
-		} else if (!comments.equals(other.comments))
-			return false;
-		if (content == null) {
-			if (other.content != null)
-				return false;
-		} else if (!content.equals(other.content))
-			return false;
-		if (expirationDate == null) {
-			if (other.expirationDate != null)
-				return false;
-		} else if (!expirationDate.equals(other.expirationDate))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (isAccepted != other.isAccepted)
-			return false;
-		if (title == null) {
-			if (other.title != null)
-				return false;
-		} else if (!title.equals(other.title))
 			return false;
 		return true;
 	}
