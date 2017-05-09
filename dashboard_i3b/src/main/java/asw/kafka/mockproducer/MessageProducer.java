@@ -25,7 +25,7 @@ public class MessageProducer {
 
 	@Scheduled(cron = "*/5 * * * * *")
 	public void sendProposalMessagesCouncilstaff() {
-		//testCreateProposal("councilStaff", "New proposal");
+		testCreateProposal("councilStaff", "New proposal");
 
 		testUpvoteProposal("councilStaff", "Test");
 

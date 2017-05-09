@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DashboardController {
     private final DBService service;
 
-    private static final Logger logger = Logger.getLogger(DashboardController.class);
-
     @Autowired
     DashboardController(DBService service) {
         this.service = service;

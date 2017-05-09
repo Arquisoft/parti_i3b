@@ -7,7 +7,7 @@ Feature:
 
   Scenario:
     Given database is loaded
-    And user navigates to "localhost:8080"
+    And user navigates to "localhost:8092"
     And user logs in with name "user" and password "password"
     And user creates proposal "proposal1" with content "Test content" and category "Cat1"
     And user visits "proposal1"
