@@ -76,7 +76,7 @@ public class DBServiceImpl implements DBService {
 
 	@Override
 	public User getUser(String username) {
-		return userRepository.findByName(username);
+		return userRepository.findByEmail(username);
 	}
 
 	@Override
