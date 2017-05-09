@@ -1,7 +1,6 @@
 package asw;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -18,10 +17,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+@SuppressWarnings("deprecation")
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest({"server.port=0"})
+@IntegrationTest({ "server.port=0" })
 public class MainControllerTest {
 
 	@Autowired
@@ -36,8 +36,7 @@ public class MainControllerTest {
 
 	@Test
 	public void testLanding() throws Exception {
-		mvc.perform(get("/"))
-				.andExpect(status().isOk())
+		mvc.perform(get("/")).andExpect(status().isOk())
 				.andExpect(content().string(containsString("Dashboard")));
 	}
 }

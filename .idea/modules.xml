@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/citizensLoader_i3b/citizensLoader_i3b.iml" filepath="$PROJECT_DIR$/citizensLoader_i3b/citizensLoader_i3b.iml" />
-      <module fileurl="file://$PROJECT_DIR$/dashboard_i3b/dashboard_i3b.iml" filepath="$PROJECT_DIR$/dashboard_i3b/dashboard_i3b.iml" />
+      <module fileurl="file://E:\Estudios\Universidad\Tercero\ASW\parti_i3b\citizensLoader_i3b\citizensLoader_i3b.iml" filepath="E:\Estudios\Universidad\Tercero\ASW\parti_i3b\citizensLoader_i3b\citizensLoader_i3b.iml" />
+      <module fileurl="file://E:\Estudios\Universidad\Tercero\ASW\parti_i3b\dashboard_i3b\dashboard_i3b.iml" filepath="E:\Estudios\Universidad\Tercero\ASW\parti_i3b\dashboard_i3b\dashboard_i3b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dashboard_i3b/dashboardi3b.iml" filepath="$PROJECT_DIR$/dashboard_i3b/dashboardi3b.iml" />
       <module fileurl="file://$PROJECT_DIR$/parti_i3b.iml" filepath="$PROJECT_DIR$/parti_i3b.iml" />
+      <module fileurl="file://E:\Estudios\Universidad\Tercero\ASW\parti_i3b\parti_i3b.iml" filepath="E:\Estudios\Universidad\Tercero\ASW\parti_i3b\parti_i3b.iml" />
       <module fileurl="file://$PROJECT_DIR$/participants_i3b/participants_i3b.iml" filepath="$PROJECT_DIR$/participants_i3b/participants_i3b.iml" />
-      <module fileurl="file://$PROJECT_DIR$/participationSystem_i3b/participationSystem_i3b.iml" filepath="$PROJECT_DIR$/participationSystem_i3b/participationSystem_i3b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/participationSystem_i3b/participationSystem0.iml" filepath="$PROJECT_DIR$/participationSystem_i3b/participationSystem0.iml" />
+      <module fileurl="file://E:\Estudios\Universidad\Tercero\ASW\parti_i3b\participationSystem_i3b\participationSystem_i3b.iml" filepath="E:\Estudios\Universidad\Tercero\ASW\parti_i3b\participationSystem_i3b\participationSystem_i3b.iml" />
     </modules>
   </component>
 </project>

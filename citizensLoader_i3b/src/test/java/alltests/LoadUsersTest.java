@@ -43,7 +43,8 @@ public class LoadUsersTest {
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		System.setErr(new PrintStream(outContent));
 		LoadUsers.main();
-		assertTrue(outContent.toString().contains("Input the name of the file."));
+		assertTrue(
+				outContent.toString().contains("Input the name of the file."));
 	}
 
 }

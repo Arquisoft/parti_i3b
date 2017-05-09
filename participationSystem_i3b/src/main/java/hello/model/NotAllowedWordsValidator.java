@@ -7,7 +7,7 @@ import org.springframework.validation.Validator;
 public class NotAllowedWordsValidator implements Validator {
 
 	@Override
-	public boolean supports(Class clazz) {
+	public boolean supports(Class<?> clazz) {
 		return Proposal.class.equals(clazz);
 	}
 
@@ -20,8 +20,8 @@ public class NotAllowedWordsValidator implements Validator {
 		if (Configuration.getInstance().containNotAllowedWord(p.getContent())) {
 			e.rejectValue("content", "notAllowedWord");
 
-		} else if (Configuration.getInstance().containNotAllowedWord(p
-				.getTitle())) {
+		} else if (Configuration.getInstance()
+				.containNotAllowedWord(p.getTitle())) {
 			e.rejectValue("title", "notAllowedWord");
 		}
 

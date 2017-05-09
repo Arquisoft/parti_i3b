@@ -15,8 +15,8 @@ public class SeleniumUtils {
 
 	// Mueve el ratón a la opción de menú submenu(desplegable). Evento hover
 	// y clicka la opcion opcionclick
-	static public void clickSubopcionMenuHover(WebDriver driver,
-											   String submenu, String opcionclick) {
+	static public void clickSubopcionMenuHover(WebDriver driver, String submenu,
+			String opcionclick) {
 		// Pasamos el raton por el submenu de Gestion de alumnos para
 		// que aparezca el menu desplegable
 		Actions builder = new Actions(driver);
@@ -28,31 +28,30 @@ public class SeleniumUtils {
 	}
 
 	static public void textoPresentePagina(WebDriver driver, String texto) {
-		List<WebElement> list = driver.findElements(By
-				.xpath("//*[contains(text(),'" + texto + "')]"));
+		List<WebElement> list = driver.findElements(
+				By.xpath("//*[contains(text(),'" + texto + "')]"));
 		assertTrue("Texto " + texto + " no localizado!", list.size() > 0);
 	}
 
 	static public void textoNoPresentePagina(WebDriver driver, String texto) {
-		List<WebElement> list = driver.findElements(By
-				.xpath("//*[contains(text(),'" + texto + "')]"));
+		List<WebElement> list = driver.findElements(
+				By.xpath("//*[contains(text(),'" + texto + "')]"));
 		assertTrue("Texto " + texto + " aun presente !", list.size() == 0);
 	}
 
 	static public void esperaCargaPaginaNoTexto(WebDriver driver, String texto,
-												int timeout) {
+			int timeout) {
 		Boolean resultado = (new WebDriverWait(driver, timeout))
-				.until(ExpectedConditions.invisibilityOfElementLocated(By
-						.xpath("//*[contains(text(),'" + texto + "')]")));
+				.until(ExpectedConditions.invisibilityOfElementLocated(
+						By.xpath("//*[contains(text(),'" + texto + "')]")));
 
 		assertTrue(resultado);
 	}
 
 	static public List<WebElement> esperaCargaPaginaxpath(WebDriver driver,
-														  String xpath, int timeout) {
-		WebElement resultado = (new WebDriverWait(driver, timeout))
-				.until(ExpectedConditions.visibilityOfElementLocated(By
-						.xpath(xpath)));
+			String xpath, int timeout) {
+		WebElement resultado = (new WebDriverWait(driver, timeout)).until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 		assertTrue(resultado != null);
 		List<WebElement> elementos = driver.findElements(By.xpath(xpath));
 
@@ -65,7 +64,7 @@ public class SeleniumUtils {
 	// De esta forma sirve tanto para carga de páginas enteras
 	// como para elementos que estan ocultos y se hace visibles
 	static public List<WebElement> esperaCargaPagina(WebDriver driver,
-													 String criterio, String id, int timeout) {
+			String criterio, String id, int timeout) {
 		String busqueda;
 		if ("id".equals(criterio))
 			busqueda = "//*[contains(@id,'" + id + "')]";

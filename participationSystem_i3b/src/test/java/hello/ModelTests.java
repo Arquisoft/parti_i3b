@@ -20,7 +20,7 @@ public class ModelTests {
 		assertTrue(c1.toString().contains("tuser"));
 		assertTrue(c1.toString().contains("testId"));
 	}
-	
+
 	@Test
 	public void testProposal() {
 		Proposal p1 = new Proposal(null, "cat1", "title", "content");
@@ -35,7 +35,7 @@ public class ModelTests {
 		assertTrue(p1.toString().contains("tuser"));
 		assertTrue(p1.toString().contains("cat1"));
 	}
-	
+
 	@Test
 	public void testUser() {
 		User c1 = new User();

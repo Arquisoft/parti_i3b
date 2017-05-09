@@ -37,24 +37,30 @@ public class TxtReadList extends AbstractReadList {
 					} else if (split[0].equals("")) {
 						wReport.report("Null name on row number " + r, ruta);
 					} else if (split[3].equals("")) {
-						wReport.report("Null birth date on row number " + r, ruta);
+						wReport.report("Null birth date on row number " + r,
+								ruta);
 					} else if (split[4].equals("")) {
 						wReport.report("Null address on row number " + r, ruta);
 					} else if (split[1].equals("")) {
-						wReport.report("Null last name on row number " + r, ruta);
+						wReport.report("Null last name on row number " + r,
+								ruta);
 					} else if (split[7].equals("")) {
 						wReport.report("Null NIF on row number " + r, ruta);
 					} else {
 						Citizen cit = new Citizen(split);
 						if (census.contains(cit)) {
-							wReport.report("Duplicated citizen on row number " + r, ruta);
+							wReport.report(
+									"Duplicated citizen on row number " + r,
+									ruta);
 						} else {
 							census.add(cit);
 						}
 					}
 				} else {
-					wReport.report("Empty or shorter than expected or larger than expected"
-							+ " row nº" + r, ruta);
+					wReport.report(
+							"Empty or shorter than expected or larger than expected"
+									+ " row nº" + r,
+							ruta);
 				}
 				r++;
 			}

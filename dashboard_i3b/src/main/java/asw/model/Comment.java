@@ -10,32 +10,30 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "VotingSystem")
 public class Comment {
 
-    @Id
-    protected String id;
-    private User user;
-    private String commentString;
+	@Id
+	protected String id;
+	private User user;
+	private String commentString;
 
-    public User getUser() {
-        return user;
-    }
+	public User getUser() {
+		return user;
+	}
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+	public void setUser(User user) {
+		this.user = user;
+	}
 
-    public String getCommentString() {
-        return commentString;
-    }
+	public String getCommentString() {
+		return commentString;
+	}
 
-    public void setCommentString(String commentString) {
-        this.commentString = commentString;
-    }
+	public void setCommentString(String commentString) {
+		this.commentString = commentString;
+	}
 
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "user=" + user.getEmail() +
-                ", commentString='" + commentString + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Comment{" + "user=" + user.getEmail() + ", commentString='"
+				+ commentString + '\'' + '}';
+	}
 }

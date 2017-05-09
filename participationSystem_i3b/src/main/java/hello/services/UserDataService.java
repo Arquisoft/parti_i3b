@@ -19,15 +19,14 @@ public class UserDataService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		User user = dbService.getUser(username);
-		if(user!=null){
+		if (user != null) {
 			return user;
 		}
-		 throw new UsernameNotFoundException("Username not found");
-	}
-	
-	public void addUserData(User user){
-		dbService.addUser(user);
+		throw new UsernameNotFoundException("Username not found");
 	}
 
+	public void addUserData(User user) {
+		dbService.addUser(user);
+	}
 
 }

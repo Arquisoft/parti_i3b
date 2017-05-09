@@ -68,8 +68,8 @@ public class WriteReportDefault implements WriteReport {
 	 */
 	public void report(String errorMessage, String file) {
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(this.file,
-					true));
+			BufferedWriter writer = new BufferedWriter(
+					new FileWriter(this.file, true));
 
 			StringBuilder error = new StringBuilder();
 			error.append("ERROR \n");
@@ -103,8 +103,8 @@ public class WriteReportDefault implements WriteReport {
 	public void report(Exception e, String errorMessage) {
 		try {
 
-			BufferedWriter writer = new BufferedWriter(new FileWriter(file,
-					true));
+			BufferedWriter writer = new BufferedWriter(
+					new FileWriter(file, true));
 
 			StringBuilder error = new StringBuilder();
 

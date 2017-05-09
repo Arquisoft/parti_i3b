@@ -34,60 +34,58 @@ import repository.DBService;
 @ComponentScan("repository")
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest({"server.port=0"})
+@IntegrationTest({ "server.port=0" })
 public class FormControllerTest {
-    @Value("${local.server.port}")
-    private int port;
+	@Value("${local.server.port}")
+	private int port;
 
-    private URL base;
-    private RestTemplate template;
-    private MockMvc mockMvc;
+	private URL base;
+	private RestTemplate template;
+	private MockMvc mockMvc;
 
-    @Autowired
-    private WebApplicationContext context;
+	@Autowired
+	private WebApplicationContext context;
 
-    @Autowired
-    private DBService db;
+	@Autowired
+	private DBService db;
 
-    @Before
-    public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
-        template = new TestRestTemplate();
-        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-    }
+	@Before
+	public void setUp() throws Exception {
+		this.base = new URL("http://localhost:" + port + "/");
+		template = new TestRestTemplate();
+		mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+	}
 
-    @Test
-    public void testLoginPage() throws Exception {
-        template.getForEntity(base.toString(), String.class);
-        mockMvc.perform(get("/login"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Username:")))
-                .andExpect(content().string(containsString("Password:")));
-    }
+	@Test
+	public void testLoginPage() throws Exception {
+		template.getForEntity(base.toString(), String.class);
+		mockMvc.perform(get("/login")).andExpect(status().isOk())
+				.andExpect(content().string(containsString("Username:")))
+				.andExpect(content().string(containsString("Password:")));
+	}
 
-    @Test
-    public void testLoginCorrect() throws Exception {
-        UserInfo user = new UserInfo("pass", "name", "surname", "macorrect@il.com", new Date());
-        db.insertUser(user);
+	@Test
+	public void testLoginCorrect() throws Exception {
+		UserInfo user = new UserInfo("pass", "name", "surname",
+				"macorrect@il.com", new Date());
+		db.insertUser(user);
 
-        mockMvc.perform(post("/login")
-                .param("login", "macorrect@il.com")
-                .param("password", "pass"))
-                .andExpect(status().isOk())
-                .andExpect(model().attribute("name1", equalTo("name")))
-                .andExpect(model().attribute("name2", equalTo("surname")))
-                .andExpect(model().attribute("email", equalTo("macorrect@il.com")))
-                .andExpect(content().string(containsString("Name:")))
-                .andExpect(content().string(containsString("Birthdate:")));
-    }
+		mockMvc.perform(post("/login").param("login", "macorrect@il.com")
+				.param("password", "pass")).andExpect(status().isOk())
+				.andExpect(model().attribute("name1", equalTo("name")))
+				.andExpect(model().attribute("name2", equalTo("surname")))
+				.andExpect(
+						model().attribute("email", equalTo("macorrect@il.com")))
+				.andExpect(content().string(containsString("Name:")))
+				.andExpect(content().string(containsString("Birthdate:")));
+	}
 
-    @Test
-    public void testLoginIncorrect() throws Exception {
-        mockMvc.perform(post("/login")
-                .param("login", "inco@rre.ct")
-                .param("password", "user"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Invalid login details.")));
-    }
+	@Test
+	public void testLoginIncorrect() throws Exception {
+		mockMvc.perform(post("/login").param("login", "inco@rre.ct")
+				.param("password", "user")).andExpect(status().isOk())
+				.andExpect(content()
+						.string(containsString("Invalid login details.")));
+	}
 
 }

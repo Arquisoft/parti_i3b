@@ -27,7 +27,6 @@ import es.uniovi.asw.reportwriter.WriteReportDefault;
  */
 public class CitizenDaoImplMongo implements CitizenDao {
 
-
 	private MongoClient mongo;
 	private DB db;
 	private DBCollection users;
@@ -40,17 +39,17 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 	@SuppressWarnings("deprecation")
 	public CitizenDaoImplMongo() {
-		
+
 		if (loadProperties()) {
 
 			this.reporter = new WriteReportDefault();
-			this.mongo = new MongoClient(properties.getProperty("host"), Integer
-					.parseInt(properties.getProperty("port")));
+			this.mongo = new MongoClient(properties.getProperty("host"),
+					Integer.parseInt(properties.getProperty("port")));
 			this.db = mongo.getDB(properties.getProperty("database"));
 			this.users = db.getCollection(properties.getProperty("collection"));
 
-			users.createIndex(new BasicDBObject("id", 1), new BasicDBObject(
-					"unique", true));
+			users.createIndex(new BasicDBObject("id", 1),
+					new BasicDBObject("unique", true));
 		}
 	}
 
@@ -61,7 +60,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 	private boolean loadProperties() {
 		try {
-			FileInputStream input = new FileInputStream("src/main/resources/database.properties");
+			FileInputStream input = new FileInputStream(
+					"src/main/resources/database.properties");
 			this.properties = new Properties();
 			this.properties.load(input);
 			return true;
@@ -88,8 +88,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		this.db = mongo.getDB(database);
 		this.users = db.getCollection(collection);
 
-		users.createIndex(new BasicDBObject("id", 1), new BasicDBObject(
-				"unique", true));
+		users.createIndex(new BasicDBObject("id", 1),
+				new BasicDBObject("unique", true));
 	}
 
 	/**
@@ -160,9 +160,10 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		Citizen c = null;
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			c = new Citizen((String) user.get("firstName"), (String) user.get(
-					"lastName"), (String) user.get("email"), (Date) user.get(
-							"dateOfBirth"), (String) user.get("address"),
+			c = new Citizen((String) user.get("firstName"),
+					(String) user.get("lastName"), (String) user.get("email"),
+					(Date) user.get("dateOfBirth"),
+					(String) user.get("address"),
 					(String) user.get("nationality"), (String) user.get("id"),
 					(String) user.get("nif"), (int) user.get("pollingStation"));
 		}
@@ -185,10 +186,10 @@ public class CitizenDaoImplMongo implements CitizenDao {
 			DBObject user = cursor.next();
 			Citizen c = new Citizen((String) user.get("firstName"),
 					(String) user.get("lastName"), (String) user.get("email"),
-					(Date) user.get("dateOfBirth"), (String) user.get(
-							"address"), (String) user.get("nationality"),
-					(String) user.get("id"), (String) user.get("nif"),
-					(int) user.get("pollingStation"));
+					(Date) user.get("dateOfBirth"),
+					(String) user.get("address"),
+					(String) user.get("nationality"), (String) user.get("id"),
+					(String) user.get("nif"), (int) user.get("pollingStation"));
 			allCitizens.add(c);
 		}
 

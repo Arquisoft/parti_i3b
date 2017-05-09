@@ -73,7 +73,9 @@ public class MainController {
 
 	}
 
-	@RequestMapping(value = "/downvoteProposal/{id}", method = RequestMethod.GET)
+	@RequestMapping(
+			value = "/downvoteProposal/{id}",
+			method = RequestMethod.GET)
 	public String downvoteProposal(Model model, @PathVariable("id") String id) {
 		Proposal prop = dbService.findProposalById(id);
 		User user = (User) SecurityContextHolder.getContext()
@@ -114,7 +116,7 @@ public class MainController {
 			com.downvote(user.getName());
 			dbService.updateComment(proposalId, com);
 		}
-		kafkaProducer.send("councilStaff", "Downvoted comment [" + id  + "]");
+		kafkaProducer.send("councilStaff", "Downvoted comment [" + id + "]");
 		return "redirect:/selectProposal/" + proposalId;
 	}
 
@@ -180,9 +182,9 @@ public class MainController {
 
 	@ModelAttribute("notAllowedWords")
 	public List<String> notAllowedWords() {
-		return new ArrayList<String>(Configuration.getInstance().getNotAllowedWords());
+		return new ArrayList<String>(
+				Configuration.getInstance().getNotAllowedWords());
 	}
-	
 
 	@ModelAttribute("author")
 	public User author() {
