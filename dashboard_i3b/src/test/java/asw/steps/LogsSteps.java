@@ -60,7 +60,7 @@ public class LogsSteps {
 
 	@When("^the user waits (\\d+) seconds$")
 	public void userWaitsSeconds(int seconds) throws Throwable {
-		rs.andDo(new WaitHandler());
+		rs.andDo(new WaitHandler(seconds));
 	}
 
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
@@ -76,9 +76,13 @@ public class LogsSteps {
 	}
 
 	class WaitHandler implements ResultHandler {
+	    private int seconds;
+	    public WaitHandler(int seconds) {
+	        this.seconds = seconds;
+        }
 		public void handle (MvcResult result) {
 			try {
-				Thread.sleep(10 * 1000);
+				Thread.sleep(seconds * 1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
