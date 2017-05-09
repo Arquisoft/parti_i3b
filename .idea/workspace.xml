@@ -2,76 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="721910b0-1b13-40e0-a93c-ca300af37d44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/citizensLoader/citizensLoader_i3b.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/main.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/main3.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/test.iml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/.gitignore" afterPath="$PROJECT_DIR$/citizensLoader_i3b/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/.travis.yml" afterPath="$PROJECT_DIR$/citizensLoader_i3b/.travis.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/24-04-2017.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/24-04-2017.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/LICENSE" afterPath="$PROJECT_DIR$/citizensLoader_i3b/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/lib/albUtilJ7.jar" afterPath="$PROJECT_DIR$/citizensLoader_i3b/lib/albUtilJ7.jar" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/pom.xml" afterPath="$PROJECT_DIR$/citizensLoader_i3b/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/LoadUsers.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/LoadUsers.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/database/CitizenDao.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/CitizenDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/database/CitizenDaoImplMongo.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/CitizenDaoImplMongo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/database/MongoPersistanceFactory.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/MongoPersistanceFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/Citizen.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/Citizen.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/ReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/ReadList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/SingletonParser.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/SingletonParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/lettergenerators/ConsoleLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/ConsoleLetterGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/lettergenerators/LetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/LetterGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/lettergenerators/PDFLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/PDFLetterGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/lettergenerators/WordLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/WordLetterGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/parserutil/PasswordGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/parserutil/PasswordGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/readers/AbstractReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/AbstractReadList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/readers/ExcelReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/ExcelReadList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/parser/readers/TxtReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/TxtReadList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/reportwriter/WriteReport.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/reportwriter/WriteReport.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/java/es/uniovi/asw/reportwriter/WriteReportDefault.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/reportwriter/WriteReportDefault.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/resources/database.properties" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/resources/database.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/resources/log4j.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/alltests/AllTests.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/alltests/AllTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/alltests/LoadUsersTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/alltests/LoadUsersTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/databasetests/AllDatabaseTests.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/databasetests/AllDatabaseTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/databasetests/CitizenDaoMongoTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/databasetests/CitizenDaoMongoTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/databasetests/PersistanceFactoryTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/databasetests/PersistanceFactoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/lettergeneratorstests/AllGeneratorTests.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/lettergeneratorstests/AllGeneratorTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/lettergeneratorstests/PDFGeneratorTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/lettergeneratorstests/PDFGeneratorTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/lettergeneratorstests/WordGeneratorTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/lettergeneratorstests/WordGeneratorTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/parsertests/AllParserTests.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/AllParserTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/parsertests/CitizenTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/CitizenTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/parsertests/ExcelParseTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/ExcelParseTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/parsertests/PasswordTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/PasswordTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/parsertests/SingletonParserTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/SingletonParserTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/java/parsertests/TxtParseTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/TxtParseTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/log4j.properties" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/log4j.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test10.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test10.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test10.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test10.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test2.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test2.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test2.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test2.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test3.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test3.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test3.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test3.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test4.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test4.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test4.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test4.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test5.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test5.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test5.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test5.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test6.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test6.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test6.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test6.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test7.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test7.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test7.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test7.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test8.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test8.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test8.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test8.xlsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test9.txt" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test9.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/citizensLoader/src/test/resources/test9.xlsx" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/resources/test9.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/pom.xml" afterPath="$PROJECT_DIR$/dashboard_i3b/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/pom.xml" afterPath="$PROJECT_DIR$/participationSystem_i3b/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/participants_i3b/target/" />
@@ -104,8 +36,18 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="272">
+              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/citizensLoader_i3b/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="200" column="30" lean-forward="false" selection-start-line="200" selection-start-column="30" selection-end-line="200" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -126,8 +68,8 @@
       <list>
         <option value="$PROJECT_DIR$/dashboard_i3b/pom.xml" />
         <option value="$PROJECT_DIR$/participationSystem_i3b/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/citizensLoader_i3b/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -138,6 +80,48 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="parti_i3b" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="parti_i3b" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="parti_i3b" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -172,6 +156,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parti_i3b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parti_i3b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="citizensLoader_i3b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -179,7 +177,31 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.parti_i3b [test]">
+    <configuration default="false" name="parti_i3b [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -348,6 +370,28 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -435,6 +479,14 @@
       <envs />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Maven.parti_i3b [test]" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Maven.parti_i3b [test]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
@@ -456,7 +508,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -465,14 +517,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -529,8 +581,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding />
         </state>
       </provider>

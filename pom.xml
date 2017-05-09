@@ -14,5 +14,6 @@
         <module>dashboard_i3b</module>
         <module>citizensLoader_i3b</module>
     </modules>
+    <packaging>pom</packaging>
 
 </project>
