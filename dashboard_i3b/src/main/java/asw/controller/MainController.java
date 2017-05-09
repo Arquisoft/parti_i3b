@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.List;
 
 import asw.repository.DBService;
-import asw.kafka.LogProcessorService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -28,11 +27,9 @@ public class MainController {
 	private List<SseEmitter> logsOtherAuthorities = Collections
 			.synchronizedList(new ArrayList<>());
 	private final DBService service;
-	private final LogProcessorService logProcessor;
 
 	@Autowired
-	MainController(DBService service, LogProcessorService logProcessor) {
-		this.logProcessor = logProcessor;
+	MainController(DBService service) {
 		this.service = service;
 	}
 
@@ -132,24 +129,63 @@ public class MainController {
 
 	@KafkaListener(topics = "councilStaff")
 	public void sendMessageCouncilStaff(@Payload String data) {
-		logProcessor.processKafkaLog(data);
 		showMessage(data, "councilStaff");
 		logger.info("New message received for council staff: \"" + data + "\"");
 	}
 
 	@KafkaListener(topics = "councilmen")
 	public void sendMessageCouncilMen(@Payload String data) {
-		logProcessor.processKafkaLog(data);
 		showMessage(data, "councilmen");
 		logger.info("New message received for council men: \"" + data + "\"");
 	}
 
 	@KafkaListener(topics = "otherAuthorities")
 	public void sendMessageOtherAuthorities(@Payload String data) {
-		logProcessor.processKafkaLog(data);
 		showMessage(data, "otherAuthorities");
 		logger.info(
 				"New message received for other authorities: \"" + data + "\"");
+	}
+
+	@RequestMapping("/councilmen_raw")
+	protected SseEmitter subscribeLogsCouncilmen() {
+		SseEmitter log = new SseEmitter();
+		synchronized (this.logsCouncilmen) {
+			this.logsCouncilmen.add(log);
+			log.onCompletion(() -> {
+				synchronized (this.logsCouncilmen) {
+					this.logsCouncilmen.remove(log);
+				}
+			});
+		}
+		return log;
+	}
+
+	@RequestMapping("/councilstaff_raw")
+	protected SseEmitter subscribeLogsCouncilstaff() {
+		SseEmitter log = new SseEmitter();
+		synchronized (this.logsCouncilStaff) {
+			this.logsCouncilStaff.add(log);
+			log.onCompletion(() -> {
+				synchronized (this.logsCouncilStaff) {
+					this.logsCouncilStaff.remove(log);
+				}
+			});
+		}
+		return log;
+	}
+
+	@RequestMapping("/otherauth_raw")
+	protected SseEmitter subscribeLogsOtherAuth() {
+		SseEmitter log = new SseEmitter();
+		synchronized (this.logsOtherAuthorities) {
+			this.logsOtherAuthorities.add(log);
+			log.onCompletion(() -> {
+				synchronized (this.logsOtherAuthorities) {
+					this.logsOtherAuthorities.remove(log);
+				}
+			});
+		}
+		return log;
 	}
 
 }

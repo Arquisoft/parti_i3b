@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+        //<![CDATA[
+        var source = new EventSource("/otherAuthorities_logs");
+
+        source.onmessage = function(event) {
+            document.getElementById("logsOtherAuth").innerHTML += (event.data + "</br>");
+        };
+        //]]>
+    </script>
+<div id="logsOtherAuth"></div>
+</body>
+</html>

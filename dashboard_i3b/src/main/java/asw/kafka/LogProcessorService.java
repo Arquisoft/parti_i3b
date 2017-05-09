@@ -1,14 +1,14 @@
 package asw.kafka;
 
-import asw.model.Proposal;
-import asw.repository.DBService;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import asw.repository.DBService;
 
 /**
  * Created by guille on 4/3/17.
