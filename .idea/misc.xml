@@ -3,10 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/dashboard_i3b/pom.xml" />
-        <option value="$PROJECT_DIR$/citizensLoader/pom.xml" />
-        <option value="$PROJECT_DIR$/participants_i3b/pom.xml" />
-        <option value="$PROJECT_DIR$/participationSystem_i3b/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
