@@ -66,35 +66,4 @@ public class AbstractVotable implements Votable {
 		return negativeVotes;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + negativeVotes;
-		result = prime * result + positiveVotes;
-		result = prime * result + ((votes == null) ? 0 : votes.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		AbstractVotable other = (AbstractVotable) obj;
-		if (negativeVotes != other.negativeVotes)
-			return false;
-		if (positiveVotes != other.positiveVotes)
-			return false;
-		if (votes == null) {
-			if (other.votes != null)
-				return false;
-		} else if (!votes.equals(other.votes))
-			return false;
-		return true;
-	}
-
 }
