@@ -104,8 +104,8 @@ public class Proposal extends AbstractVotable {
 	}
 
 	private void setExpirationDate() {
-		this.expirationDate = DateUtils.addDays(new Date(), Configuration
-				.getInstance().getExpirationDays());
+		this.expirationDate = DateUtils.addDays(new Date(),
+				Configuration.getInstance().getExpirationDays());
 	}
 
 	@Override
@@ -136,8 +136,9 @@ public class Proposal extends AbstractVotable {
 		if (content != null ? !content.equals(proposal.content)
 				: proposal.content != null)
 			return false;
-		return expirationDate != null ? expirationDate.equals(
-				proposal.expirationDate) : proposal.expirationDate == null;
+		return expirationDate != null
+				? expirationDate.equals(proposal.expirationDate)
+				: proposal.expirationDate == null;
 
 	}
 
@@ -150,8 +151,8 @@ public class Proposal extends AbstractVotable {
 		result = 31 * result + (category != null ? category.hashCode() : 0);
 		result = 31 * result + (title != null ? title.hashCode() : 0);
 		result = 31 * result + (content != null ? content.hashCode() : 0);
-		result = 31 * result + (expirationDate != null ? expirationDate
-				.hashCode() : 0);
+		result = 31 * result
+				+ (expirationDate != null ? expirationDate.hashCode() : 0);
 		return result;
 	}
 

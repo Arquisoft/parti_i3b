@@ -21,7 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest({"server.port=0"})
+@IntegrationTest({ "server.port=0" })
 public class MainControllerTest {
 
 	@Autowired
@@ -36,8 +36,7 @@ public class MainControllerTest {
 
 	@Test
 	public void testLanding() throws Exception {
-		mvc.perform(get("/"))
-				.andExpect(status().isOk())
+		mvc.perform(get("/")).andExpect(status().isOk())
 				.andExpect(content().string(containsString("Dashboard")));
 	}
 }

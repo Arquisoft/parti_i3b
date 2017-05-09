@@ -20,8 +20,8 @@ public class NotAllowedWordsValidator implements Validator {
 		if (Configuration.getInstance().containNotAllowedWord(p.getContent())) {
 			e.rejectValue("content", "notAllowedWord");
 
-		} else if (Configuration.getInstance().containNotAllowedWord(p
-				.getTitle())) {
+		} else if (Configuration.getInstance()
+				.containNotAllowedWord(p.getTitle())) {
 			e.rejectValue("title", "notAllowedWord");
 		}
 

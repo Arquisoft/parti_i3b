@@ -10,16 +10,16 @@ import org.junit.runner.RunWith;
  * Created by Oriol on 01/04/2017.
  */
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources"})
+@CucumberOptions(features = { "src/test/resources" })
 public class CucumberTest {
 
-    @BeforeClass
-    public static void setUp() {
-        CucumberActions.setUp();
-    }
+	@BeforeClass
+	public static void setUp() {
+		CucumberActions.setUp();
+	}
 
-    @AfterClass
-    public static void tearDown() {
-        CucumberActions.tearDown();
-    }
+	@AfterClass
+	public static void tearDown() {
+		CucumberActions.tearDown();
+	}
 }

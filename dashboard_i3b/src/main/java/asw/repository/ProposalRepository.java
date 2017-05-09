@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface ProposalRepository extends MongoRepository<Proposal, String> {
 
-    List<Proposal> findAll();
-    Proposal findByTitle(String title);
+	List<Proposal> findAll();
 
+	Proposal findByTitle(String title);
 
 }

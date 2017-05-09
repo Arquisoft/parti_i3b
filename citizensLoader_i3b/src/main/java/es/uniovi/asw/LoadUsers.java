@@ -18,10 +18,9 @@ public class LoadUsers {
 	}
 
 	private void run() {
-		String ruta = Console
-				.readString("Input name of the file (xlsx or txt) "
-						+ "and desired output extension (pdf, docx or cons)"
-						+ "\nExample: example.xlsx docx\n>");
+		String ruta = Console.readString("Input name of the file (xlsx or txt) "
+				+ "and desired output extension (pdf, docx or cons)"
+				+ "\nExample: example.xlsx docx\n>");
 		while (ruta.length() < 1) {
 			ruta = Console.readString("Input name of the file (xlsx or txt) "
 					+ "and desired output extension (pdf, docx or cons)"
@@ -30,12 +29,12 @@ public class LoadUsers {
 
 		String[] text = ruta.split(" ");
 		ReadList rl = null;
-		
-		if(text.length < 2) {
+
+		if (text.length < 2) {
 			System.err.println("Invalid input");
 			return;
 		}
-		
+
 		if (text[0].contains(".xlsx")) {
 			if (text[1].equals("pdf")) {
 				rl = SingletonParser.getInstance().getPDFLetterExcelReadList();

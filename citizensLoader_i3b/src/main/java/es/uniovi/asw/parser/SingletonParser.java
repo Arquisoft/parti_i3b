@@ -6,8 +6,7 @@ import es.uniovi.asw.parser.readers.ExcelReadList;
 import es.uniovi.asw.parser.readers.TxtReadList;
 
 /**
- * @author uo245303
- * Parser Manager
+ * @author uo245303 Parser Manager
  */
 public class SingletonParser {
 	private static SingletonParser instance;
@@ -33,15 +32,15 @@ public class SingletonParser {
 		}
 		return instance;
 	}
-	
+
 	public ReadList getDefaultTxtReadList() {
 		return txtRL;
 	}
-	
+
 	public ReadList getWordLetterTxtReadList() {
 		return txtRLWordLetter;
 	}
-	
+
 	public ReadList getPDFLetterTxtReadList() {
 		return txtRLPDFLetter;
 	}
@@ -49,11 +48,11 @@ public class SingletonParser {
 	public ReadList getDefaultExcelReadList() {
 		return excelRL;
 	}
-	
+
 	public ReadList getWordLetterExcelReadList() {
 		return excelRLWordLetter;
 	}
-	
+
 	public ReadList getPDFLetterExcelReadList() {
 		return excelRLPDFLetter;
 	}

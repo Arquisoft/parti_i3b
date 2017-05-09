@@ -37,108 +37,110 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ComponentScan("repository")
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest({"server.port=0"})
+@IntegrationTest({ "server.port=0" })
 public class ChangePasswordControllerTest {
-    @Value("${local.server.port}")
-    private int port;
+	@Value("${local.server.port}")
+	private int port;
 
-    private URL base;
-    private RestTemplate template;
-    private MockMvc mockMvc;
+	private URL base;
+	private RestTemplate template;
+	private MockMvc mockMvc;
 
-    @Autowired
-    private WebApplicationContext context;
+	@Autowired
+	private WebApplicationContext context;
 
-    @Autowired
-    private DBService db;
+	@Autowired
+	private DBService db;
 
-    @Before
-    public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
-        template = new TestRestTemplate();
-        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-    }
+	@Before
+	public void setUp() throws Exception {
+		this.base = new URL("http://localhost:" + port + "/");
+		template = new TestRestTemplate();
+		mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+	}
 
-    @Test
-    public void testGetChangePasswordPage() throws Exception {
-        template.getForEntity(base.toString(), String.class);
-        mockMvc.perform(get("/changep"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(containsString("passwform")))
-                .andExpect(content().string(containsString("Go back to")));
-    }
+	@Test
+	public void testGetChangePasswordPage() throws Exception {
+		template.getForEntity(base.toString(), String.class);
+		mockMvc.perform(get("/changep")).andExpect(status().isOk())
+				.andExpect(content().string(containsString("passwform")))
+				.andExpect(content().string(containsString("Go back to")));
+	}
 
-    @Test
-    public void testPostChangePasswordSuccess() throws Exception {
-        // If this test fails, tru clearing the database
-        UserInfo user = new UserInfo("pass", "name", "surname", "test1@mail.com", new Date());
-        db.insertUser(user);
+	@Test
+	public void testPostChangePasswordSuccess() throws Exception {
+		// If this test fails, tru clearing the database
+		UserInfo user = new UserInfo("pass", "name", "surname",
+				"test1@mail.com", new Date());
+		db.insertUser(user);
 
-        mockMvc.perform(post("/changep")
-                .param("email", "test1@mail.com")
-                .param("old", "pass")
-                .param("password", "newpass")
-                .param("password2", "newpass"))
-                .andExpect(status().isOk())
-                .andExpect(model().attribute("result", equalTo("The password has been changed")))
-                .andExpect(model().attribute("bg", equalTo("background: #0F0;")))
-                .andExpect(content().string(containsString("passwform")))
-                .andExpect(content().string(containsString("result")))
-                .andExpect(content().string(containsString("Go back to")));
-        UserInfo retrieved = db.getParticipant("test1@mail.com", "newpass");
-        assertNotNull(retrieved);
-        assertTrue(retrieved.getEmail().equals("test1@mail.com"));
-        assertFalse(retrieved.getPassword().equals("pass"));
-        assertTrue(retrieved.getPassword().equals("newpass"));
+		mockMvc.perform(post("/changep").param("email", "test1@mail.com")
+				.param("old", "pass").param("password", "newpass")
+				.param("password2", "newpass"))
+				.andExpect(status().isOk())
+				.andExpect(model().attribute("result",
+						equalTo("The password has been changed")))
+				.andExpect(
+						model().attribute("bg", equalTo("background: #0F0;")))
+				.andExpect(content().string(containsString("passwform")))
+				.andExpect(content().string(containsString("result")))
+				.andExpect(content().string(containsString("Go back to")));
+		UserInfo retrieved = db.getParticipant("test1@mail.com", "newpass");
+		assertNotNull(retrieved);
+		assertTrue(retrieved.getEmail().equals("test1@mail.com"));
+		assertFalse(retrieved.getPassword().equals("pass"));
+		assertTrue(retrieved.getPassword().equals("newpass"));
 
-    }
+	}
 
-    @Test
-    public void testPostChangePasswordFail1() throws Exception {
-        UserInfo user = new UserInfo("pass", "name", "surname", "test2@mail.com", new Date());
-        db.insertUser(user);
+	@Test
+	public void testPostChangePasswordFail1() throws Exception {
+		UserInfo user = new UserInfo("pass", "name", "surname",
+				"test2@mail.com", new Date());
+		db.insertUser(user);
 
-        mockMvc.perform(post("/changep")
-                .param("email", "test2@mail.com")
-                .param("old", "pass")
-                .param("password", "newpass1")
-                .param("password2", "newpass"))
-                .andExpect(status().isOk())
-                .andExpect(model().attribute("result", equalTo("The passwords don't match")))
-                .andExpect(model().attribute("bg", equalTo("background: #F00;")))
-                .andExpect(content().string(containsString("passwform")))
-                .andExpect(content().string(containsString("result")))
-                .andExpect(content().string(containsString("Go back to")));
-        UserInfo retrieved = db.getParticipant("test2@mail.com", "pass");
-        assertNotNull(retrieved);
-        assertTrue(retrieved.getEmail().equals("test2@mail.com"));
-        assertTrue(retrieved.getPassword().equals("pass"));
-        assertFalse(retrieved.getPassword().equals("newpass"));
-        assertFalse(retrieved.getPassword().equals("newpass2"));
+		mockMvc.perform(post("/changep").param("email", "test2@mail.com")
+				.param("old", "pass").param("password", "newpass1")
+				.param("password2", "newpass"))
+				.andExpect(status().isOk())
+				.andExpect(model().attribute("result",
+						equalTo("The passwords don't match")))
+				.andExpect(
+						model().attribute("bg", equalTo("background: #F00;")))
+				.andExpect(content().string(containsString("passwform")))
+				.andExpect(content().string(containsString("result")))
+				.andExpect(content().string(containsString("Go back to")));
+		UserInfo retrieved = db.getParticipant("test2@mail.com", "pass");
+		assertNotNull(retrieved);
+		assertTrue(retrieved.getEmail().equals("test2@mail.com"));
+		assertTrue(retrieved.getPassword().equals("pass"));
+		assertFalse(retrieved.getPassword().equals("newpass"));
+		assertFalse(retrieved.getPassword().equals("newpass2"));
 
-    }
+	}
 
-    @Test
-    public void testPostChangePasswordFail2() throws Exception {
-        UserInfo user = new UserInfo("pass", "name", "surname", "test3@mail.com", new Date());
-        db.insertUser(user);
+	@Test
+	public void testPostChangePasswordFail2() throws Exception {
+		UserInfo user = new UserInfo("pass", "name", "surname",
+				"test3@mail.com", new Date());
+		db.insertUser(user);
 
-        mockMvc.perform(post("/changep")
-                .param("email", "test3@mail.com")
-                .param("old", "wrongpass")
-                .param("password", "new")
-                .param("password2", "new"))
-                .andExpect(status().isOk())
-                .andExpect(model().attribute("result", equalTo("The password is incorrect")))
-                .andExpect(model().attribute("bg", equalTo("background: #F00;")))
-                .andExpect(content().string(containsString("passwform")))
-                .andExpect(content().string(containsString("result")))
-                .andExpect(content().string(containsString("Go back to")));
-        UserInfo retrieved = db.getParticipant("test3@mail.com", "pass");
-        assertNotNull(retrieved);
-        assertTrue(retrieved.getEmail().equals("test3@mail.com"));
-        assertTrue(retrieved.getPassword().equals("pass"));
-        assertFalse(retrieved.getPassword().equals("new"));
+		mockMvc.perform(post("/changep").param("email", "test3@mail.com")
+				.param("old", "wrongpass").param("password", "new")
+				.param("password2", "new"))
+				.andExpect(status().isOk())
+				.andExpect(model().attribute("result",
+						equalTo("The password is incorrect")))
+				.andExpect(
+						model().attribute("bg", equalTo("background: #F00;")))
+				.andExpect(content().string(containsString("passwform")))
+				.andExpect(content().string(containsString("result")))
+				.andExpect(content().string(containsString("Go back to")));
+		UserInfo retrieved = db.getParticipant("test3@mail.com", "pass");
+		assertNotNull(retrieved);
+		assertTrue(retrieved.getEmail().equals("test3@mail.com"));
+		assertTrue(retrieved.getPassword().equals("pass"));
+		assertFalse(retrieved.getPassword().equals("new"));
 
-    }
+	}
 }

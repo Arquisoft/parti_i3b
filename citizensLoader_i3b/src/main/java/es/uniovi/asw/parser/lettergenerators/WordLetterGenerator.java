@@ -10,12 +10,12 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 public class WordLetterGenerator implements LetterGenerator {
-	
+
 	/**
 	 * @author Adrian
 	 * 
-	 * Generates a new word document into which it writes
-	 * the data of a given citizen.
+	 *         Generates a new word document into which it writes the data of a
+	 *         given citizen.
 	 */
 	@Override
 	public void generatePersonalLetter(Citizen c) {
@@ -25,22 +25,23 @@ public class WordLetterGenerator implements LetterGenerator {
 		// Write the Document in file system
 		FileOutputStream out;
 		try {
-			out = new FileOutputStream(new File(c.getID()+".docx"));
+			out = new FileOutputStream(new File(c.getID() + ".docx"));
 			XWPFParagraph paragraph = document.createParagraph();
 			XWPFRun runNames = paragraph.createRun();
-			
-			//Add text to the document 
-			runNames.setText("Mr/Mrs " + c.getName() + " " + c.getlastName() +",");
+
+			// Add text to the document
+			runNames.setText(
+					"Mr/Mrs " + c.getName() + " " + c.getlastName() + ",");
 			runNames.addBreak();
-			
+
 			XWPFRun runLogin = paragraph.createRun();
 			runLogin.setText("Your login data has been generated:");
 			runLogin.addBreak();
-			
+
 			XWPFRun runUser = paragraph.createRun();
-			runUser.setText("Username: "+ c.getEmail());
+			runUser.setText("Username: " + c.getEmail());
 			runUser.addBreak();
-			
+
 			XWPFRun runPass = paragraph.createRun();
 			runPass.setText("Password: " + c.getPassword());
 
