@@ -8,10 +8,14 @@ import java.util.Date;
 /**
  * @author Oriol. Class use to represent the citizens and parse their data.
  */
-public class Citizen {
+public class User {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
-	private String email;
+	private String name;
 	private Date birthDate;
 	private String address;
 	private String ID;
@@ -19,14 +23,15 @@ public class Citizen {
 	private String nationality;
 	private String NIF;
 	private int pollingStation;
+	private boolean isAdmin = false;
 
-	public Citizen(String firstName, String lastName, String email,
+	public User(String firstName, String lastName, String email,
 			String birthDate, String address, String nationality, String ID,
 			String NIF, int pollingStation) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
+		this.name = email;
 		setbirthDate(birthDate);
 		this.address = address;
 		this.nationality = nationality;
@@ -35,13 +40,13 @@ public class Citizen {
 		this.pollingStation = pollingStation;
 	}
 
-	public Citizen(String firstName, String lastName, String email,
-			Date birthDate, String address, String nationality, String ID,
-			String NIF, int pollingStation) {
+	public User(String firstName, String lastName, String email, Date birthDate,
+			String address, String nationality, String ID, String NIF,
+			int pollingStation) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
+		this.name = email;
 		this.birthDate = birthDate;
 		this.address = address;
 		this.nationality = nationality;
@@ -50,10 +55,10 @@ public class Citizen {
 		this.pollingStation = pollingStation;
 	}
 
-	public Citizen(String[] data) {
+	public User(String[] data) {
 		this.firstName = data[0];
 		this.lastName = data[1];
-		this.email = data[2];
+		this.name = data[2];
 		setbirthDate(data[3]);
 		this.address = data[4];
 		this.nationality = data[5];
@@ -86,7 +91,7 @@ public class Citizen {
 	}
 
 	public String getEmail() {
-		return email;
+		return name;
 	}
 
 	public Date getbirthDate() {
@@ -133,7 +138,7 @@ public class Citizen {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Citizen other = (Citizen) obj;
+		User other = (User) obj;
 		if (ID == null) {
 			if (other.ID != null)
 				return false;
@@ -145,9 +150,13 @@ public class Citizen {
 	@Override
 	public String toString() {
 		return "Citizen [firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + email + ", birthDate=" + birthDate + ", address="
+				+ ", email=" + name + ", birthDate=" + birthDate + ", address="
 				+ address + ", ID=" + ID + ", nationality=" + nationality + ","
 				+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
+	}
+
+	public boolean isAdmin() {
+		return isAdmin;
 	}
 
 }

@@ -1,6 +1,6 @@
 package es.uniovi.asw.parser.lettergenerators;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class WordLetterGenerator implements LetterGenerator {
 	 * the data of a given citizen.
 	 */
 	@Override
-	public void generatePersonalLetter(Citizen c) {
+	public void generatePersonalLetter(User c) {
 		// Blank Document
 		XWPFDocument document = new XWPFDocument();
 

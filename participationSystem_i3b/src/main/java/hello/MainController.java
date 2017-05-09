@@ -180,13 +180,8 @@ public class MainController {
 
 	@ModelAttribute("notAllowedWords")
 	public List<String> notAllowedWords() {
-		return new ArrayList<String>(Configuration.getInstance().getNotAllowedWords());
-	}
-	
-
-	@ModelAttribute("author")
-	public User author() {
-		return new User("ASW", 20);
+		return new ArrayList<String>(Configuration.getInstance()
+				.getNotAllowedWords());
 	}
 
 }

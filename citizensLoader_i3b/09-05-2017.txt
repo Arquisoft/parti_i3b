@@ -1,0 +1,54 @@
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 17:46:47
+Error: No se ha encontrado el archivo solicitado
+Message exception: \test\resources\test.xlsx (El sistema no puede encontrar la ruta especificada)
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 17:47:26
+Error: No se ha encontrado el archivo solicitado
+Message exception: test\resources\test.xlsx (El sistema no puede encontrar la ruta especificada)
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 17:58:47
+Error: No se ha encontrado el archivo solicitado
+Message exception: src\resources\test\test.xlsx (El sistema no puede encontrar la ruta especificada)
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 17:59:12
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "19160962F" }'
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 17:59:12
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "90500084Y" }'
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 17:59:12
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "09940449X" }'
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 19:18:10
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "19160962F" }'
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 19:18:10
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "90500084Y" }'
+
+ERROR 
+------------------------------
+Date and hour: 09-05-2017 19:18:10
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "09940449X" }'
+
