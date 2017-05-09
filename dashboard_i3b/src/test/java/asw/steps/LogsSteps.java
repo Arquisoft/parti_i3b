@@ -11,6 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.ResultHandler;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
@@ -35,6 +37,7 @@ public class LogsSteps {
 
 	protected MockMvc mvc;
 	protected MvcResult result;
+	protected ResultActions rs;
 
 	@Given("^the user navigates to /$")
 	public void userNavigatesTo() throws Throwable {
@@ -47,7 +50,7 @@ public class LogsSteps {
 	public void clicksLink(String str) throws Throwable {
 		Assert.notNull(context);
 		this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
-		result = mvc.perform(get("/" + str)).andReturn();
+		rs = mvc.perform(get("/" + str));
 	}
 
 	@Given("^a message is produced with topic \"([^\"]*)\"$")
@@ -57,20 +60,28 @@ public class LogsSteps {
 
 	@When("^the user waits (\\d+) seconds$")
 	public void userWaitsSeconds(int seconds) throws Throwable {
-		Thread.sleep(seconds * 1000);
+		rs.andDo(new WaitHandler());
 	}
 
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
 	public void logWeb(String str) throws Throwable {
-		logger.info("TEST1 -- " + str);
-		logger.info("TEST2 -- " + result.getResponse().getContentAsString());
-		if (result.getResponse().getContentAsString() != null && str != null)
-			assertTrue(result.getResponse().getContentAsString().contains(str));
+		result = rs.andReturn();
+		assertTrue(result.getResponse().getContentAsString().contains(str));
 	}
 
 	@Then("^there is not a log of \"([^\"]*)\" on the webpage$")
 	public void noLogWeb(String str) throws Throwable {
 		assertThat(result.getResponse().getContentAsString(),
 				not(containsString(str)));
+	}
+
+	class WaitHandler implements ResultHandler {
+		public void handle (MvcResult result) {
+			try {
+				Thread.sleep(10 * 1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
