@@ -33,36 +33,36 @@ public class LogsSteps {
     protected MvcResult result;
 
     @Given("^the user navigates to /$")
-    public void the_user_navigates_to() throws Throwable {
+    public void userNavigatesTo() throws Throwable {
         Assert.notNull(context);
         this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
         result = mvc.perform(get("/")).andReturn();
     }
 
     @Given("^clicks \"([^\"]*)\" link$")
-    public void clicks_link(String str) throws Throwable {
+    public void clicksLink(String str) throws Throwable {
         Assert.notNull(context);
         this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
         result = mvc.perform(get("/" + str)).andReturn();
     }
 
     @Given("^a message is produced with topic \"([^\"]*)\"$")
-    public void a_message_is_produced_with_topic(String topic) throws Throwable {
+    public void messageIsProducedWithTopic(String topic) throws Throwable {
         mp.send(topic);
     }
 
     @When("^the user waits (\\d+) seconds$")
-    public void the_user_waits_seconds(int seconds) throws Throwable {
+    public void userWaitsSeconds(int seconds) throws Throwable {
         Thread.sleep(seconds * 1000);
     }
 
     @Then("^there is a log of \"([^\"]*)\" on the webpage$")
-    public void there_is_a_log_of_on_the_webpage(String str) throws Throwable {
+    public void logWeb(String str) throws Throwable {
         assertThat(result.getResponse().getContentAsString(), containsString(str));
     }
 
     @Then("^there is not a log of \"([^\"]*)\" on the webpage$")
-    public void there_is_not_a_log_of_on_the_webpage(String str) throws Throwable {
+    public void noLogWeb(String str) throws Throwable {
         assertThat(result.getResponse().getContentAsString(), not(containsString(str)));
     }
 }
