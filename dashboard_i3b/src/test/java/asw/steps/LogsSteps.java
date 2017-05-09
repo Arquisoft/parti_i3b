@@ -5,6 +5,7 @@ import asw.kafka.mockproducer.MessageProducer;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
@@ -26,6 +27,8 @@ public class LogsSteps {
 
 	@Autowired
 	protected WebApplicationContext context;
+
+	private static final Logger logger = Logger.getLogger(LogsSteps.class);
 
 	@Autowired
 	private MessageProducer mp;
@@ -59,6 +62,8 @@ public class LogsSteps {
 
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
 	public void logWeb(String str) throws Throwable {
+		logger.info("TEST1 -- " + str);
+		logger.info("TEST2 -- " + result.getResponse().getContentAsString());
 		if (result.getResponse().getContentAsString() != null && str != null)
 			assertTrue(result.getResponse().getContentAsString().contains(str));
 	}
