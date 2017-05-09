@@ -11,9 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Comment {
 
     @Id
-    String id;
-    User user;
-    String commentString;
+    protected String id;
+    private User user;
+    private String commentString;
 
     public User getUser() {
         return user;

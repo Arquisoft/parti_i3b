@@ -7,17 +7,11 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection= "users")
 public class UserInfo {
-
-    // Log
-    private static final Logger LOG = LoggerFactory.getLogger(UserInfo.class);
 
     @Id
     private String id;

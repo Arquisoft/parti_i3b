@@ -41,7 +41,7 @@ public class MainController {
     }
 
     @RequestMapping("/councilmen_logs")
-    SseEmitter subscribeCouncilmen() {
+    protected SseEmitter subscribeCouncilmen() {
         SseEmitter sseEmitter = new SseEmitter();
         synchronized (this.logsCouncilmen) {
             this.logsCouncilmen.add(sseEmitter);
@@ -55,7 +55,7 @@ public class MainController {
     }
 
     @RequestMapping("/otherAuthorities_logs")
-    SseEmitter subscribeOtherAuthorities() {
+    protected SseEmitter subscribeOtherAuthorities() {
         SseEmitter sseEmitter = new SseEmitter();
         synchronized (this.logsOtherAuthorities) {
             this.logsOtherAuthorities.add(sseEmitter);
@@ -69,7 +69,7 @@ public class MainController {
     }
 
     @RequestMapping("/councilstaff_logs")
-    SseEmitter subscribeLogs() {
+    protected SseEmitter subscribeLogs() {
         SseEmitter log = new SseEmitter();
         synchronized (this.logsCouncilStaff) {
             this.logsCouncilStaff.add(log);
@@ -122,7 +122,9 @@ public class MainController {
                     }
                 }
                 break;
-
+            default:
+                logger.error("Invalid event message");
+                break;
         }
         return data;
     }

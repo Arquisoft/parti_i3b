@@ -62,7 +62,7 @@ public class ChangePasswordControllerTest {
 
     @Test
     public void testGetChangePasswordPage() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+        template.getForEntity(base.toString(), String.class);
         mockMvc.perform(get("/changep"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("passwform")))
@@ -89,7 +89,7 @@ public class ChangePasswordControllerTest {
         UserInfo retrieved = db.getParticipant("test1@mail.com", "newpass");
         assertNotNull(retrieved);
         assertTrue(retrieved.getEmail().equals("test1@mail.com"));
-        assertTrue(!retrieved.getPassword().equals("pass"));
+        assertFalse(retrieved.getPassword().equals("pass"));
         assertTrue(retrieved.getPassword().equals("newpass"));
 
     }

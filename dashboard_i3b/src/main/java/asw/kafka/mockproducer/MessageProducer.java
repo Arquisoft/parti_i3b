@@ -19,6 +19,7 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 public class MessageProducer {
   
 	private static final Logger logger = Logger.getLogger(MessageProducer.class);
+	private Map<Integer, String> topics = new HashMap<>();
 
 	@Autowired
 	private KafkaTemplate<String, String> template;
@@ -32,8 +33,6 @@ public class MessageProducer {
 		testDownvoteProposal("councilStaff", "Test2");
 
 	}
-
-    Map<Integer, String> topics = new HashMap<>();
 
     @Scheduled(cron = "*/3 * * * * *")
     public void send() {

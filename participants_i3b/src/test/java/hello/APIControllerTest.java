@@ -103,7 +103,6 @@ public class APIControllerTest {
                         Charset.forName("utf8"))))
                 .andExpect(status().isNotFound()
                 );
-        assertTrue(true);
     }
 
 

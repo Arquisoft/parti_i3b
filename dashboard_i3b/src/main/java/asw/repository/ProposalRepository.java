@@ -1,7 +1,6 @@
 package asw.repository;
 
 import asw.model.Proposal;
-import asw.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -59,7 +59,7 @@ public class FormControllerTest {
 
     @Test
     public void testLoginPage() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+        template.getForEntity(base.toString(), String.class);
         mockMvc.perform(get("/login"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Username:")))
