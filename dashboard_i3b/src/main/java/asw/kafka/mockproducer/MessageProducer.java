@@ -24,7 +24,7 @@ public class MessageProducer {
 	@Autowired
 	private KafkaTemplate<String, String> template;
 
-	@Scheduled(cron = "*/5 * * * * *")
+	//@Scheduled(cron = "*/5 * * * * *")
 	public void sendProposalMessagesCouncilstaff() {
 		//testCreateProposal("councilStaff", "New proposal");
 
@@ -34,7 +34,7 @@ public class MessageProducer {
 
 	}
 
-    @Scheduled(cron = "*/3 * * * * *")
+    //@Scheduled(cron = "*/3 * * * * *")
     public void send() {
         topics.put(0, "councilStaff");
         topics.put(1, "otherAuthorities");
