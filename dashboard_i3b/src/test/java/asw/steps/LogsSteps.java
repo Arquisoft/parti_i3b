@@ -57,6 +57,7 @@ public class LogsSteps {
 	@Given("^a message is produced with topic \"([^\"]*)\"$")
 	public void messageIsProducedWithTopic(String topic) throws Throwable {
 		mp.send(topic);
+		mp.send(topic);
 	}
 
 	@When("^the user waits (\\d+) seconds$")
@@ -70,7 +71,7 @@ public class LogsSteps {
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
 	public void logWeb(String str) throws Throwable {
 		result = rs.andReturn();
-        System.out.println(result.getResponse().getContentAsString() == null);
+        System.out.println(result.getResponse().getContentAsString().equals(""));
         System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(str));
 	}
