@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 import es.uniovi.asw.parser.lettergenerators.LetterGenerator;
 
 /**
@@ -42,7 +42,7 @@ public class ExcelReadList extends AbstractReadList {
 
 			wb = new XSSFWorkbook(OPCPackage.open(file));
 			sheet = wb.getSheetAt(0);
-			census = new HashSet<Citizen>();
+			census = new HashSet<User>();
 
 			int rows = sheet.getPhysicalNumberOfRows();
 
@@ -55,7 +55,7 @@ public class ExcelReadList extends AbstractReadList {
 
 				String[] data = parseRow(row, cols);
 
-				Citizen cit = null;
+				User cit = null;
 
 				if (data != null) {
 
@@ -74,11 +74,10 @@ public class ExcelReadList extends AbstractReadList {
 					} else if (data[7] == null) {
 						wReport.report("Null NIF on row number " + r, ruta);
 					} else {
-						cit = new Citizen(data);
+						cit = new User(data);
 						if (census.contains(cit)) {
-							wReport.report(
-									"Duplicated citizen on row number " + r,
-									ruta);
+							wReport.report("Duplicated citizen on row number "
+									+ r, ruta);
 						} else {
 							census.add(cit);
 						}
@@ -109,8 +108,8 @@ public class ExcelReadList extends AbstractReadList {
 			for (int c = 0; c < cols; c++) {
 				cell = row.getCell((short) c);
 				if (cell != null && !cell.toString().equals("")) {
-					if (cell.getCellTypeEnum() == CellType.NUMERIC
-							&& DateUtil.isCellDateFormatted(cell)) {
+					if (cell.getCellTypeEnum() == CellType.NUMERIC && DateUtil
+							.isCellDateFormatted(cell)) {
 						SimpleDateFormat sdf = new SimpleDateFormat(
 								"dd/MM/yyyy");
 						data[c] = sdf.format(cell.getDateCellValue());

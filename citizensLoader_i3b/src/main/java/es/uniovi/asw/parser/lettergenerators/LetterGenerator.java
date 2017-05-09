@@ -1,6 +1,6 @@
 package es.uniovi.asw.parser.lettergenerators;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 
 /**
  * @author Oriol Strategy. Encapsulate output algorithm, in order to prepare:
@@ -8,5 +8,5 @@ import es.uniovi.asw.parser.Citizen;
  *         other formats like Microsoft Word or PDF.
  */
 public interface LetterGenerator {
-	void generatePersonalLetter(Citizen c);
+	void generatePersonalLetter(User c);
 }

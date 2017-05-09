@@ -6,12 +6,12 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 
 public class PDFLetterGenerator implements LetterGenerator {
 
 	@Override
-	public void generatePersonalLetter(Citizen c) {
+	public void generatePersonalLetter(User c) {
 		Document document = new Document();
 
 		try {

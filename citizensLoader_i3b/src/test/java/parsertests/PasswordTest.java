@@ -7,16 +7,16 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 import es.uniovi.asw.parser.parserutil.PasswordGenerator;
 
 public class PasswordTest {
 
 	@Test
 	public void testNotNull() {
-		Citizen c = new Citizen("a", "b", "a@a.com", "10/10/2010", "a", "a",
+		User c = new User("a", "b", "a@a.com", "10/10/2010", "a", "a",
 				"7198791Z", "2652165165", 1234);
-		Set<Citizen> census = new HashSet<Citizen>();
+		Set<User> census = new HashSet<User>();
 		census.add(c);
 		PasswordGenerator.createPasswords(census);
 		assertTrue(c.getPassword() != null);

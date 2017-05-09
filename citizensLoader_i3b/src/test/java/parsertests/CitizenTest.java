@@ -4,22 +4,22 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 
 public class CitizenTest {
 
 	@Test
 	public void testEquals() {
-		Citizen dummy = new Citizen("a", "b", "a@a.com", "10/10/2010", "a", "a",
+		User dummy = new User("a", "b", "a@a.com", "10/10/2010", "a", "a",
 				"123456789Z", "132456789", 1234);
-		Citizen dummy1 = new Citizen("b", "c", "b@a.com", "10/10/2010", "a",
+		User dummy1 = new User("b", "c", "b@a.com", "10/10/2010", "a",
 				"a", "123456789Z", "132456789", 1234);
-		Citizen dummy2 = new Citizen("a", "b", "b@a.com", "10/10/2010", "a",
+		User dummy2 = new User("a", "b", "b@a.com", "10/10/2010", "a",
 				"a", "3", "132456789", 1234);
-		Citizen dummy3 = null;
-		Citizen dummy4 = new Citizen("a", "b", "b@a.com", "10/10/2010", "a",
+		User dummy3 = null;
+		User dummy4 = new User("a", "b", "b@a.com", "10/10/2010", "a",
 				"a", null, "132456789", 1234);
-		Citizen dummy5 = new Citizen("a", "b", "b@a.com", "10/10/2010", "a",
+		User dummy5 = new User("a", "b", "b@a.com", "10/10/2010", "a",
 				"a", null, "132456789", 1234);
 		Double doub = new Double(5.0);
 

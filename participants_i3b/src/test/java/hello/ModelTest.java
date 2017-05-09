@@ -60,8 +60,8 @@ public class ModelTest {
 
 		UserInfo user = new UserInfo(password, firstName, lastName, email,
 				format.parse(birthDate));
-		UserInfo user2 = new UserInfo(firstName, lastName, email,
-				format.parse(birthDate));
+		UserInfo user2 = new UserInfo(firstName, lastName, email, format.parse(
+				birthDate));
 		UserInfo user3 = new UserInfo(firstName, lastName, email, birthDate,
 				address, nationality, ID, NIF, pollingStation.toString());
 
@@ -69,15 +69,15 @@ public class ModelTest {
 		assertTrue(user.getFirstName().equals(firstName));
 		assertTrue(user.getLastName().equals(lastName));
 		assertTrue(user.getEmail().equals(email));
-		assertTrue(user.getBirthDate().equals(format.parse(birthDate)));
+		assertTrue(user.getDateOfBirth().equals(format.parse(birthDate)));
 		assertTrue(user2.getFirstName().equals(firstName));
 		assertTrue(user2.getLastName().equals(lastName));
 		assertTrue(user2.getEmail().equals(email));
-		assertTrue(user2.getBirthDate().equals(format.parse(birthDate)));
+		assertTrue(user2.getDateOfBirth().equals(format.parse(birthDate)));
 		assertTrue(user3.getFirstName().equals(firstName));
 		assertTrue(user3.getLastName().equals(lastName));
 		assertTrue(user3.getEmail().equals(email));
-		assertTrue(user3.getBirthDate().equals(format.parse(birthDate)));
+		assertTrue(user3.getDateOfBirth().equals(format.parse(birthDate)));
 		assertTrue(user3.getAddress().equals(address));
 		assertTrue(user3.getNationality().equals(nationality));
 		assertTrue(user3.getId().equals(ID));

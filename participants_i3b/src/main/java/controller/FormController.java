@@ -45,8 +45,8 @@ public class FormController {
 			model.addAttribute("address", user.getAddress());
 			model.addAttribute("nationality", user.getNationality());
 			model.addAttribute("polling", user.getPollingStation());
-			String birthdate = DateFormat.getDateInstance()
-					.format(user.getBirthDate());
+			String birthdate = DateFormat.getDateInstance().format(user
+					.getDateOfBirth());
 			model.addAttribute("birthdate", birthdate);
 
 			// model.addAttribute("nif", citizen.NIF);

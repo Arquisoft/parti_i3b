@@ -17,7 +17,7 @@ public class UserInfo {
 	private String id;
 
 	private String password;
-	private Date birthDate;
+	private Date dateOfBirth;
 	private String address;
 	private String nationality;
 	private int pollingStation;
@@ -36,7 +36,7 @@ public class UserInfo {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.birthDate = birthDate;
+		this.dateOfBirth = birthDate;
 	}
 
 	public UserInfo(String password, String firstName, String lastName,
@@ -73,7 +73,7 @@ public class UserInfo {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		this.birthDate = date;
+		this.dateOfBirth = date;
 	}
 
 	public String getPassword() {
@@ -93,7 +93,7 @@ public class UserInfo {
 	}
 
 	public Integer getAge() {
-		setAge(getBirthDate());
+		setAge(getDateOfBirth());
 		return age;
 	}
 
@@ -105,10 +105,6 @@ public class UserInfo {
 
 	public String getNationality() {
 		return nationality;
-	}
-
-	public Date getBirthDate() {
-		return birthDate;
 	}
 
 	public String getAddress() {
@@ -159,10 +155,18 @@ public class UserInfo {
 	@Override
 	public String toString() {
 		return "UserInfo [ID=" + id + ", password=" + password + ", birthDate="
-				+ birthDate + ", address=" + address + ", nationality="
+				+ dateOfBirth + ", address=" + address + ", nationality="
 				+ nationality + ", pollingStation=" + pollingStation
 				+ ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", age=" + age + ", NIF=" + NIF + ", email=" + email + "]";
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 }

@@ -2,7 +2,7 @@ package es.uniovi.asw.database;
 
 import java.util.List;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 
 /**
  * Interface for the methods that the DAO must accomplish
@@ -12,13 +12,13 @@ import es.uniovi.asw.parser.Citizen;
  */
 public interface CitizenDao {
 
-	boolean insert(Citizen c);
+	boolean insert(User c);
 
-	Citizen findById(String ID);
+	User findById(String ID);
 
 	void remove(String ID);
 
-	List<Citizen> findAll();
+	List<User> findAll();
 
 	void cleanDatabase();
 }

@@ -68,14 +68,12 @@ public class MainController {
 			prop.upvote(user.getName());
 			dbService.updateProposal(prop);
 		}
-		kafkaProducer.send("councilStaff", "Upvoted proposal [" + id + "]");
+		kafkaProducer.send("upvotedProposal", "upvoted proposal");
 		return "redirect:/selectProposal/" + id;
 
 	}
 
-	@RequestMapping(
-			value = "/downvoteProposal/{id}",
-			method = RequestMethod.GET)
+	@RequestMapping(value = "/downvoteProposal/{id}", method = RequestMethod.GET)
 	public String downvoteProposal(Model model, @PathVariable("id") String id) {
 		Proposal prop = dbService.findProposalById(id);
 		User user = (User) SecurityContextHolder.getContext()
@@ -85,7 +83,7 @@ public class MainController {
 			dbService.updateProposal(prop);
 		}
 
-		kafkaProducer.send("councilStaff", "Downvoted proposal [" + id + "]");
+		kafkaProducer.send("downvotedProposal", "downvoted proposal");
 
 		return "redirect:/selectProposal/" + id;
 	}
@@ -101,7 +99,7 @@ public class MainController {
 			com.upvote(user.getName());
 			dbService.updateComment(proposalId, com);
 		}
-		kafkaProducer.send("councilStaff", "Upvoted comment [" + id + "]");
+		kafkaProducer.send("upvotedComment", "upvoted comment");
 		return "redirect:/selectProposal/" + proposalId;
 	}
 
@@ -116,7 +114,7 @@ public class MainController {
 			com.downvote(user.getName());
 			dbService.updateComment(proposalId, com);
 		}
-		kafkaProducer.send("councilStaff", "Downvoted comment [" + id + "]");
+		kafkaProducer.send("downvotedComment", "downvoted comment");
 		return "redirect:/selectProposal/" + proposalId;
 	}
 
@@ -146,7 +144,7 @@ public class MainController {
 
 		if (!result.hasErrors()) {
 			dbService.insertProposal(proposal);
-			kafkaProducer.send("councilStaff", "New proposal");
+			kafkaProducer.send("createdProposal", "created proposal");
 		}
 
 		return "redirect:/userHome";
@@ -166,7 +164,7 @@ public class MainController {
 		comment.setIdProposal(id);
 		Proposal prop = dbService.findProposalById(id);
 		dbService.insertComment(comment, prop);
-		kafkaProducer.send("councilStaff", "New comment [" + id + "]");
+		kafkaProducer.send("createdComment", "created comment");
 		return "redirect:/selectProposal/" + id;
 	}
 
@@ -182,13 +180,8 @@ public class MainController {
 
 	@ModelAttribute("notAllowedWords")
 	public List<String> notAllowedWords() {
-		return new ArrayList<String>(
-				Configuration.getInstance().getNotAllowedWords());
-	}
-
-	@ModelAttribute("author")
-	public User author() {
-		return new User("ASW", 20);
+		return new ArrayList<String>(Configuration.getInstance()
+				.getNotAllowedWords());
 	}
 
 }

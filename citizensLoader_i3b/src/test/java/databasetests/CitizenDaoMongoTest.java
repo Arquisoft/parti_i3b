@@ -11,13 +11,13 @@ import org.junit.Test;
 
 import es.uniovi.asw.database.CitizenDao;
 import es.uniovi.asw.database.CitizenDaoImplMongo;
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 
 public class CitizenDaoMongoTest {
 
-	private Citizen dummy;
-	private Citizen dummy1;
-	private Citizen dummy2;
+	private User dummy;
+	private User dummy1;
+	private User dummy2;
 	private static CitizenDao dao;
 
 	@BeforeClass
@@ -28,11 +28,11 @@ public class CitizenDaoMongoTest {
 
 	@Before
 	public void insertCitizen() {
-		dummy = new Citizen("a", "b", "a@a.com", "10/10/2010", "a", "a",
+		dummy = new User("a", "b", "a@a.com", "10/10/2010", "a", "a",
 				"123456789Z", "132456789", 1234);
-		dummy1 = new Citizen("a", "b", "b@a.com", "10/10/2010", "a", "a", "2",
+		dummy1 = new User("a", "b", "b@a.com", "10/10/2010", "a", "a", "2",
 				"132456789", 1234);
-		dummy2 = new Citizen("a", "b", "c@a.com", "10/10/2010", "a", "a", "3",
+		dummy2 = new User("a", "b", "c@a.com", "10/10/2010", "a", "a", "3",
 				"132456789", 1234);
 	}
 
@@ -45,7 +45,7 @@ public class CitizenDaoMongoTest {
 	public void testInsert() {
 
 		dao.insert(dummy);
-		List<Citizen> citizens = dao.findAll();
+		List<User> citizens = dao.findAll();
 
 		assertEquals(citizens.size(), 1);
 
@@ -64,7 +64,7 @@ public class CitizenDaoMongoTest {
 		dao.insert(dummy2);
 		dao.insert(dummy1);
 
-		List<Citizen> citizens = dao.findAll();
+		List<User> citizens = dao.findAll();
 
 		assertEquals(citizens.size(), 3);
 
@@ -77,7 +77,7 @@ public class CitizenDaoMongoTest {
 	public void testFindById() {
 		dao.insert(dummy);
 
-		Citizen c = dao.findById("1");
+		User c = dao.findById("1");
 
 		assertNull(c);
 
@@ -92,7 +92,7 @@ public class CitizenDaoMongoTest {
 		dao.insert(dummy1);
 		dao.insert(dummy2);
 
-		List<Citizen> citizens = dao.findAll();
+		List<User> citizens = dao.findAll();
 
 		assertEquals(citizens.size(), 3);
 
@@ -139,7 +139,7 @@ public class CitizenDaoMongoTest {
 		dao.insert(dummy);
 		dao.insert(dummy);
 
-		List<Citizen> citizens = dao.findAll();
+		List<User> citizens = dao.findAll();
 
 		assertEquals(citizens.size(), 1);
 	}

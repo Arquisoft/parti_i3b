@@ -15,7 +15,7 @@ import com.mongodb.DuplicateKeyException;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoException;
 
-import es.uniovi.asw.parser.Citizen;
+import es.uniovi.asw.parser.User;
 import es.uniovi.asw.reportwriter.WriteReport;
 import es.uniovi.asw.reportwriter.WriteReportDefault;
 
@@ -43,13 +43,13 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		if (loadProperties()) {
 
 			this.reporter = new WriteReportDefault();
-			this.mongo = new MongoClient(properties.getProperty("host"),
-					Integer.parseInt(properties.getProperty("port")));
+			this.mongo = new MongoClient(properties.getProperty("host"), Integer
+					.parseInt(properties.getProperty("port")));
 			this.db = mongo.getDB(properties.getProperty("database"));
 			this.users = db.getCollection(properties.getProperty("collection"));
 
-			users.createIndex(new BasicDBObject("id", 1),
-					new BasicDBObject("unique", true));
+			users.createIndex(new BasicDBObject("id", 1), new BasicDBObject(
+					"unique", true));
 		}
 	}
 
@@ -88,8 +88,8 @@ public class CitizenDaoImplMongo implements CitizenDao {
 		this.db = mongo.getDB(database);
 		this.users = db.getCollection(collection);
 
-		users.createIndex(new BasicDBObject("id", 1),
-				new BasicDBObject("unique", true));
+		users.createIndex(new BasicDBObject("id", 1), new BasicDBObject(
+				"unique", true));
 	}
 
 	/**
@@ -102,8 +102,9 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public boolean insert(Citizen c) {
+	public boolean insert(User c) {
 		BasicDBObject document = new BasicDBObject();
+		document.put("_class", "hello.UserInfo");
 		document.put("firstName", c.getName());
 		document.put("lastName", c.getlastName());
 		document.put("email", c.getEmail());
@@ -153,17 +154,16 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public Citizen findById(String ID) {
+	public User findById(String ID) {
 		BasicDBObject whereQuery = new BasicDBObject();
 		whereQuery.put("id", ID);
 		DBCursor cursor = users.find(whereQuery);
-		Citizen c = null;
+		User c = null;
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			c = new Citizen((String) user.get("firstName"),
-					(String) user.get("lastName"), (String) user.get("email"),
-					(Date) user.get("dateOfBirth"),
-					(String) user.get("address"),
+			c = new User((String) user.get("firstName"), (String) user.get(
+					"lastName"), (String) user.get("name"), (Date) user.get(
+							"dateOfBirth"), (String) user.get("address"),
 					(String) user.get("nationality"), (String) user.get("id"),
 					(String) user.get("nif"), (int) user.get("pollingStation"));
 		}
@@ -177,17 +177,16 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	 */
 
 	@Override
-	public List<Citizen> findAll() {
+	public List<User> findAll() {
 
-		List<Citizen> allCitizens = new ArrayList<>();
+		List<User> allCitizens = new ArrayList<>();
 
 		DBCursor cursor = users.find();
 		while (cursor.hasNext()) {
 			DBObject user = cursor.next();
-			Citizen c = new Citizen((String) user.get("firstName"),
-					(String) user.get("lastName"), (String) user.get("email"),
-					(Date) user.get("dateOfBirth"),
-					(String) user.get("address"),
+			User c = new User((String) user.get("firstName"), (String) user.get(
+					"lastName"), (String) user.get("email"), (Date) user.get(
+							"dateOfBirth"), (String) user.get("address"),
 					(String) user.get("nationality"), (String) user.get("id"),
 					(String) user.get("nif"), (int) user.get("pollingStation"));
 			allCitizens.add(c);
