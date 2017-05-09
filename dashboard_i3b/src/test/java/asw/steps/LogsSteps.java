@@ -30,8 +30,6 @@ public class LogsSteps {
 	@Autowired
 	protected WebApplicationContext context;
 
-	private static final Logger logger = Logger.getLogger(LogsSteps.class);
-
 	@Autowired
 	private MessageProducer mp;
 
