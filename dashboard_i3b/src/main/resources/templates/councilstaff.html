@@ -38,15 +38,15 @@
 <p>Total number of proposals: <span th:text="${proposals.size()}" /></p>
 <h1>List of proposals</h1>
 <div id="proposals_list">
-<table>
-    <tr th:each="prop,it : ${proposals}" th:class="${prop.votes>=0}? 'positive' : 'negative'">
-        <td><div class="dashboard-element" align="center">
-            <span th:text="${prop.title}"></span>
-            <br />
-            <span th:text="${prop.votes}"></span>
-        </div></td>
-    </tr>
-</table>
+    <table>
+        <tr th:each="prop,it : ${proposals}" th:class="${prop.votes>=0}? 'positive' : 'negative'">
+            <td><div class="dashboard-element" align="center">
+                <a th:href="@{'/proposals/' + ${prop.id}}"><span th:text="${prop.title}"></span></a>
+                <br />
+                <span th:text="${prop.votes}"></span>
+            </div></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
