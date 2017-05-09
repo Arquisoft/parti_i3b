@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Proposal information</title>
+</head>
+<body>
+Title: <span th:text="${proposal.title}" /><br />
+Votes: <span th:text="${proposal.votes}" /> (+<span th:text="${proposal.upvotes}" />)/(-<span th:text="${proposal.downvotes}" />)<br />
+Comments: <span th:text="${proposal.comments.size()}" /><br />
+<table>
+    <tr th:each="comment,it : ${proposal.comments}">
+        <td><div align="center">
+            <span th:text="${comment.user}"></span>
+            <br />
+            <span th:text="${comment.commentString}"></span>
+        </div></td>
+    </tr>
+</table>
+</body>
+</html>

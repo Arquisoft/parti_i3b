@@ -5,6 +5,7 @@ import asw.repository.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -13,35 +14,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class DashboardController {
-	private final DBService service;
+    private final DBService service;
 
-	@Autowired
-	DashboardController(DBService service) {
-		this.service = service;
-		createMockDatabaseContent();
-	}
+    @Autowired
+    DashboardController(DBService service) {
+        this.service = service;
+        createMockDatabaseContent();
+    }
 
-	private void createMockDatabaseContent() {
-		service.insertProposal(new Proposal("Test"));
-		service.insertProposal(new Proposal("Test2"));
-		service.insertProposal(new Proposal("Test create"));
-	}
+    private void createMockDatabaseContent() {
+        service.insertProposal(new Proposal("Test"));
+        service.insertProposal(new Proposal("Test2"));
+        service.insertProposal(new Proposal("Test create"));
+    }
 
-	@RequestMapping(path = "/councilstaff")
-	public String dashboardCouncilstaffController(Model model) {
-		model.addAttribute("proposals", service.getAllProposal());
-		return "councilstaff";
-	}
+    @RequestMapping(path = "/councilstaff")
+    public String dashboardCouncilstaffController(Model model) {
+        model.addAttribute("proposals", service.getAllProposal());
+        return "councilstaff";
+    }
 
-	@RequestMapping(path = "/councilmen")
-	public String dashboardCouncilmenController(Model model) {
-		model.addAttribute("proposals", service.getAllProposal());
-		return "councilmen";
-	}
+    @RequestMapping(path = "/councilmen")
+    public String dashboardCouncilmenController(Model model) {
+        model.addAttribute("proposals", service.getAllProposal());
+        return "councilmen";
+    }
 
-	@RequestMapping(path = "/otherAuthorities")
-	public String dashboardOtherAuthoritiesController(Model model) {
-		model.addAttribute("proposals", service.getAllProposal());
-		return "otherAuthorities";
-	}
+    @RequestMapping(path = "/otherAuthorities")
+    public String dashboardOtherAuthoritiesController(Model model) {
+        model.addAttribute("proposals", service.getAllProposal());
+        return "otherAuthorities";
+    }
+
+    @RequestMapping(path = "/proposals/{propID}")
+    public String viewProposalInfoController(Model model, @PathVariable(value="propID") String id) {
+        model.addAttribute("proposal", service.getProposal(id));
+        return "proposal";
+    }
 }
