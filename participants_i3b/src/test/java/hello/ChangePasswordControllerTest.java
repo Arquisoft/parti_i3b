@@ -69,9 +69,12 @@ public class ChangePasswordControllerTest {
 
 	@Test
 	public void testPostChangePasswordSuccess() throws Exception {
-		// If this test fails, tru clearing the database
+		// If this test fails, try clearing the database
 		UserInfo user = new UserInfo("pass", "name", "surname",
 				"test1@mail.com", new Date());
+		UserInfo aux = db.getParticipant("test1@mail.com", "newpass");
+		if (aux != null)
+			db.deleteUser(aux);
 		db.insertUser(user);
 
 		mockMvc.perform(post("/changep").param("email", "test1@mail.com")
@@ -90,7 +93,6 @@ public class ChangePasswordControllerTest {
 		assertTrue(retrieved.getEmail().equals("test1@mail.com"));
 		assertFalse(retrieved.getPassword().equals("pass"));
 		assertTrue(retrieved.getPassword().equals("newpass"));
-
 	}
 
 	@Test

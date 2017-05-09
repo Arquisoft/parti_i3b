@@ -34,4 +34,9 @@ public class DBServiceClass implements DBService {
 	public void insertUser(UserInfo user) {
 		repository.insert(user);
 	}
+
+	@Override
+	public void deleteUser(UserInfo user) {
+		repository.delete(user);
+	}
 }

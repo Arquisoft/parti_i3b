@@ -9,4 +9,6 @@ public interface DBService {
 	UserInfo getParticipant(String email, String password);
 
 	void insertUser(UserInfo user);
+
+	void deleteUser(UserInfo user);
 }

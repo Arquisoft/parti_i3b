@@ -1,77 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" line="27" mnemonic="7" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="721910b0-1b13-40e0-a93c-ca300af37d44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/LoadUsers.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/LoadUsers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/CitizenDaoImplMongo.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/CitizenDaoImplMongo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/SingletonParser.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/SingletonParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/ConsoleLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/ConsoleLetterGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/LetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/LetterGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/PDFLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/PDFLetterGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/WordLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/WordLetterGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/parserutil/PasswordGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/parserutil/PasswordGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/ExcelReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/ExcelReadList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/TxtReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/TxtReadList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/reportwriter/WriteReportDefault.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/reportwriter/WriteReportDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/alltests/LoadUsersTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/alltests/LoadUsersTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/SingletonParserTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/SingletonParserTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/Application.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/DashboardController.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/DashboardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/MainController.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/KafkaListenerFactory.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/KafkaListenerFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/LogProcessorService.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/LogProcessorService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/Message.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Comment.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Comment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Proposal.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Proposal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/User.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBService.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBServiceClass.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBServiceClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/ProposalRepository.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/ProposalRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/UserRepository.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/CucumberTest.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/CucumberTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/MainControllerTest.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/MainControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/ModelTest.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/ModelTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/APIController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/APIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/ChangePasswordController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/ChangePasswordController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/FormController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/FormController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/MainController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/Application.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenDTO.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenLogin.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/UserInfo.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/UserInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBService.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBServiceClass.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBServiceClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/UserInfoRepository.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/UserInfoRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/APIControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/APIControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ChangePasswordControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ChangePasswordControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/FormControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/FormControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/MainControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/MainControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ModelTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ModelTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/MainController.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/SecurityFilter.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/SecurityFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/AbstractVotable.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/AbstractVotable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateComment.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateComment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateProposal.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateProposal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/NotAllowedWordsValidator.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/NotAllowedWordsValidator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Proposal.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Proposal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Votable.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Votable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/VoteType.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/VoteType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducer.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducerFactory.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducerFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/CommentRepository.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/CommentRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/ProposalRepository.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/ProposalRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/services/UserDataService.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/services/UserDataService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/util/DateUtils.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/util/DateUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberActions.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberTest.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/ModelTests.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/ModelTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/selenium/SeleniumUtils.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/selenium/SeleniumUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/participants_i3b/target/" />
@@ -91,38 +26,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LogsSteps.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LogsSteps.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1494350202038" expanded="true" signature="2395:2396" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageProducer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java">
+      <file leaf-file-name="logs.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/resources/features/logs.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-              <folding>
-                <element signature="e#2477#2478#0" expanded="true" />
-                <element signature="e#2533#2534#0" expanded="true" />
-                <element signature="e#2592#2593#0" expanded="true" />
-                <element signature="e#2647#2648#0" expanded="true" />
-                <element signature="e#3682#3683#0" expanded="true" />
-                <element signature="e#3738#3739#0" expanded="true" />
-                <element signature="e#3797#3798#0" expanded="true" />
-                <element signature="e#3852#3853#0" expanded="true" />
-                <element signature="e#4288#4289#0" expanded="true" />
-                <element signature="e#4344#4345#0" expanded="true" />
-                <element signature="e#4403#4404#0" expanded="true" />
-                <element signature="e#4458#4459#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,6 +70,10 @@
         <option value="$PROJECT_DIR$/dashboard_i3b/src/test/resources/features/logs.feature" />
         <option value="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java" />
         <option value="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" />
+        <option value="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBService.java" />
+        <option value="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBServiceClass.java" />
+        <option value="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ChangePasswordControllerTest.java" />
+        <option value="$PROJECT_DIR$/participants_i3b/src/test/java/hello/APIControllerTest.java" />
       </list>
     </option>
   </component>
@@ -222,286 +147,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="steps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kafka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parti_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dashboard_i3b" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kafka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mockproducer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -543,6 +188,32 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="ChangePasswordControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="hello.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="participants_i3b" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hello" />
+      <option name="MAIN_CLASS_NAME" value="hello.ChangePasswordControllerTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -790,12 +461,14 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Maven.parti_i3b [test]" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ChangePasswordControllerTest" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Maven.parti_i3b [test]" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ChangePasswordControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -817,31 +490,45 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ChangePasswordControllerTest - 2017.05.09 at 19h 52m 19s.xml">
+      <configuration name="ChangePasswordControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ChangePasswordControllerTest - 2017.05.09 at 19h 53m 45s.xml">
+      <configuration name="ChangePasswordControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ChangePasswordControllerTest - 2017.05.09 at 19h 54m 04s.xml">
+      <configuration name="ChangePasswordControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ChangePasswordControllerTest - 2017.05.09 at 19h 57m 41s.xml">
+      <configuration name="ChangePasswordControllerTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -854,8 +541,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="aux" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/participants_i3b/pom.xml">
@@ -878,6 +575,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,29 +643,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/resources/features/logs.feature">
+    <entry file="file://$PROJECT_DIR$/participants_i3b/src/main/java/repository/UserInfoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="61" lean-forward="true" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+        <state relative-caret-position="153">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java">
+    <entry file="file://$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBServiceClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1494350202038" expanded="true" signature="2395:2396" ph="{...}" />
+            <element signature="e#930#931#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/participants_i3b/src/test/java/hello/ChangePasswordControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="76" column="31" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="76" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/participants_i3b/src/test/java/hello/APIControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="218">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="e#2477#2478#0" expanded="true" />
             <element signature="e#2533#2534#0" expanded="true" />
@@ -981,6 +702,24 @@
             <element signature="e#4344#4345#0" expanded="true" />
             <element signature="e#4403#4404#0" expanded="true" />
             <element signature="e#4458#4459#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/resources/features/logs.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

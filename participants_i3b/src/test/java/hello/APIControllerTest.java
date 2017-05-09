@@ -59,6 +59,9 @@ public class APIControllerTest {
 	public void testDatabase() throws Exception {
 		UserInfo user = new UserInfo("pass2", "name", "surname", "ma@il2.com",
 				new Date());
+		UserInfo aux = db.getParticipant("ma@il2.com", "pass3");
+		if (aux != null)
+			db.deleteUser(aux);
 		db.insertUser(user);
 		UserInfo userFromDB = db.getParticipant("ma@il2.com", "pass2");
 		assertThat(user.getEmail(), equalTo(userFromDB.getEmail()));
