@@ -24,7 +24,6 @@ public class MainController {
     private List<SseEmitter> logsCouncilmen = Collections.synchronizedList(new ArrayList<>());
     private List<SseEmitter> logsCouncilStaff = Collections.synchronizedList(new ArrayList<>());
     private List<SseEmitter> logsOtherAuthorities = Collections.synchronizedList(new ArrayList<>());
-    private SseEmitter emitter = new SseEmitter();
     private final DBService service;
     private final LogProcessorService logProcessor;
 
