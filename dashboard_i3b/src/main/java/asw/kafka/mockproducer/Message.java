@@ -1,4 +1,4 @@
-package asw.kafka.mockProducer;
+package asw.kafka.mockproducer;
 
 public class Message {
 	// Mensajes a enviar

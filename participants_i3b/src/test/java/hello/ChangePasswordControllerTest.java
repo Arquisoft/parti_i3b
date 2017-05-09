@@ -23,8 +23,7 @@ import java.util.Date;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -115,8 +114,8 @@ public class ChangePasswordControllerTest {
         assertNotNull(retrieved);
         assertTrue(retrieved.getEmail().equals("test2@mail.com"));
         assertTrue(retrieved.getPassword().equals("pass"));
-        assertTrue(!retrieved.getPassword().equals("newpass"));
-        assertTrue(!retrieved.getPassword().equals("newpass2"));
+        assertFalse(retrieved.getPassword().equals("newpass"));
+        assertFalse(retrieved.getPassword().equals("newpass2"));
 
     }
 
@@ -140,7 +139,7 @@ public class ChangePasswordControllerTest {
         assertNotNull(retrieved);
         assertTrue(retrieved.getEmail().equals("test3@mail.com"));
         assertTrue(retrieved.getPassword().equals("pass"));
-        assertTrue(!retrieved.getPassword().equals("new"));
+        assertFalse(retrieved.getPassword().equals("new"));
 
     }
 }

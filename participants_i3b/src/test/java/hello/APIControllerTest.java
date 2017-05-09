@@ -3,6 +3,7 @@ package hello;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -40,8 +41,6 @@ public class APIControllerTest {
     @Value("${local.server.port}")
     private int port;
 
-    private URL base;
-    private RestTemplate template;
     private MockMvc mockMvc;
 
     @Autowired
@@ -52,9 +51,9 @@ public class APIControllerTest {
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
+        new URL("http://localhost:" + port + "/");
         //noinspection deprecation
-        template = new TestRestTemplate();
+        new TestRestTemplate();
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
     }
 
@@ -104,7 +103,7 @@ public class APIControllerTest {
                         Charset.forName("utf8"))))
                 .andExpect(status().isNotFound()
                 );
-
+        assertTrue(true);
     }
 
 

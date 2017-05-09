@@ -10,7 +10,7 @@ import hello.model.User;
 public class RegistrationService {
 
 	@Autowired
-	UserDataService userDataService;
+	protected UserDataService userDataService;
 
 	public boolean registrate(CreateUser data) {
 		User newUser = new User();

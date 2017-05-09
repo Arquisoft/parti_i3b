@@ -1,6 +1,7 @@
 package asw;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -38,5 +39,6 @@ public class MainControllerTest {
 		mvc.perform(get("/"))
 				.andExpect(status().isOk())
 				.andExpect(content().string(containsString("Dashboard")));
+		assertTrue(true);
 	}
 }

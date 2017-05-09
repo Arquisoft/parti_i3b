@@ -1,7 +1,7 @@
 package asw.selenium;
 
 import asw.Application;
-import asw.kafka.mockProducer.MessageProducer;
+import asw.kafka.mockproducer.MessageProducer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

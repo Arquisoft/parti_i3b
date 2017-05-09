@@ -1,4 +1,4 @@
-package asw.kafka.mockProducer;
+package asw.kafka.mockproducer;
 
 import java.util.Date;
 import java.util.HashMap;

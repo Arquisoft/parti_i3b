@@ -28,14 +28,11 @@ public class ModelTest {
     @Value("${local.server.port}")
     private int port;
 
-    private URL base;
-    private RestTemplate template;
-
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
+        new URL("http://localhost:" + port + "/");
         //noinspection deprecation
-        template = new TestRestTemplate();
+        new TestRestTemplate();
     }
 
     @Test
