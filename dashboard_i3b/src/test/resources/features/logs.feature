@@ -4,7 +4,7 @@ Feature: The user should be able to see the logs related to its role in the appl
     Given the user navigates to /
     And clicks "councilstaff_logs" link
     And a message is produced with topic "councilStaff"
-    When the user waits 5 seconds
+    When the user waits 10 seconds
     Then there is a log of "councilStaff" on the webpage
       But there is not a log of "councilmen" on the webpage
 
@@ -12,6 +12,6 @@ Feature: The user should be able to see the logs related to its role in the appl
     Given the user navigates to /
     And clicks "councilmen_logs" link
     And a message is produced with topic "councilmen"
-    When the user waits 5 seconds
+    When the user waits 10 seconds
     Then there is a log of "councilmen" on the webpage
       But there is not a log of "councilStaff" on the webpage
