@@ -34,10 +34,12 @@
         }, 2000);
     })();
 </script>
+<h1>Statistics</h1>
+<p>Total number of proposals: <span th:text="${proposals.size()}" /></p>
 <h1>List of proposals</h1>
 <div id="proposals_list">
 <table>
-    <tr th:each="prop,it : ${proposals}" th:class="${prop.votes>0}? 'positive' : 'negative'">
+    <tr th:each="prop,it : ${proposals}" th:class="${prop.votes>=0}? 'positive' : 'negative'">
         <td><div class="dashboard-element" align="center">
             <span th:text="${prop.title}"></span>
             <br />

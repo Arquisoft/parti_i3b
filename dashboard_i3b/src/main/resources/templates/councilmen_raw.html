@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+        //<![CDATA[
+
+        var sourceLogs = new EventSource("/councilmen_logs");
+
+        sourceLogs.onmessage = function(event) {
+            document.getElementById("logscouncilmen").innerHTML += (event.data + "</br>");
+        };
+
+        //]]>
+    </script>
+<div id="logscouncilmen"></div>
+</body>
+</html>
