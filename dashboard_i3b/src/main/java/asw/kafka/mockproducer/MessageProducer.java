@@ -34,33 +34,33 @@ public class MessageProducer {
 
 	}
 
-    @Scheduled(cron = "*/3 * * * * *")
-    public void send() {
-        topics.put(0, "councilStaff");
-        topics.put(1, "otherAuthorities");
-        topics.put(2, "councilmen");
-
-        Random a = new Random();
-        a.setSeed(new Date().getTime());
-        int key = a.nextInt(3);
-        // Simple message to test
-        String message = "MESSAGE TEST LOG " + topics.get(key)+ " " + new Date();
-
-        ListenableFuture<SendResult<String, String>> future = template.send(topics.get(key), message);
-
-        //Log if it is sent or not
-        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-            @Override
-            public void onSuccess(SendResult<String, String> result) {
-                logger.info("Success sending " + message);
-            }
-
-            @Override
-            public void onFailure(Throwable ex) {
-                logger.error("Error sending " + message);
-            }
-        });
-    }
+//    @Scheduled(cron = "*/3 * * * * *")
+//    public void send() {
+//        topics.put(0, "councilStaff");
+//        topics.put(1, "otherAuthorities");
+//        topics.put(2, "councilmen");
+//
+//        Random a = new Random();
+//        a.setSeed(new Date().getTime());
+//        int key = a.nextInt(3);
+//        // Simple message to test
+//        String message = "MESSAGE TEST LOG " + topics.get(key)+ " " + new Date();
+//
+//        ListenableFuture<SendResult<String, String>> future = template.send(topics.get(key), message);
+//
+//        //Log if it is sent or not
+//        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+//            @Override
+//            public void onSuccess(SendResult<String, String> result) {
+//                logger.info("Success sending " + message);
+//            }
+//
+//            @Override
+//            public void onFailure(Throwable ex) {
+//                logger.error("Error sending " + message);
+//            }
+//        });
+//    }
 
     public void send(String topic) {
         String message = "MESSAGE TEST LOG " + topic + " " + new Date();
