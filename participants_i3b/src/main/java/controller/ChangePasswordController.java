@@ -14,38 +14,42 @@ import repository.DBService;
  */
 @Controller
 public class ChangePasswordController {
-    private final DBService service;
+	private final DBService service;
 
-    @Autowired
-    ChangePasswordController(DBService service) {
-        this.service = service;
-    }
+	@Autowired
+	ChangePasswordController(DBService service) {
+		this.service = service;
+	}
 
-    @RequestMapping(value = "/changep", method = RequestMethod.GET)
-    public String changeGet() {
-        return "changep";
+	@RequestMapping(value = "/changep", method = RequestMethod.GET)
+	public String changeGet() {
+		return "changep";
 
-    }
+	}
 
-    @RequestMapping(value = "/changep", method = RequestMethod.POST)
-    public String changePost(Model model, @RequestParam(value = "email") String email, @RequestParam(value = "old") String old, @RequestParam(value = "password") String password, @RequestParam(value = "password2") String password2) {
-        UserInfo user = service.getParticipant(email, old);
-        if (user == null) {
-            model.addAttribute("bg", "background: #F00;");
-            model.addAttribute("result", "The password is incorrect");
+	@RequestMapping(value = "/changep", method = RequestMethod.POST)
+	public String changePost(Model model,
+			@RequestParam(value = "email") String email,
+			@RequestParam(value = "old") String old,
+			@RequestParam(value = "password") String password,
+			@RequestParam(value = "password2") String password2) {
+		UserInfo user = service.getParticipant(email, old);
+		if (user == null) {
+			model.addAttribute("bg", "background: #F00;");
+			model.addAttribute("result", "The password is incorrect");
 
-        } else if (!password.equals(password2)) {
-            model.addAttribute("bg", "background: #F00;");
-            model.addAttribute("result", "The passwords don't match");
+		} else if (!password.equals(password2)) {
+			model.addAttribute("bg", "background: #F00;");
+			model.addAttribute("result", "The passwords don't match");
 
-        } else {
-            service.updateInfo(user.getId(), old, password);
-            model.addAttribute("bg", "background: #0F0;");
-            model.addAttribute("result", "The password has been changed");
-        }
+		} else {
+			service.updateInfo(user.getId(), old, password);
+			model.addAttribute("bg", "background: #0F0;");
+			model.addAttribute("result", "The password has been changed");
+		}
 
-        return "changep";
+		return "changep";
 
-    }
+	}
 
 }

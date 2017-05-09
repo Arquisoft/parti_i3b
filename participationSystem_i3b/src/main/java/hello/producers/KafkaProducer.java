@@ -21,18 +21,22 @@ public class KafkaProducer {
 	private KafkaTemplate<String, String> kafkaTemplate;
 
 	public void send(String topic, String data) {
-		ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, data);
-		future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-			@Override
-			public void onSuccess(SendResult<String, String> result) {
-				logger.info("Success on sending message \"" + data + "\" to topic " + topic);
-			}
+		ListenableFuture<SendResult<String, String>> future = kafkaTemplate
+				.send(topic, data);
+		future.addCallback(
+				new ListenableFutureCallback<SendResult<String, String>>() {
+					@Override
+					public void onSuccess(SendResult<String, String> result) {
+						logger.info("Success on sending message \"" + data
+								+ "\" to topic " + topic);
+					}
 
-			@Override
-			public void onFailure(Throwable ex) {
-				logger.error("Error on sending message \"" + data + "\", stacktrace " + ex.getMessage());
-			}
-		});
+					@Override
+					public void onFailure(Throwable ex) {
+						logger.error("Error on sending message \"" + data
+								+ "\", stacktrace " + ex.getMessage());
+					}
+				});
 	}
 
 }

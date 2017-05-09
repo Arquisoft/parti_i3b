@@ -1,11 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" line="27" mnemonic="7" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="721910b0-1b13-40e0-a93c-ca300af37d44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/LoadUsers.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/LoadUsers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/CitizenDaoImplMongo.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/database/CitizenDaoImplMongo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/SingletonParser.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/SingletonParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/ConsoleLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/ConsoleLetterGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/LetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/LetterGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/PDFLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/PDFLetterGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/WordLetterGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/lettergenerators/WordLetterGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/parserutil/PasswordGenerator.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/parserutil/PasswordGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/ExcelReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/ExcelReadList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/TxtReadList.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/parser/readers/TxtReadList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/reportwriter/WriteReportDefault.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/main/java/es/uniovi/asw/reportwriter/WriteReportDefault.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/alltests/LoadUsersTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/alltests/LoadUsersTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/SingletonParserTest.java" afterPath="$PROJECT_DIR$/citizensLoader_i3b/src/test/java/parsertests/SingletonParserTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/Application.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/DashboardController.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/DashboardController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/MainController.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/controller/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/KafkaListenerFactory.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/KafkaListenerFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/LogProcessorService.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/LogProcessorService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/Message.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/Message.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/participants_i3b.iml" afterPath="$PROJECT_DIR$/participants_i3b/participants_i3b.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/participationSystem0.iml" afterPath="$PROJECT_DIR$/participationSystem_i3b/participationSystem0.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Comment.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Comment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Proposal.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/Proposal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/User.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBService.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBServiceClass.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/DBServiceClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/ProposalRepository.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/ProposalRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/UserRepository.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/repository/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/CucumberTest.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/CucumberTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/MainControllerTest.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/MainControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/ModelTest.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/ModelTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java" afterPath="$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/APIController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/APIController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/ChangePasswordController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/ChangePasswordController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/FormController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/FormController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/MainController.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/controller/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/Application.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenDTO.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenLogin.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/CitizenLogin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/UserInfo.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/hello/UserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBService.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBServiceClass.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/DBServiceClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/UserInfoRepository.java" afterPath="$PROJECT_DIR$/participants_i3b/src/main/java/repository/UserInfoRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/APIControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/APIControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ChangePasswordControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ChangePasswordControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/FormControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/FormControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/MainControllerTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/MainControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ModelTest.java" afterPath="$PROJECT_DIR$/participants_i3b/src/test/java/hello/ModelTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/MainController.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/SecurityFilter.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/SecurityFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/AbstractVotable.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/AbstractVotable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateComment.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateComment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateProposal.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/CreateProposal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/NotAllowedWordsValidator.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/NotAllowedWordsValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Proposal.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Proposal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Votable.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/Votable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/VoteType.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/model/VoteType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducer.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducerFactory.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/producers/KafkaProducerFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/CommentRepository.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/CommentRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/ProposalRepository.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/repository/ProposalRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/services/UserDataService.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/services/UserDataService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/util/DateUtils.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/main/java/hello/util/DateUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberActions.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberTest.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/CucumberTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/ModelTests.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/ModelTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/selenium/SeleniumUtils.java" afterPath="$PROJECT_DIR$/participationSystem_i3b/src/test/java/hello/selenium/SeleniumUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/participants_i3b/target/" />
@@ -29,9 +95,10 @@
         <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="526">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1494350202038" expanded="true" signature="2395:2396" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -40,9 +107,22 @@
       <file leaf-file-name="MessageProducer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="62" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="286">
+              <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+              <folding>
+                <element signature="e#2477#2478#0" expanded="true" />
+                <element signature="e#2533#2534#0" expanded="true" />
+                <element signature="e#2592#2593#0" expanded="true" />
+                <element signature="e#2647#2648#0" expanded="true" />
+                <element signature="e#3682#3683#0" expanded="true" />
+                <element signature="e#3738#3739#0" expanded="true" />
+                <element signature="e#3797#3798#0" expanded="true" />
+                <element signature="e#3852#3853#0" expanded="true" />
+                <element signature="e#4288#4289#0" expanded="true" />
+                <element signature="e#4344#4345#0" expanded="true" />
+                <element signature="e#4403#4404#0" expanded="true" />
+                <element signature="e#4458#4459#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -876,18 +956,32 @@
     <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/test/java/asw/steps/LogsSteps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1494350202038" expanded="true" signature="2395:2396" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard_i3b/src/main/java/asw/kafka/mockproducer/MessageProducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="62" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="286">
+          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <element signature="e#2477#2478#0" expanded="true" />
+            <element signature="e#2533#2534#0" expanded="true" />
+            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2647#2648#0" expanded="true" />
+            <element signature="e#3682#3683#0" expanded="true" />
+            <element signature="e#3738#3739#0" expanded="true" />
+            <element signature="e#3797#3798#0" expanded="true" />
+            <element signature="e#3852#3853#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4344#4345#0" expanded="true" />
+            <element signature="e#4403#4404#0" expanded="true" />
+            <element signature="e#4458#4459#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
