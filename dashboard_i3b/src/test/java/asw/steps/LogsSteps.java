@@ -38,20 +38,12 @@ public class LogsSteps {
 	protected MvcResult result;
 	protected ResultActions rs;
 
-	@Given("^the user navigates to /$")
-	public void userNavigatesTo() throws Throwable {
-		Assert.notNull(context);
-		this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
-		result = mvc.perform(get("/")).andReturn();
-	}
-
-	@Given("^clicks \"([^\"]*)\" link$")
-	public void clicksLink(String str) throws Throwable {
+	@Given("^the user navigates to /([^\"]*)$")
+	public void userNavigatesTo(String str) throws Throwable {
 		Assert.notNull(context);
 		this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
 		rs = mvc.perform(get("/" + str));
-		System.out.println("TEST1");
-		rs.andDo(print());
+		//rs.andDo(print());
 	}
 
 	@Given("^a message is produced with topic \"([^\"]*)\"$")
@@ -62,17 +54,16 @@ public class LogsSteps {
 
 	@When("^the user waits (\\d+) seconds$")
 	public void userWaitsSeconds(int seconds) throws Throwable {
-        System.out.println("TEST2");
         rs.andDo(new WaitHandler(seconds));
-        rs.andDo(print());
-        System.out.println("TEST3");
+        //rs.andDo(print());
+
 	}
 
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
 	public void logWeb(String str) throws Throwable {
 		result = rs.andReturn();
-        System.out.println(result.getResponse().getContentAsString().equals(""));
-        System.out.println(result.getResponse().getContentAsString());
+        //System.out.println(result.getResponse().getContentAsString().equals(""));
+        //System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(str));
 	}
 

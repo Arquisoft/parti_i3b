@@ -24,7 +24,7 @@ public class MessageProducer {
 	@Autowired
 	private KafkaTemplate<String, String> template;
 
-	@Scheduled(cron = "*/5 * * * * *")
+	//@Scheduled(cron = "*/5 * * * * *")
 	public void sendProposalMessagesCouncilstaff() {
 		//testCreateProposal("councilStaff", "New proposal");
 
