@@ -17,6 +17,7 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @ContextConfiguration
@@ -58,7 +59,7 @@ public class LogsSteps {
 
     @Then("^there is a log of \"([^\"]*)\" on the webpage$")
     public void logWeb(String str) throws Throwable {
-        assertThat(result.getResponse().getContentAsString(), containsString(str));
+        assertTrue(result.getResponse().getContentAsString().contains(str));
     }
 
     @Then("^there is not a log of \"([^\"]*)\" on the webpage$")
