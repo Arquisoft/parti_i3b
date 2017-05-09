@@ -17,7 +17,7 @@ import java.util.Date;
 @Document(collection = "VotingSystem")
 public class User {
     @Id
-    String id;
+    protected String id;
     private String password;
     private Date birthDate;
     private String address;

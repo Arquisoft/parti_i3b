@@ -25,7 +25,7 @@ public class MessageProducer {
 
 	@Scheduled(cron = "*/5 * * * * *")
 	public void sendProposalMessagesCouncilstaff() {
-		testCreateProposal("councilStaff", "New proposal");
+		//testCreateProposal("councilStaff", "New proposal");
 
 		testUpvoteProposal("councilStaff", "Test");
 
@@ -82,7 +82,7 @@ public class MessageProducer {
         });
     }
 
-    private void testCreateProposal(String topic, String proposal) {
+    /*private void testCreateProposal(String topic, String proposal) {
 		ListenableFuture<SendResult<String, String>> future;
 		String message = "New proposal [\"" + proposal + "\"]";
 
@@ -99,7 +99,7 @@ public class MessageProducer {
 				logger.error("Error sending " + message);
 			}
 		});
-	}
+	}*/
 
 	private void testUpvoteProposal(String topic, String proposal) {
 		ListenableFuture<SendResult<String, String>> future;

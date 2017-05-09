@@ -10,6 +10,9 @@ import java.util.List;
 
 @Service
 public class DBServiceClass implements DBService {
+    @Autowired
+    private
+    ProposalRepository proposalRepository;
 
     @Autowired
     private
@@ -41,10 +44,6 @@ public class DBServiceClass implements DBService {
     }
 
     // Proposal code
-
-    @Autowired
-    private
-    ProposalRepository proposalRepository;
 
     @Override
     public List<Proposal> getAllProposal() {

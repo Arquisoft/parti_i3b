@@ -14,7 +14,7 @@ import java.util.List;
 public class Proposal {
 
     @Id
-    String id;
+    protected String id;
     private String title;
     private int votes;
     private int upvotes;
