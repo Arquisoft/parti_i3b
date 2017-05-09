@@ -22,6 +22,7 @@ import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 @ContextConfiguration
 @SpringBootTest(classes = Application.class)
@@ -49,6 +50,8 @@ public class LogsSteps {
 		Assert.notNull(context);
 		this.mvc = MockMvcBuilders.webAppContextSetup(context).build();
 		rs = mvc.perform(get("/" + str));
+		System.out.println("TEST1");
+		rs.andDo(print());
 	}
 
 	@Given("^a message is produced with topic \"([^\"]*)\"$")
@@ -58,12 +61,17 @@ public class LogsSteps {
 
 	@When("^the user waits (\\d+) seconds$")
 	public void userWaitsSeconds(int seconds) throws Throwable {
-		rs.andDo(new WaitHandler(seconds));
+        System.out.println("TEST2");
+        rs.andDo(new WaitHandler(seconds));
+        rs.andDo(print());
+        System.out.println("TEST3");
 	}
 
 	@Then("^there is a log of \"([^\"]*)\" on the webpage$")
 	public void logWeb(String str) throws Throwable {
 		result = rs.andReturn();
+        System.out.println(result.getResponse().getContentAsString() == null);
+        System.out.println(result.getResponse().getContentAsString());
 		assertTrue(result.getResponse().getContentAsString().contains(str));
 	}
 
