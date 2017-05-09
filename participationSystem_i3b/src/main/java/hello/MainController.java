@@ -25,16 +25,12 @@ import hello.model.Proposal;
 import hello.model.User;
 import hello.producers.KafkaProducer;
 import hello.repository.DBServiceImpl;
-import hello.services.RegistrationService;
 
 @Controller
 public class MainController {
 
 	@Autowired
 	private DBServiceImpl dbService;
-
-	@Autowired
-	private RegistrationService registration;
 
 	@Autowired
 	private KafkaProducer kafkaProducer;
@@ -132,12 +128,6 @@ public class MainController {
 		model.addAttribute("createUser", new CreateUser());
 		return "login";
 	}
-
-	/*@RequestMapping("/register")
-	public String register(Model model, @ModelAttribute CreateUser createUser) {
-		registration.registrate(createUser);
-		return "login";
-	}*/
 
 	@RequestMapping("/createProposal")
 	public String createProposal(Model model,
