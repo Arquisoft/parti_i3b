@@ -9,10 +9,11 @@
     <version>0.0.1</version>
 
     <modules>
-        <module>participationSystem_i3b</module>
         <module>participants_i3b</module>
         <module>dashboard_i3b</module>
-        <module>citizensLoader_i3b</module>
+        <module>participationSystem_i3b</module>
+
+
     </modules>
     <packaging>pom</packaging>
 
