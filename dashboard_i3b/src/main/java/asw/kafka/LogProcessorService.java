@@ -26,7 +26,7 @@ public class LogProcessorService {
         newProposalPattern = Pattern.compile("New proposal");
         upvotedProposalPattern = Pattern.compile("Upvoted proposal \\[(.+)\\]");
         downvotedProposalPattern = Pattern.compile("Downvoted proposal \\[(.+)\\]");
-        newCommentPattern = Pattern.compile("New comment");
+        newCommentPattern = Pattern.compile("New comment \\[(.+)\\]");
         upvotedCommentPattern = Pattern.compile("Upvoted comment \\[(.+)\\]");
         downvotedCommentPattern = Pattern.compile("Downvoted comment \\[(.+)\\]");
     }
@@ -50,15 +50,16 @@ public class LogProcessorService {
             logger.info("Downvoted proposal [" + ID + "]");
         }
         else if (newCommentMatcher.matches()) { // New Proposal
-            logger.info("Added comment");
+            String ID = newProposalMatcher.group(1);
+            logger.info("Added comment with proposal ID ["+ ID+ "]");
         }
         else if (upvotedCommentMatcher.matches()) { // Upvote proposal
             String ID = upvotedCommentMatcher.group(1);
-            logger.info("Upvoted comment [" + ID + "]");
+            logger.info("Upvoted comment with proposal ID [" + ID + "]");
         }
         else if (downvotedCommentMatcher.matches()) { // Downvote proposal
             String ID = downvotedCommentMatcher.group(1);
-            logger.info("Downvoted comment [" + ID + "]");
+            logger.info("Downvoted comment with proposal ID [" + ID + "]");
         }
 
         else {
