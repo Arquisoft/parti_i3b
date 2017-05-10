@@ -4,6 +4,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <title>Proposal information</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
 </head>
 <body>
 <script>
@@ -17,17 +22,94 @@
         }, 2000);
     })();
 </script>
-Title: <span th:text="${proposal.title}" /><br />
-Votes: <span th:text="${proposal.voteBalance}" /> (+<span th:text="${proposal.upvotes}" />)/(-<span th:text="${proposal.downvotes}" />)<br />
-Comments: <span th:text="${proposal.commentsList.size()}" /><br />
-<table>
-    <tr th:each="comment,it : ${proposal.commentsList}">
-        <td><div align="center">
-            <span th:text="${comment.user}"></span>
-            <br />
-            <span th:text="${comment.content}"></span>
-        </div></td>
-    </tr>
-</table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-primary" th:text="${proposal.title}"></h1>
+            </div>
+            <div class="col-md-7">
+                <h2>Proposal description:</h2>
+                <p th:text="${proposal.content}"></p>
+                <div class="col-md-12">
+                    <h2>Votes</h2>
+                    <div class="row">
+                        <table id="votesTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><h3>
+                                        <b>Likes</b>
+                                    </h3></th>
+                                    <th class="text-center"><h3>
+                                        <b>Dislikes</b>
+                                    </h3></th>
+                                    <th class="text-center"><h3>
+                                        <b>Total</b>
+                                    </h3></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center" th:text="${proposal.upvotes}"
+                                        id="upVotes"></td>
+                                    <td class="text-center" th:text="${proposal.downvotes}"
+                                        id="downVotes"></td>
+                                    <td class="text-center" th:text="${proposal.voteBalance}"
+                                        id="voteBalance"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <h2>Comments:</h2>
+                <div class="row">
+                    <table class="table">
+                        <tr th:each="com : ${proposal.commentsList}">
+                            <div class="col-sm-2">
+                                <div class="thumbnail">
+                                    <img class="img-responsive user-photo"
+                                         src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+                                </div>
+                                <!-- /thumbnail -->
+                            </div>
+                            <!-- /col-sm-2 -->
+                            <div class="col-sm-8">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span class="text-muted" th:text="${com.user}"></span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p th:text="${com.content}"></p>
+                                    </div>
+                                    <!-- /panel-body -->
+                                </div>
+                                <!-- /panel panel-default -->
+                            </div>
+                            <div class="col-sm-2">
+                                <table class="table"
+                                       th:with="idComment=${com.getId()} , idProposal=${proposal.getId()} ">
+                                    <tbody>
+                                        <tr>
+                                            <td><span
+                                                    class="btn btn-xs btn-success glyphicon glyphicon-thumbs-up"></span></td>
+                                            <td class="text-center" th:text="${com.upvotes}"
+                                                th:id="${idComment+'upVotes'}"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span
+                                                    class="btn btn-xs btn-danger glyphicon glyphicon-thumbs-down"></span></td>
+                                            <td class="text-center" th:text="${com.downvotes}"
+                                                th:id="${idComment+'downVotes'}"></td>
+                                        </tr>
+                                    </tbody>
+                                    <!-- /thumbnail -->
+                                </table>
+                            </div>
+                            <!-- /col-sm-10 -->
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

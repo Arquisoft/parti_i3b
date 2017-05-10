@@ -11,41 +11,64 @@
     .negative {
         background-color: red;
     }
-
-    .dashboard-element {
-        width: 100px;
-        padding: 25px;
-    }
     </style>
 
     <meta charset="UTF-8" />
     <title>Other authorities dashboard</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
 </head>
 <body>
-<script>
-    (function pollServer() {
-        setTimeout(function () {
-            $.ajax("/otherAuthorities", {
-                success: function (data) {
-                    $('body').load("/otherAuthorities");
-                }
-            });
-        }, 2000);
-    })();
-</script>
-<h1>Statistics</h1>
-<p>Total number of proposals: <span th:text="${proposals.size()}" /></p>
-<h1>List of proposals</h1>
-<div id="proposals_list">
-    <table>
-        <tr th:each="prop,it : ${proposals}" th:class="${prop.voteBalance>=0}? 'positive' : 'negative'">
-            <td><div class="dashboard-element" align="center">
-                <a th:href="@{'/proposals/' + ${prop.id}}"><span th:text="${prop.title}"></span></a>
-                <br />
-                <span th:text="${prop.voteBalance}"></span>
-            </div></td>
-        </tr>
-    </table>
-</div>
+    <script>
+        (function pollServer() {
+            setTimeout(function () {
+                $.ajax("/otherAuthorities", {
+                    success: function (data) {
+                        $('body').load("/otherAuthorities");
+                    }
+                });
+            }, 2000);
+        })();
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Statistics</h1>
+                <p>Total number of proposals: <span th:text="${proposals.size()}" /></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <h1>List of proposals</h1>
+                <div id="proposals_list">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Vote balance</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="prop : ${proposals}">
+                            <td th:text="${prop.title}"></td>
+                            <td th:text="${prop.category}"></td>
+                            <td th:text="${prop.voteBalance}"
+                                th:class="${prop.voteBalance>=0}? 'positive' : 'negative'"></td>
+                            <td><a th:href="@{'/proposals/' + ${prop.id}}"
+                                   class="btn btn-block btn-sm btn-info"
+                                   th:id="${prop.title}">Open</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
