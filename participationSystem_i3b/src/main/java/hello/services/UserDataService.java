@@ -25,16 +25,17 @@ public class UserDataService implements UserDetailsService {
 			throws UsernameNotFoundException {
 		User user = dbService.getUser(username);
 		if (user != null) {
-			RestTemplate restTemplate = new RestTemplate();
-			Map<String, String> vars = new HashMap<String, String>();
-			vars.put("login", user.getEmail());
-			vars.put("password", user.getPassword());
-			CitizenDTO userDTO = restTemplate.postForObject(
-					"http://localhost:8091/user", vars, CitizenDTO.class);
-
-			if (userDTO != null) {
-				return user;
-			}
+//			RestTemplate restTemplate = new RestTemplate();
+//			Map<String, String> vars = new HashMap<String, String>();
+//			vars.put("login", user.getEmail());
+//			vars.put("password", user.getPassword());
+//			CitizenDTO userDTO = restTemplate.postForObject(
+//					"http://localhost:8091/user", vars, CitizenDTO.class);
+//
+//			if (userDTO != null) {
+//				return user;
+//			}
+			return user;
 		}
 		throw new UsernameNotFoundException("Username not found");
 	}
