@@ -30,6 +30,6 @@ before_script:
 script:
 - cd dashboard_i3b && mvn test
 - cd ../participants_i3b && mvn test
-- nohup bash -c "cd participants_i3b && mvn spring-boot:run &"
+- nohup bash -c "mvn spring-boot:run &"
 - sleep 100  # give spring some time to start
 - cd ../participationSystem_i3b && mvn test
