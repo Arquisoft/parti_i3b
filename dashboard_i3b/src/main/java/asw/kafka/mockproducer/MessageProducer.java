@@ -11,137 +11,134 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @ManagedBean
 public class MessageProducer {
-  
-	private static final Logger logger = Logger.getLogger(MessageProducer.class);
-	private Map<Integer, String> topics = new HashMap<>();
 
-	@Autowired
-	private KafkaTemplate<String, String> template;
+    private static final Logger logger = Logger
+	    .getLogger(MessageProducer.class);
+    private Map<Integer, String> topics = new HashMap<>();
 
-	//@Scheduled(cron = "*/5 * * * * *")
-	public void sendProposalMessagesCouncilstaff() {
-		//testCreateProposal("councilStaff", "New proposal");
+    @Autowired
+    private KafkaTemplate<String, String> template;
 
-		//testUpvoteProposal("councilStaff", "Test");
+    // @Scheduled(cron = "*/5 * * * * *")
+    public void sendProposalMessagesCouncilstaff() {
+	// testCreateProposal("councilStaff", "New proposal");
 
-		//testDownvoteProposal("councilStaff", "Test2");
+	// testUpvoteProposal("councilStaff", "Test");
 
-		send("councilStaff");
-		send("councilmen");
+	// testDownvoteProposal("councilStaff", "Test2");
 
-	}
+	send("councilStaff");
+	send("councilmen");
 
-    //@Scheduled(cron = "*/3 * * * * *")
+    }
+
+    // @Scheduled(cron = "*/3 * * * * *")
     public void send() {
-        topics.put(0, "councilStaff");
-        topics.put(1, "otherAuthorities");
-        topics.put(2, "councilmen");
+	topics.put(0, "councilStaff");
+	topics.put(1, "otherAuthorities");
+	topics.put(2, "councilmen");
 
-        Random a = new Random();
-        a.setSeed(new Date().getTime());
-        int key = a.nextInt(3);
-        // Simple message to test
-        String message = "MESSAGE TEST LOG " + topics.get(key)+ " " + new Date();
+	Random a = new Random();
+	a.setSeed(new Date().getTime());
+	int key = a.nextInt(3);
+	// Simple message to test
+	String message = "MESSAGE TEST LOG " + topics.get(key) + " "
+		+ new Date();
 
-        ListenableFuture<SendResult<String, String>> future = template.send(topics.get(key), message);
+	ListenableFuture<SendResult<String, String>> future = template
+		.send(topics.get(key), message);
 
-        //Log if it is sent or not
-        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-            @Override
-            public void onSuccess(SendResult<String, String> result) {
-                logger.info("Success sending " + message);
-            }
+	// Log if it is sent or not
+	future.addCallback(
+		new ListenableFutureCallback<SendResult<String, String>>() {
+		    @Override
+		    public void onSuccess(SendResult<String, String> result) {
+			logger.info("Success sending " + message);
+		    }
 
-            @Override
-            public void onFailure(Throwable ex) {
-                logger.error("Error sending " + message);
-            }
-        });
+		    @Override
+		    public void onFailure(Throwable ex) {
+			logger.error("Error sending " + message);
+		    }
+		});
     }
 
     public void send(String topic) {
-        String message = "MESSAGE TEST LOG " + topic + " " + new Date();
+	String message = "MESSAGE TEST LOG " + topic + " " + new Date();
 
-        ListenableFuture<SendResult<String, String>> future = template.send(topic, message);
+	ListenableFuture<SendResult<String, String>> future = template
+		.send(topic, message);
 
-        //Log if it is sent or not
-        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-            @Override
-            public void onSuccess(SendResult<String, String> result) {
-                logger.info("Success sending " + message);
-            }
+	// Log if it is sent or not
+	future.addCallback(
+		new ListenableFutureCallback<SendResult<String, String>>() {
+		    @Override
+		    public void onSuccess(SendResult<String, String> result) {
+			logger.info("Success sending " + message);
+		    }
 
-            @Override
-            public void onFailure(Throwable ex) {
-                logger.error("Error sending " + message);
-            }
-        });
+		    @Override
+		    public void onFailure(Throwable ex) {
+			logger.error("Error sending " + message);
+		    }
+		});
     }
 
-    /*private void testCreateProposal(String topic, String proposal) {
-		ListenableFuture<SendResult<String, String>> future;
-		String message = "New proposal [\"" + proposal + "\"]";
+    /*
+     * private void testCreateProposal(String topic, String proposal) {
+     * ListenableFuture<SendResult<String, String>> future; String message =
+     * "New proposal [\"" + proposal + "\"]";
+     * 
+     * future = template.send(topic, message);
+     * 
+     * //Log if it is sent or not future.addCallback(new
+     * ListenableFutureCallback<SendResult<String, String>>() {
+     * 
+     * @Override public void onSuccess(SendResult<String, String> result) {
+     * logger.info("Success sending " + message); }
+     * 
+     * @Override public void onFailure(Throwable ex) {
+     * logger.error("Error sending " + message); } }); }
+     */
 
-		future = template.send(topic, message);
+    /*
+     * private void testUpvoteProposal(String topic, String proposal) {
+     * ListenableFuture<SendResult<String, String>> future;
+     * 
+     * String message = "Upvoted proposal [" + proposal + "]";
+     * 
+     * future = template.send(topic, message);
+     * 
+     * //Log if it is sent or not future.addCallback(new
+     * ListenableFutureCallback<SendResult<String, String>>() {
+     * 
+     * @Override public void onSuccess(SendResult<String, String> result) {
+     * logger.info("Success sending " + message); }
+     * 
+     * @Override public void onFailure(Throwable ex) {
+     * logger.error("Error sending " + message); } }); }
+     */
 
-		//Log if it is sent or not
-		future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-			@Override
-			public void onSuccess(SendResult<String, String> result) {
-				logger.info("Success sending " + message);
-			}
-			@Override
-			public void onFailure(Throwable ex) {
-				logger.error("Error sending " + message);
-			}
-		});
-	}*/
-
-	private void testUpvoteProposal(String topic, String proposal) {
-		ListenableFuture<SendResult<String, String>> future;
-
-		String message = "Upvoted proposal [" + proposal + "]";
-
-		future = template.send(topic, message);
-
-		//Log if it is sent or not
-		future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-			@Override
-			public void onSuccess(SendResult<String, String> result) {
-				logger.info("Success sending " + message);
-			}
-
-			@Override
-			public void onFailure(Throwable ex) {
-				logger.error("Error sending " + message);
-			}
-		});
-	}
-
-	private void testDownvoteProposal(String topic, String proposal) {
-		ListenableFuture<SendResult<String, String>> future;
-
-		String message = "Downvoted proposal [" + proposal + "]";
-
-		future = template.send(topic, message);
-
-		//Log if it is sent or not
-		future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
-			@Override
-			public void onSuccess(SendResult<String, String> result) {
-				logger.info("Success sending " + message);
-			}
-
-			@Override
-			public void onFailure(Throwable ex) {
-				logger.error("Error sending " + message);
-			}
-		});
-	}
+    /*
+     * private void testDownvoteProposal(String topic, String proposal) {
+     * ListenableFuture<SendResult<String, String>> future;
+     * 
+     * String message = "Downvoted proposal [" + proposal + "]";
+     * 
+     * future = template.send(topic, message);
+     * 
+     * //Log if it is sent or not future.addCallback(new
+     * ListenableFutureCallback<SendResult<String, String>>() {
+     * 
+     * @Override public void onSuccess(SendResult<String, String> result) {
+     * logger.info("Success sending " + message); }
+     * 
+     * @Override public void onFailure(Throwable ex) {
+     * logger.error("Error sending " + message); } }); }
+     */
 }

@@ -9,154 +9,150 @@ import java.util.Date;
  * @author Oriol. Class use to represent the citizens and parse their data.
  */
 public class User {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String firstName;
-	private String lastName;
-	private String name;
-	private Date birthDate;
-	private String address;
-	private String ID;
-	private String password;
-	private String nationality;
-	private String NIF;
-	private int pollingStation;
-	private boolean isAdmin = false;
+    private String firstName;
+    private String lastName;
+    private String name;
+    private Date birthDate;
+    private String address;
+    private String ID;
+    private String password;
+    private String nationality;
+    private String NIF;
+    private int pollingStation;
+    private boolean isAdmin = false;
 
-	public User(String firstName, String lastName, String email,
-			String birthDate, String address, String nationality, String ID,
-			String NIF, int pollingStation) {
+    public User(String firstName, String lastName, String email,
+	    String birthDate, String address, String nationality, String ID,
+	    String NIF, int pollingStation) {
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.name = email;
-		setbirthDate(birthDate);
-		this.address = address;
-		this.nationality = nationality;
-		this.ID = ID;
-		this.NIF = NIF;
-		this.pollingStation = pollingStation;
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.name = email;
+	setbirthDate(birthDate);
+	this.address = address;
+	this.nationality = nationality;
+	this.ID = ID;
+	this.NIF = NIF;
+	this.pollingStation = pollingStation;
+    }
+
+    public User(String firstName, String lastName, String email, Date birthDate,
+	    String address, String nationality, String ID, String NIF,
+	    int pollingStation) {
+
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.name = email;
+	this.birthDate = birthDate;
+	this.address = address;
+	this.nationality = nationality;
+	this.ID = ID;
+	this.NIF = NIF;
+	this.pollingStation = pollingStation;
+    }
+
+    public User(String[] data) {
+	this.firstName = data[0];
+	this.lastName = data[1];
+	this.name = data[2];
+	setbirthDate(data[3]);
+	this.address = data[4];
+	this.nationality = data[5];
+	this.ID = data[6];
+	this.NIF = data[7];
+	this.pollingStation = Integer.parseInt(data[8].replace(".0", ""));
+    }
+
+    private void setbirthDate(String birthDate) {
+	DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	Date date = null;
+	try {
+	    date = format.parse(birthDate);
+	} catch (ParseException e) {
+	    e.printStackTrace();
 	}
+	this.birthDate = date;
+    }
 
-	public User(String firstName, String lastName, String email, Date birthDate,
-			String address, String nationality, String ID, String NIF,
-			int pollingStation) {
+    public String getNationality() {
+	return nationality;
+    }
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.name = email;
-		this.birthDate = birthDate;
-		this.address = address;
-		this.nationality = nationality;
-		this.ID = ID;
-		this.NIF = NIF;
-		this.pollingStation = pollingStation;
-	}
+    public String getName() {
+	return firstName;
+    }
 
-	public User(String[] data) {
-		this.firstName = data[0];
-		this.lastName = data[1];
-		this.name = data[2];
-		setbirthDate(data[3]);
-		this.address = data[4];
-		this.nationality = data[5];
-		this.ID = data[6];
-		this.NIF = data[7];
-		this.pollingStation = Integer.parseInt(data[8].replace(".0", ""));
-	}
+    public String getlastName() {
+	return lastName;
+    }
 
-	private void setbirthDate(String birthDate) {
-		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = null;
-		try {
-			date = format.parse(birthDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		this.birthDate = date;
-	}
+    public String getEmail() {
+	return name;
+    }
 
-	public String getNationality() {
-		return nationality;
-	}
+    public Date getbirthDate() {
+	return birthDate;
+    }
 
-	public String getName() {
-		return firstName;
-	}
+    public String getAddress() {
+	return address;
+    }
 
-	public String getlastName() {
-		return lastName;
-	}
+    public String getID() {
+	return ID;
+    }
 
-	public String getEmail() {
-		return name;
-	}
+    public String getPassword() {
+	return password;
+    }
 
-	public Date getbirthDate() {
-		return birthDate;
-	}
+    public void setPassword(String pw) {
+	this.password = pw;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getNIF() {
+	return NIF;
+    }
 
-	public String getID() {
-		return ID;
-	}
+    public int getpollingStation() {
+	return pollingStation;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+	return result;
+    }
 
-	public void setPassword(String pw) {
-		this.password = pw;
-	}
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	User other = (User) obj;
+	if (ID == null) {
+	    if (other.ID != null)
+		return false;
+	} else if (!ID.equals(other.ID))
+	    return false;
+	return true;
+    }
 
-	public String getNIF() {
-		return NIF;
-	}
+    @Override
+    public String toString() {
+	return "Citizen [firstName=" + firstName + ", lastName=" + lastName
+		+ ", email=" + name + ", birthDate=" + birthDate + ", address="
+		+ address + ", ID=" + ID + ", nationality=" + nationality + ","
+		+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
+    }
 
-	public int getpollingStation() {
-		return pollingStation;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (ID == null) {
-			if (other.ID != null)
-				return false;
-		} else if (!ID.equals(other.ID))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Citizen [firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + name + ", birthDate=" + birthDate + ", address="
-				+ address + ", ID=" + ID + ", nationality=" + nationality + ","
-				+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
-	}
-
-	public boolean isAdmin() {
-		return isAdmin;
-	}
+    public boolean isAdmin() {
+	return isAdmin;
+    }
 
 }

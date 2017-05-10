@@ -12,11 +12,11 @@ import java.util.List;
 @Repository
 public interface ProposalRepository extends MongoRepository<Proposal, String> {
 
-	Proposal insert(Proposal proposal);
+    Proposal insert(Proposal proposal);
 
-	Proposal save(Proposal proposal);
+    Proposal save(Proposal proposal);
 
-	Proposal findById(String id);
+    Proposal findById(String id);
 
-	List<Proposal> findAll();
+    List<Proposal> findAll();
 }

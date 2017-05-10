@@ -15,248 +15,248 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 @Document(collection = "users")
 public class User implements UserDetails {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private Date birthDate;
-	private String address;
-	private String ID;
-	private String password;
-	private String nationality;
-	private String NIF;
-	private int pollingStation;
-	private boolean isAdmin = false;
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private Date birthDate;
+    private String address;
+    private String ID;
+    private String password;
+    private String nationality;
+    private String NIF;
+    private int pollingStation;
+    private boolean isAdmin = false;
 
-	public User() {
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String email,
+	    String birthDate, String address, String nationality, String ID,
+	    String NIF, int pollingStation) {
+
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.email = email;
+	setbirthDate(birthDate);
+	this.address = address;
+	this.nationality = nationality;
+	this.ID = ID;
+	this.NIF = NIF;
+	this.pollingStation = pollingStation;
+    }
+
+    public User(String firstName, String lastName, String email, Date birthDate,
+	    String address, String nationality, String ID, String NIF,
+	    int pollingStation) {
+
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.email = email;
+	this.birthDate = birthDate;
+	this.address = address;
+	this.nationality = nationality;
+	this.ID = ID;
+	this.NIF = NIF;
+	this.pollingStation = pollingStation;
+    }
+
+    public User(String[] data) {
+	this.firstName = data[0];
+	this.lastName = data[1];
+	this.email = data[2];
+	setbirthDate(data[3]);
+	this.address = data[4];
+	this.nationality = data[5];
+	this.ID = data[6];
+	this.NIF = data[7];
+	this.pollingStation = Integer.parseInt(data[8].replace(".0", ""));
+    }
+
+    private void setbirthDate(String birthDate) {
+	DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	Date date = null;
+	try {
+	    date = format.parse(birthDate);
+	} catch (ParseException e) {
+	    e.printStackTrace();
 	}
+	this.birthDate = date;
+    }
 
-	public User(String firstName, String lastName, String email,
-			String birthDate, String address, String nationality, String ID,
-			String NIF, int pollingStation) {
+    public String getNationality() {
+	return nationality;
+    }
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		setbirthDate(birthDate);
-		this.address = address;
-		this.nationality = nationality;
-		this.ID = ID;
-		this.NIF = NIF;
-		this.pollingStation = pollingStation;
-	}
+    public String getName() {
+	return firstName;
+    }
 
-	public User(String firstName, String lastName, String email, Date birthDate,
-			String address, String nationality, String ID, String NIF,
-			int pollingStation) {
+    public String getlastName() {
+	return lastName;
+    }
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.birthDate = birthDate;
-		this.address = address;
-		this.nationality = nationality;
-		this.ID = ID;
-		this.NIF = NIF;
-		this.pollingStation = pollingStation;
-	}
+    public Date getbirthDate() {
+	return birthDate;
+    }
 
-	public User(String[] data) {
-		this.firstName = data[0];
-		this.lastName = data[1];
-		this.email = data[2];
-		setbirthDate(data[3]);
-		this.address = data[4];
-		this.nationality = data[5];
-		this.ID = data[6];
-		this.NIF = data[7];
-		this.pollingStation = Integer.parseInt(data[8].replace(".0", ""));
-	}
+    public String getAddress() {
+	return address;
+    }
 
-	private void setbirthDate(String birthDate) {
-		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = null;
-		try {
-			date = format.parse(birthDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		this.birthDate = date;
-	}
+    public String getID() {
+	return ID;
+    }
 
-	public String getNationality() {
-		return nationality;
-	}
+    public String getPassword() {
+	return password;
+    }
 
-	public String getName() {
-		return firstName;
-	}
+    public void setPassword(String pw) {
+	this.password = pw;
+    }
 
-	public String getlastName() {
-		return lastName;
-	}
+    public String getNIF() {
+	return NIF;
+    }
 
-	public Date getbirthDate() {
-		return birthDate;
-	}
+    public int getpollingStation() {
+	return pollingStation;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+	return result;
+    }
 
-	public String getID() {
-		return ID;
-	}
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	User other = (User) obj;
+	if (ID == null) {
+	    if (other.ID != null)
+		return false;
+	} else if (!ID.equals(other.ID))
+	    return false;
+	return true;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    @Override
+    public String toString() {
+	return "Citizen [firstName=" + firstName + ", lastName=" + lastName
+		+ ", email=" + email + ", birthDate=" + birthDate + ", address="
+		+ address + ", ID=" + ID + ", nationality=" + nationality + ","
+		+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
+    }
 
-	public void setPassword(String pw) {
-		this.password = pw;
-	}
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+	// TODO Auto-generated method stub
+	return null;
+    }
 
-	public String getNIF() {
-		return NIF;
-	}
+    @Override
+    public boolean isAccountNonExpired() {
+	return true;
+    }
 
-	public int getpollingStation() {
-		return pollingStation;
-	}
+    @Override
+    public boolean isAccountNonLocked() {
+	return true;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
-		return result;
-	}
+    @Override
+    public boolean isCredentialsNonExpired() {
+	return true;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		if (ID == null) {
-			if (other.ID != null)
-				return false;
-		} else if (!ID.equals(other.ID))
-			return false;
-		return true;
-	}
+    @Override
+    public boolean isEnabled() {
+	return true;
+    }
 
-	@Override
-	public String toString() {
-		return "Citizen [firstName=" + firstName + ", lastName=" + lastName
-				+ ", email=" + email + ", birthDate=" + birthDate + ", address="
-				+ address + ", ID=" + ID + ", nationality=" + nationality + ","
-				+ " NIF=" + NIF + ", pollingStation=" + pollingStation + "]";
-	}
+    @Override
+    public String getUsername() {
+	return email;
+    }
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public boolean isAdmin() {
+	return isAdmin;
+    }
 
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
+    public String getFirstName() {
+	return firstName;
+    }
 
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
+    public void setFirstName(String firstName) {
+	this.firstName = firstName;
+    }
 
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
+    public String getLastName() {
+	return lastName;
+    }
 
-	@Override
-	public boolean isEnabled() {
-		return true;
-	}
+    public void setLastName(String lastName) {
+	this.lastName = lastName;
+    }
 
-	@Override
-	public String getUsername() {
-		return email;
-	}
+    public Date getBirthDate() {
+	return birthDate;
+    }
 
-	public boolean isAdmin() {
-		return isAdmin;
-	}
+    public void setBirthDate(Date birthDate) {
+	this.birthDate = birthDate;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public int getPollingStation() {
+	return pollingStation;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setPollingStation(int pollingStation) {
+	this.pollingStation = pollingStation;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public static long getSerialversionuid() {
+	return serialVersionUID;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setAddress(String address) {
+	this.address = address;
+    }
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
+    public void setID(String iD) {
+	ID = iD;
+    }
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
+    public void setNationality(String nationality) {
+	this.nationality = nationality;
+    }
 
-	public int getPollingStation() {
-		return pollingStation;
-	}
+    public void setNIF(String nIF) {
+	NIF = nIF;
+    }
 
-	public void setPollingStation(int pollingStation) {
-		this.pollingStation = pollingStation;
-	}
+    public void setAdmin(boolean isAdmin) {
+	this.isAdmin = isAdmin;
+    }
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+    public String getEmail() {
+	return email;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public void setID(String iD) {
-		ID = iD;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-
-	public void setNIF(String nIF) {
-		NIF = nIF;
-	}
-
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+	this.email = email;
+    }
 
 }

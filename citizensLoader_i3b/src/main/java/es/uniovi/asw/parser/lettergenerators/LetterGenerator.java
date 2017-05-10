@@ -8,5 +8,5 @@ import es.uniovi.asw.parser.User;
  *         other formats like Microsoft Word or PDF.
  */
 public interface LetterGenerator {
-	void generatePersonalLetter(User c);
+    void generatePersonalLetter(User c);
 }

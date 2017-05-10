@@ -8,11 +8,11 @@ import es.uniovi.asw.database.MongoPersistanceFactory;
 
 public class PersistanceFactoryTest {
 
-	@Test
-	public void test() {
-		assertNotNull(MongoPersistanceFactory.getCitizenDao());
-		MongoPersistanceFactory p = new MongoPersistanceFactory();
-		assertNotNull(p);
-	}
+    @Test
+    public void test() {
+	assertNotNull(MongoPersistanceFactory.getCitizenDao());
+	MongoPersistanceFactory p = new MongoPersistanceFactory();
+	assertNotNull(p);
+    }
 
 }

@@ -12,15 +12,15 @@ import es.uniovi.asw.parser.lettergenerators.WordLetterGenerator;
 
 public class WordGeneratorTest {
 
-	@Test
-	public void test() {
-		WordLetterGenerator wordg = new WordLetterGenerator();
-		User c = new User("adri", "mc", "zoo@snek.com", "10/10/2010", "a",
-				"a", "123456789Z", "132456789", 1234);
-		wordg.generatePersonalLetter(c);
-		File f = new File(c.getID() + ".docx");
-		assertTrue(f.exists());
-		Files.delete(f);
-	}
+    @Test
+    public void test() {
+	WordLetterGenerator wordg = new WordLetterGenerator();
+	User c = new User("adri", "mc", "zoo@snek.com", "10/10/2010", "a", "a",
+		"123456789Z", "132456789", 1234);
+	wordg.generatePersonalLetter(c);
+	File f = new File(c.getID() + ".docx");
+	assertTrue(f.exists());
+	Files.delete(f);
+    }
 
 }

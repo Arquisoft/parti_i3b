@@ -12,26 +12,26 @@ import java.util.List;
 
 public interface DBService {
 
-	// Comment methods
-	Comment insertComment(Comment comment, Proposal proposal);
+    // Comment methods
+    Comment insertComment(Comment comment, Proposal proposal);
 
-	Comment updateComment(String proposalId, Comment comment);
+    Comment updateComment(String proposalId, Comment comment);
 
-	// Proposal methods
-	Proposal insertProposal(Proposal proposal);
+    // Proposal methods
+    Proposal insertProposal(Proposal proposal);
 
-	Proposal updateProposal(Proposal proposal);
+    Proposal updateProposal(Proposal proposal);
 
-	void deleteProposalById(String proposalId);
+    void deleteProposalById(String proposalId);
 
-	Proposal findProposalById(String id);
+    Proposal findProposalById(String id);
 
-	List<Proposal> findAllProposals();
+    List<Proposal> findAllProposals();
 
-	public void addUser(User user);
+    public void addUser(User user);
 
-	public User getUser(String username);
+    public User getUser(String username);
 
-	Comment findCommentByID(String proposalId, String id);
+    Comment findCommentByID(String proposalId, String id);
 
 }

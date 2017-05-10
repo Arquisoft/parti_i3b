@@ -7,5 +7,5 @@ import java.util.Set;
  * 
  */
 public interface ReadList {
-	Set<User> parse(String ruta);
+    Set<User> parse(String ruta);
 }

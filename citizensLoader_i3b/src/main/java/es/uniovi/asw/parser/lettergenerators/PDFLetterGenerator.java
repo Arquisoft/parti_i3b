@@ -10,50 +10,50 @@ import es.uniovi.asw.parser.User;
 
 public class PDFLetterGenerator implements LetterGenerator {
 
-	@Override
-	public void generatePersonalLetter(User c) {
-		Document document = new Document();
+    @Override
+    public void generatePersonalLetter(User c) {
+	Document document = new Document();
 
-		try {
+	try {
 
-			PdfWriter.getInstance(document,
-					new FileOutputStream(new File(c.getID() + ".pdf")));
+	    PdfWriter.getInstance(document,
+		    new FileOutputStream(new File(c.getID() + ".pdf")));
 
-			// open
-			document.open();
+	    // open
+	    document.open();
 
-			Font f = new Font();
-			f.setStyle(Font.BOLD);
+	    Font f = new Font();
+	    f.setStyle(Font.BOLD);
 
-			Paragraph p = new Paragraph();
-			p.setFont(f);
-			p.add("To: " + c.getEmail());
+	    Paragraph p = new Paragraph();
+	    p.setFont(f);
+	    p.add("To: " + c.getEmail());
 
-			document.add(p);
+	    document.add(p);
 
-			Paragraph p2 = new Paragraph();
-			p2.setFont(f);
-			p2.add("Subject: Login data\n");
+	    Paragraph p2 = new Paragraph();
+	    p2.setFont(f);
+	    p2.add("Subject: Login data\n");
 
-			document.add(p2);
+	    document.add(p2);
 
-			Paragraph main = new Paragraph();
-			main.add("Mr/Mrs " + c.getName() + " " + c.getlastName() + ",\n"
-					+ "Your login data has been generated:\n" + "\tUsername: "
-					+ c.getEmail() + "\n" + "\tPassword: " + c.getPassword()
-					+ "\n");
+	    Paragraph main = new Paragraph();
+	    main.add("Mr/Mrs " + c.getName() + " " + c.getlastName() + ",\n"
+		    + "Your login data has been generated:\n" + "\tUsername: "
+		    + c.getEmail() + "\n" + "\tPassword: " + c.getPassword()
+		    + "\n");
 
-			document.add(main);
+	    document.add(main);
 
-			// close
-			document.close();
+	    // close
+	    document.close();
 
-			System.out.println(c.getID() + "letter sent.");
+	    System.out.println(c.getID() + "letter sent.");
 
-		} catch (FileNotFoundException | DocumentException e) {
-			e.printStackTrace();
-		}
-
+	} catch (FileNotFoundException | DocumentException e) {
+	    e.printStackTrace();
 	}
+
+    }
 
 }

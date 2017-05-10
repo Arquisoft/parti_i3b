@@ -24,19 +24,19 @@ import org.springframework.web.context.WebApplicationContext;
 @IntegrationTest({ "server.port=0" })
 public class MainControllerTest {
 
-	@Autowired
-	private WebApplicationContext context;
+    @Autowired
+    private WebApplicationContext context;
 
-	private MockMvc mvc;
+    private MockMvc mvc;
 
-	@Before
-	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.webAppContextSetup(context).build();
-	}
+    @Before
+    public void setUp() throws Exception {
+	mvc = MockMvcBuilders.webAppContextSetup(context).build();
+    }
 
-	@Test
-	public void testLanding() throws Exception {
-		mvc.perform(get("/")).andExpect(status().isOk())
-				.andExpect(content().string(containsString("Dashboard")));
-	}
+    @Test
+    public void testLanding() throws Exception {
+	mvc.perform(get("/")).andExpect(status().isOk())
+		.andExpect(content().string(containsString("Dashboard")));
+    }
 }

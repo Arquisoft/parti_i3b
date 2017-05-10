@@ -7,9 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
-	@RequestMapping("/")
-	public ModelAndView landing() {
-		return new ModelAndView("redirect:/login");
-	}
+    @RequestMapping("/")
+    public ModelAndView landing() {
+	return new ModelAndView("redirect:/login");
+    }
 
 }

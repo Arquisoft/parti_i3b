@@ -12,13 +12,13 @@ import es.uniovi.asw.parser.User;
  */
 public interface CitizenDao {
 
-	boolean insert(User c);
+    boolean insert(User c);
 
-	User findById(String ID);
+    User findById(String ID);
 
-	void remove(String ID);
+    void remove(String ID);
 
-	List<User> findAll();
+    List<User> findAll();
 
-	void cleanDatabase();
+    void cleanDatabase();
 }

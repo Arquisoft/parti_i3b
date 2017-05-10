@@ -22,105 +22,106 @@ import es.uniovi.asw.parser.lettergenerators.LetterGenerator;
  */
 public class ExcelReadList extends AbstractReadList {
 
-	public ExcelReadList() {
-		super();
-	}
+    public ExcelReadList() {
+	super();
+    }
 
-	public ExcelReadList(LetterGenerator letterGenerator) {
-		super(letterGenerator);
-	}
+    public ExcelReadList(LetterGenerator letterGenerator) {
+	super(letterGenerator);
+    }
 
-	@Override
-	public void doParse(String ruta) {
+    @Override
+    public void doParse(String ruta) {
 
-		XSSFWorkbook wb = null;
-		XSSFSheet sheet;
-		XSSFRow row;
+	XSSFWorkbook wb = null;
+	XSSFSheet sheet;
+	XSSFRow row;
 
-		try {
-			FileInputStream file = new FileInputStream(ruta);
+	try {
+	    FileInputStream file = new FileInputStream(ruta);
 
-			wb = new XSSFWorkbook(OPCPackage.open(file));
-			sheet = wb.getSheetAt(0);
-			census = new HashSet<User>();
+	    wb = new XSSFWorkbook(OPCPackage.open(file));
+	    sheet = wb.getSheetAt(0);
+	    census = new HashSet<User>();
 
-			int rows = sheet.getPhysicalNumberOfRows();
+	    int rows = sheet.getPhysicalNumberOfRows();
 
-			int cols = 9; // Nombre/Apellidos/Email/Fecha
-							// nacimiento/Dirección/Nacionalidad/DNI/NIF/Polling
-							// code
+	    int cols = 9; // Nombre/Apellidos/Email/Fecha
+			  // nacimiento/Dirección/Nacionalidad/DNI/NIF/Polling
+			  // code
 
-			for (int r = 1; r < rows; r++) {
-				row = sheet.getRow(r);
+	    for (int r = 1; r < rows; r++) {
+		row = sheet.getRow(r);
 
-				String[] data = parseRow(row, cols);
+		String[] data = parseRow(row, cols);
 
-				User cit = null;
+		User cit = null;
 
-				if (data != null) {
+		if (data != null) {
 
-					if (data[6] == null) {
-						wReport.report("Null DNI on row number " + r, ruta);
-					} else if (data[0] == null) {
-						wReport.report("Null name on row number " + r, ruta);
-					} else if (data[3] == null) {
-						wReport.report("Null birth date on row number " + r,
-								ruta);
-					} else if (data[4] == null) {
-						wReport.report("Null address on row number " + r, ruta);
-					} else if (data[1] == null) {
-						wReport.report("Null last name on row number " + r,
-								ruta);
-					} else if (data[7] == null) {
-						wReport.report("Null NIF on row number " + r, ruta);
-					} else {
-						cit = new User(data);
-						if (census.contains(cit)) {
-							wReport.report("Duplicated citizen on row number "
-									+ r, ruta);
-						} else {
-							census.add(cit);
-						}
-
-					}
-				} else {
-					wReport.report("Empty row nº" + r, ruta);
-				}
-
+		    if (data[6] == null) {
+			wReport.report("Null DNI on row number " + r, ruta);
+		    } else if (data[0] == null) {
+			wReport.report("Null name on row number " + r, ruta);
+		    } else if (data[3] == null) {
+			wReport.report("Null birth date on row number " + r,
+				ruta);
+		    } else if (data[4] == null) {
+			wReport.report("Null address on row number " + r, ruta);
+		    } else if (data[1] == null) {
+			wReport.report("Null last name on row number " + r,
+				ruta);
+		    } else if (data[7] == null) {
+			wReport.report("Null NIF on row number " + r, ruta);
+		    } else {
+			cit = new User(data);
+			if (census.contains(cit)) {
+			    wReport.report(
+				    "Duplicated citizen on row number " + r,
+				    ruta);
+			} else {
+			    census.add(cit);
 			}
 
-			wb.close();
-		} catch (FileNotFoundException e) {
-			wReport.report(e, "No se ha encontrado el archivo solicitado");
+		    }
+		} else {
+		    wReport.report("Empty row nº" + r, ruta);
 		}
 
-		catch (Exception ioe) {
-			ioe.printStackTrace();
-		}
+	    }
+
+	    wb.close();
+	} catch (FileNotFoundException e) {
+	    wReport.report(e, "No se ha encontrado el archivo solicitado");
 	}
 
-	@SuppressWarnings("deprecation")
-	private String[] parseRow(XSSFRow row, int cols) throws ParseException {
-		XSSFCell cell;
-		String[] data = new String[cols];
-
-		if (row != null) {
-			for (int c = 0; c < cols; c++) {
-				cell = row.getCell((short) c);
-				if (cell != null && !cell.toString().equals("")) {
-					if (cell.getCellTypeEnum() == CellType.NUMERIC && DateUtil
-							.isCellDateFormatted(cell)) {
-						SimpleDateFormat sdf = new SimpleDateFormat(
-								"dd/MM/yyyy");
-						data[c] = sdf.format(cell.getDateCellValue());
-					} else {
-						data[c] = cell.toString();
-					}
-				}
-			}
-			return data;
-		}
-		return null;
+	catch (Exception ioe) {
+	    ioe.printStackTrace();
 	}
+    }
+
+    @SuppressWarnings("deprecation")
+    private String[] parseRow(XSSFRow row, int cols) throws ParseException {
+	XSSFCell cell;
+	String[] data = new String[cols];
+
+	if (row != null) {
+	    for (int c = 0; c < cols; c++) {
+		cell = row.getCell((short) c);
+		if (cell != null && !cell.toString().equals("")) {
+		    if (cell.getCellTypeEnum() == CellType.NUMERIC
+			    && DateUtil.isCellDateFormatted(cell)) {
+			SimpleDateFormat sdf = new SimpleDateFormat(
+				"dd/MM/yyyy");
+			data[c] = sdf.format(cell.getDateCellValue());
+		    } else {
+			data[c] = cell.toString();
+		    }
+		}
+	    }
+	    return data;
+	}
+	return null;
+    }
 
 }
