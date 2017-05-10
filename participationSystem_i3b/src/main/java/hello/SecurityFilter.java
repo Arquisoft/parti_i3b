@@ -14,20 +14,20 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @EnableWebSecurity
 public class SecurityFilter extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private UserDataService userDataService;
+    @Autowired
+    private UserDataService userDataService;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/home", "/register")
-				.permitAll().anyRequest().authenticated().and().formLogin()
-				.loginPage("/login").permitAll().and().logout().permitAll();
-	}
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+	http.authorizeRequests().antMatchers("/", "/home", "/register")
+		.permitAll().anyRequest().authenticated().and().formLogin()
+		.loginPage("/login").permitAll().and().logout().permitAll();
+    }
 
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth)
-			throws Exception {
-		auth.userDetailsService(userDataService);
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth)
+	    throws Exception {
+	auth.userDetailsService(userDataService);
 
-	}
+    }
 }

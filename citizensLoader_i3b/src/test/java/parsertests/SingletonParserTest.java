@@ -8,41 +8,41 @@ import es.uniovi.asw.parser.SingletonParser;
 
 public class SingletonParserTest {
 
-	@Test
-	public void testGetInstance() {
-		assertNotNull(SingletonParser.getInstance());
-	}
+    @Test
+    public void testGetInstance() {
+	assertNotNull(SingletonParser.getInstance());
+    }
 
-	@Test
-	public void testGetExcelParserDefault() {
-		assertNotNull(SingletonParser.getInstance().getDefaultExcelReadList());
-	}
+    @Test
+    public void testGetExcelParserDefault() {
+	assertNotNull(SingletonParser.getInstance().getDefaultExcelReadList());
+    }
 
-	@Test
-	public void testGetExcelParserWord() {
-		assertNotNull(
-				SingletonParser.getInstance().getWordLetterExcelReadList());
-	}
+    @Test
+    public void testGetExcelParserWord() {
+	assertNotNull(
+		SingletonParser.getInstance().getWordLetterExcelReadList());
+    }
 
-	@Test
-	public void testGetExcelParserPdf() {
-		assertNotNull(
-				SingletonParser.getInstance().getPDFLetterExcelReadList());
-	}
+    @Test
+    public void testGetExcelParserPdf() {
+	assertNotNull(
+		SingletonParser.getInstance().getPDFLetterExcelReadList());
+    }
 
-	@Test
-	public void testGetTxtParserDefault() {
-		assertNotNull(SingletonParser.getInstance().getDefaultTxtReadList());
-	}
+    @Test
+    public void testGetTxtParserDefault() {
+	assertNotNull(SingletonParser.getInstance().getDefaultTxtReadList());
+    }
 
-	@Test
-	public void testGetTxtParserWord() {
-		assertNotNull(SingletonParser.getInstance().getWordLetterTxtReadList());
-	}
+    @Test
+    public void testGetTxtParserWord() {
+	assertNotNull(SingletonParser.getInstance().getWordLetterTxtReadList());
+    }
 
-	@Test
-	public void testGetTxtParserPdf() {
-		assertNotNull(SingletonParser.getInstance().getPDFLetterTxtReadList());
-	}
+    @Test
+    public void testGetTxtParserPdf() {
+	assertNotNull(SingletonParser.getInstance().getPDFLetterTxtReadList());
+    }
 
 }

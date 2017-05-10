@@ -13,160 +13,160 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "users")
 public class UserInfo {
 
-	@Id
-	private String id;
+    @Id
+    private String id;
 
-	private String password;
-	private Date dateOfBirth;
-	private String address;
-	private String nationality;
-	private int pollingStation;
+    private String password;
+    private Date dateOfBirth;
+    private String address;
+    private String nationality;
+    private int pollingStation;
 
-	private String firstName;
-	private String lastName;
-	private Integer age;
-	private String NIF;
-	private String email;
+    private String firstName;
+    private String lastName;
+    private Integer age;
+    private String NIF;
+    private String email;
 
-	private UserInfo() {
+    private UserInfo() {
+    }
+
+    public UserInfo(String firstName, String lastName, String email,
+	    Date birthDate) {
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.email = email;
+	this.dateOfBirth = birthDate;
+    }
+
+    public UserInfo(String password, String firstName, String lastName,
+	    String email, Date birthDate) {
+	this(firstName, lastName, email, birthDate);
+	this.password = password;
+    }
+
+    public UserInfo(String firstName, String lastName, String email,
+	    String birthDate, String address, String nationality, String ID,
+	    String NIF, String pollingStation) {
+
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.email = email;
+	setBirthDate(birthDate);
+	this.address = address;
+	this.nationality = nationality;
+	this.id = ID;
+	this.NIF = NIF;
+	this.pollingStation = Integer.parseInt(pollingStation);
+    }
+
+    public UserInfo(String[] data) {
+	this(data[0], data[1], data[2], data[3], data[4], data[5], data[6],
+		data[7], data[8]);
+    }
+
+    private void setBirthDate(String birthDate) {
+	DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	Date date = null;
+	try {
+	    date = format.parse(birthDate);
+	} catch (ParseException e) {
+	    e.printStackTrace();
 	}
+	this.dateOfBirth = date;
+    }
 
-	public UserInfo(String firstName, String lastName, String email,
-			Date birthDate) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.dateOfBirth = birthDate;
-	}
+    public String getPassword() {
+	return password;
+    }
 
-	public UserInfo(String password, String firstName, String lastName,
-			String email, Date birthDate) {
-		this(firstName, lastName, email, birthDate);
-		this.password = password;
-	}
+    public String getFirstName() {
+	return firstName;
+    }
 
-	public UserInfo(String firstName, String lastName, String email,
-			String birthDate, String address, String nationality, String ID,
-			String NIF, String pollingStation) {
+    public String getLastName() {
+	return lastName;
+    }
 
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		setBirthDate(birthDate);
-		this.address = address;
-		this.nationality = nationality;
-		this.id = ID;
-		this.NIF = NIF;
-		this.pollingStation = Integer.parseInt(pollingStation);
-	}
+    public String getEmail() {
+	return email;
+    }
 
-	public UserInfo(String[] data) {
-		this(data[0], data[1], data[2], data[3], data[4], data[5], data[6],
-				data[7], data[8]);
-	}
+    public Integer getAge() {
+	setAge(getDateOfBirth());
+	return age;
+    }
 
-	private void setBirthDate(String birthDate) {
-		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = null;
-		try {
-			date = format.parse(birthDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		this.dateOfBirth = date;
-	}
+    private void setAge(Date birthdate) {
+	LocalDate date = birthdate.toInstant().atZone(ZoneId.systemDefault())
+		.toLocalDate();
+	this.age = Period.between(date, LocalDate.now()).getYears();
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getNationality() {
+	return nationality;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getAddress() {
+	return address;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getId() {
+	return id;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setPassword(String pw) {
+	this.password = pw;
+    }
 
-	public Integer getAge() {
-		setAge(getDateOfBirth());
-		return age;
-	}
+    public String getNIF() {
+	return NIF;
+    }
 
-	private void setAge(Date birthdate) {
-		LocalDate date = birthdate.toInstant().atZone(ZoneId.systemDefault())
-				.toLocalDate();
-		this.age = Period.between(date, LocalDate.now()).getYears();
-	}
+    public int getPollingStation() {
+	return pollingStation;
+    }
 
-	public String getNationality() {
-		return nationality;
-	}
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((id == null) ? 0 : id.hashCode());
+	return result;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (getClass() != obj.getClass())
+	    return false;
+	UserInfo other = (UserInfo) obj;
+	if (id == null) {
+	    if (other.id != null)
+		return false;
+	} else if (!id.equals(other.id))
+	    return false;
+	return true;
+    }
 
-	public String getId() {
-		return id;
-	}
+    @Override
+    public String toString() {
+	return "UserInfo [ID=" + id + ", password=" + password + ", birthDate="
+		+ dateOfBirth + ", address=" + address + ", nationality="
+		+ nationality + ", pollingStation=" + pollingStation
+		+ ", firstName=" + firstName + ", lastName=" + lastName
+		+ ", age=" + age + ", NIF=" + NIF + ", email=" + email + "]";
+    }
 
-	public void setPassword(String pw) {
-		this.password = pw;
-	}
+    public Date getDateOfBirth() {
+	return dateOfBirth;
+    }
 
-	public String getNIF() {
-		return NIF;
-	}
-
-	public int getPollingStation() {
-		return pollingStation;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		UserInfo other = (UserInfo) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "UserInfo [ID=" + id + ", password=" + password + ", birthDate="
-				+ dateOfBirth + ", address=" + address + ", nationality="
-				+ nationality + ", pollingStation=" + pollingStation
-				+ ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", age=" + age + ", NIF=" + NIF + ", email=" + email + "]";
-	}
-
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+    public void setDateOfBirth(Date dateOfBirth) {
+	this.dateOfBirth = dateOfBirth;
+    }
 
 }

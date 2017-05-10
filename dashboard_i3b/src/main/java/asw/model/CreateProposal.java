@@ -5,31 +5,31 @@ package asw.model;
  */
 public class CreateProposal {
 
-	private String title;
-	private String content;
-	private String category;
+    private String title;
+    private String content;
+    private String category;
 
-	public String getTitle() {
-		return title;
-	}
+    public String getTitle() {
+	return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setTitle(String title) {
+	this.title = title;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+	return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+	this.content = content;
+    }
 
-	public String getCategory() {
-		return category;
-	}
+    public String getCategory() {
+	return category;
+    }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+    public void setCategory(String category) {
+	this.category = category;
+    }
 }

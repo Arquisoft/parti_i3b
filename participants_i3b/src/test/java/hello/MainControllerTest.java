@@ -27,28 +27,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @IntegrationTest({ "server.port=0" })
 public class MainControllerTest {
 
-	@Value("${local.server.port}")
-	private int port;
+    @Value("${local.server.port}")
+    private int port;
 
-	private URL base;
-	private RestTemplate template;
-	private MockMvc mockMvc;
+    private URL base;
+    private RestTemplate template;
+    private MockMvc mockMvc;
 
-	@Autowired
-	private WebApplicationContext context;
+    @Autowired
+    private WebApplicationContext context;
 
-	@Before
-	public void setUp() throws Exception {
-		this.base = new URL("http://localhost:" + port + "/");
-		template = new TestRestTemplate();
-		Application.main(new String[0]);
-		mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-	}
+    @Before
+    public void setUp() throws Exception {
+	this.base = new URL("http://localhost:" + port + "/");
+	template = new TestRestTemplate();
+	Application.main(new String[0]);
+	mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
+    }
 
-	@Test
-	public void getLanding() throws Exception {
-		template.getForEntity(base.toString(), String.class);
-		mockMvc.perform(get("/")).andExpect(status().is3xxRedirection());
-	}
+    @Test
+    public void getLanding() throws Exception {
+	template.getForEntity(base.toString(), String.class);
+	mockMvc.perform(get("/")).andExpect(status().is3xxRedirection());
+    }
 
 }

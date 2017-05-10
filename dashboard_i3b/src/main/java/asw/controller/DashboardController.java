@@ -18,43 +18,44 @@ public class DashboardController {
 
     @Autowired
     DashboardController(DBService service) {
-        this.service = service;
-        createMockDatabaseContent();
+	this.service = service;
+	createMockDatabaseContent();
     }
 
     private void createMockDatabaseContent() {
-        Proposal test = new Proposal();
-        test.setTitle("Test");
-        service.insertProposal(test);
-        Proposal test2 = new Proposal();
-        test2.setTitle("Test2");
-        service.insertProposal(test2);
-        Proposal test3 = new Proposal();
-        test3.setTitle("Test create");
-        service.insertProposal(test3);
+	Proposal test = new Proposal();
+	test.setTitle("Test");
+	service.insertProposal(test);
+	Proposal test2 = new Proposal();
+	test2.setTitle("Test2");
+	service.insertProposal(test2);
+	Proposal test3 = new Proposal();
+	test3.setTitle("Test create");
+	service.insertProposal(test3);
     }
 
     @RequestMapping(path = "/councilstaff")
     public String dashboardCouncilstaffController(Model model) {
-        model.addAttribute("proposals", service.getAllProposal());
-        return "councilstaff";
+	model.addAttribute("proposals", service.getAllProposal());
+	return "councilstaff";
     }
 
     @RequestMapping(path = "/councilmen")
     public String dashboardCouncilmenController(Model model) {
-        model.addAttribute("proposals", service.getAllProposal());
-        return "councilmen";
+	model.addAttribute("proposals", service.getAllProposal());
+	return "councilmen";
     }
 
     @RequestMapping(path = "/otherAuthorities")
     public String dashboardOtherAuthoritiesController(Model model) {
-        model.addAttribute("proposals", service.getAllProposal());
-        return "otherAuthorities";
+	model.addAttribute("proposals", service.getAllProposal());
+	return "otherAuthorities";
     }
 
     @RequestMapping(path = "/proposals/{propID}")
-    public String viewProposalInfoController(Model model, @PathVariable(value="propID") String id) {
-        model.addAttribute("proposal", service.getProposal(id));
-        return "proposal";
+    public String viewProposalInfoController(Model model,
+	    @PathVariable(value = "propID") String id) {
+	model.addAttribute("proposal", service.getProposal(id));
+	return "proposal";
     }
 }

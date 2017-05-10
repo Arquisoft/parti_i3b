@@ -29,158 +29,161 @@ import hello.repository.DBServiceImpl;
 @Controller
 public class MainController {
 
-	@Autowired
-	private DBServiceImpl dbService;
+    @Autowired
+    private DBServiceImpl dbService;
 
-	@Autowired
-	private KafkaProducer kafkaProducer;
+    @Autowired
+    private KafkaProducer kafkaProducer;
 
-	@RequestMapping(value = "selectProposal/{id}", method = RequestMethod.GET)
-	public String selectProposal(Model model, @PathVariable String id) {
-		model.addAttribute("prop", dbService.findProposalById(id));
-		model.addAttribute("createComment", new CreateComment());
-		return "proposal";
+    @RequestMapping(value = "selectProposal/{id}", method = RequestMethod.GET)
+    public String selectProposal(Model model, @PathVariable String id) {
+	model.addAttribute("prop", dbService.findProposalById(id));
+	model.addAttribute("createComment", new CreateComment());
+	return "proposal";
+    }
+
+    @RequestMapping(value = "/userHome")
+    public String userHome(Model model) {
+	User user = (User) SecurityContextHolder.getContext()
+		.getAuthentication().getPrincipal();
+	if (user.isAdmin()) {
+	    return "adminHome";
+	}
+	model.addAttribute("createProposal", new CreateProposal());
+
+	return "userHome";
+    }
+
+    @RequestMapping(value = "/index")
+    public String index(Model model) {
+	return "index";
+    }
+
+    @RequestMapping(value = "/upvoteProposal/{id}", method = RequestMethod.GET)
+    public String upvoteProposal(Model model, @PathVariable("id") String id) {
+	Proposal prop = dbService.findProposalById(id);
+	User user = (User) SecurityContextHolder.getContext()
+		.getAuthentication().getPrincipal();
+	if (prop != null) {
+	    prop.upvote(user.getName());
+	    dbService.updateProposal(prop);
+	}
+	kafkaProducer.send("councilStaff", "Upvoted proposal [" + id + "]");
+	return "redirect:/selectProposal/" + id;
+
+    }
+
+    @RequestMapping(
+	    value = "/downvoteProposal/{id}",
+	    method = RequestMethod.GET)
+    public String downvoteProposal(Model model, @PathVariable("id") String id) {
+	Proposal prop = dbService.findProposalById(id);
+	User user = (User) SecurityContextHolder.getContext()
+		.getAuthentication().getPrincipal();
+	if (prop != null) {
+	    prop.downvote(user.getName());
+	    dbService.updateProposal(prop);
 	}
 
-	@RequestMapping(value = "/userHome")
-	public String userHome(Model model) {
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		if (user.isAdmin()) {
-			return "adminHome";
-		}
-		model.addAttribute("createProposal", new CreateProposal());
+	kafkaProducer.send("councilStaff", "Downvoted proposal [" + id + "]");
 
-		return "userHome";
+	return "redirect:/selectProposal/" + id;
+    }
+
+    @RequestMapping(value = "/upvoteComment/{proposalId}/{id}")
+    public String upvoteComment(Model model,
+	    @PathVariable("proposalId") String proposalId,
+	    @PathVariable("id") String id) {
+	Comment com = dbService.findCommentByID(proposalId, id);
+	User user = (User) SecurityContextHolder.getContext()
+		.getAuthentication().getPrincipal();
+	if (com != null) {
+	    com.upvote(user.getName());
+	    dbService.updateComment(proposalId, com);
+	}
+	kafkaProducer.send("councilStaff", "Upvoted comment [" + id + "]");
+	return "redirect:/selectProposal/" + proposalId;
+    }
+
+    @RequestMapping(value = "/downvoteComment/{proposalId}/{id}")
+    public String downvoteComment(Model model,
+	    @PathVariable("proposalId") String proposalId,
+	    @PathVariable("id") String id) {
+	Comment com = dbService.findCommentByID(proposalId, id);
+	User user = (User) SecurityContextHolder.getContext()
+		.getAuthentication().getPrincipal();
+	if (com != null) {
+	    com.downvote(user.getName());
+	    dbService.updateComment(proposalId, com);
+	}
+	kafkaProducer.send("councilStaff", "Downvoted comment [" + id + "]");
+	return "redirect:/selectProposal/" + proposalId;
+    }
+
+    @RequestMapping("/")
+    public ModelAndView landing(Model model) {
+	return new ModelAndView("redirect:" + "/userHome");
+    }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+	model.addAttribute("createUser", new CreateUser());
+	return "login";
+    }
+
+    @RequestMapping("/createProposal")
+    public String createProposal(Model model,
+	    @ModelAttribute CreateProposal createProposal,
+	    BindingResult result) {
+
+	Proposal proposal = new Proposal();
+	proposal.setTitle(createProposal.getTitle());
+	proposal.setContent(createProposal.getContent());
+	proposal.setCategory(createProposal.getCategory());
+
+	NotAllowedWordsValidator validator = new NotAllowedWordsValidator();
+	validator.validate(proposal, result);
+
+	if (!result.hasErrors()) {
+	    dbService.insertProposal(proposal);
+	    kafkaProducer.send("councilStaff", "New proposal");
 	}
 
-	@RequestMapping(value = "/index")
-	public String index(Model model) {
-		return "index";
-	}
+	return "redirect:/userHome";
+    }
 
-	@RequestMapping(value = "/upvoteProposal/{id}", method = RequestMethod.GET)
-	public String upvoteProposal(Model model, @PathVariable("id") String id) {
-		Proposal prop = dbService.findProposalById(id);
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		if (prop != null) {
-			prop.upvote(user.getName());
-			dbService.updateProposal(prop);
-		}
-		kafkaProducer.send("councilStaff", "Upvoted proposal [" + id + "]");
-		return "redirect:/selectProposal/" + id;
+    @RequestMapping("/deleteProposal/{id}")
+    public String deleteProposal(Model model, @PathVariable("id") String id) {
+	dbService.deleteProposalById(id);
+	return "redirect:/userHome";
+    }
 
-	}
+    @RequestMapping("/createComment/{id}")
+    public String commentProposal(Model model, @PathVariable("id") String id,
+	    @ModelAttribute CreateComment createComment) {
+	Comment comment = new Comment();
+	comment.setContent(createComment.getContent());
+	comment.setIdProposal(id);
+	Proposal prop = dbService.findProposalById(id);
+	dbService.insertComment(comment, prop);
+	kafkaProducer.send("councilStaff", "New comment [" + id + "]");
+	return "redirect:/selectProposal/" + id;
+    }
 
-	@RequestMapping(value = "/downvoteProposal/{id}", method = RequestMethod.GET)
-	public String downvoteProposal(Model model, @PathVariable("id") String id) {
-		Proposal prop = dbService.findProposalById(id);
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		if (prop != null) {
-			prop.downvote(user.getName());
-			dbService.updateProposal(prop);
-		}
+    @ModelAttribute("proposals")
+    public List<Proposal> proposals() {
+	return dbService.findAllProposals();
+    }
 
-		kafkaProducer.send("councilStaff", "Downvoted proposal [" + id + "]");
+    @ModelAttribute("categories")
+    public List<String> categories() {
+	return Configuration.getInstance().getCategories();
+    }
 
-		return "redirect:/selectProposal/" + id;
-	}
+    @ModelAttribute("notAllowedWords")
+    public List<String> notAllowedWords() {
+	return new ArrayList<String>(
+		Configuration.getInstance().getNotAllowedWords());
+    }
 
-	@RequestMapping(value = "/upvoteComment/{proposalId}/{id}")
-	public String upvoteComment(Model model,
-			@PathVariable("proposalId") String proposalId,
-			@PathVariable("id") String id) {
-		Comment com = dbService.findCommentByID(proposalId, id);
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		if (com != null) {
-			com.upvote(user.getName());
-			dbService.updateComment(proposalId, com);
-		}
-		kafkaProducer.send("councilStaff", "Upvoted comment [" + id + "]");
-		return "redirect:/selectProposal/" + proposalId;
-	}
-
-	@RequestMapping(value = "/downvoteComment/{proposalId}/{id}")
-	public String downvoteComment(Model model,
-			@PathVariable("proposalId") String proposalId,
-			@PathVariable("id") String id) {
-		Comment com = dbService.findCommentByID(proposalId, id);
-		User user = (User) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		if (com != null) {
-			com.downvote(user.getName());
-			dbService.updateComment(proposalId, com);
-		}
-		kafkaProducer.send("councilStaff", "Downvoted comment [" + id  + "]");
-		return "redirect:/selectProposal/" + proposalId;
-	}
-
-	@RequestMapping("/")
-	public ModelAndView landing(Model model) {
-		return new ModelAndView("redirect:" + "/userHome");
-	}
-
-	@GetMapping("/login")
-	public String login(Model model) {
-		model.addAttribute("createUser", new CreateUser());
-		return "login";
-	}
-
-	@RequestMapping("/createProposal")
-	public String createProposal(Model model,
-			@ModelAttribute CreateProposal createProposal,
-			BindingResult result) {
-
-		Proposal proposal = new Proposal();
-		proposal.setTitle(createProposal.getTitle());
-		proposal.setContent(createProposal.getContent());
-		proposal.setCategory(createProposal.getCategory());
-
-		NotAllowedWordsValidator validator = new NotAllowedWordsValidator();
-		validator.validate(proposal, result);
-
-		if (!result.hasErrors()) {
-			dbService.insertProposal(proposal);
-			kafkaProducer.send("councilStaff", "New proposal");
-		}
-
-		return "redirect:/userHome";
-	}
-
-	@RequestMapping("/deleteProposal/{id}")
-	public String deleteProposal(Model model, @PathVariable("id") String id) {
-		dbService.deleteProposalById(id);
-		return "redirect:/userHome";
-	}
-
-	@RequestMapping("/createComment/{id}")
-	public String commentProposal(Model model, @PathVariable("id") String id,
-			@ModelAttribute CreateComment createComment) {
-		Comment comment = new Comment();
-		comment.setContent(createComment.getContent());
-		comment.setIdProposal(id);
-		Proposal prop = dbService.findProposalById(id);
-		dbService.insertComment(comment, prop);
-		kafkaProducer.send("councilStaff", "New comment [" + id + "]");
-		return "redirect:/selectProposal/" + id;
-	}
-
-	@ModelAttribute("proposals")
-	public List<Proposal> proposals() {
-		return dbService.findAllProposals();
-	}
-
-	@ModelAttribute("categories")
-	public List<String> categories() {
-		return Configuration.getInstance().getCategories();
-	}
-
-	@ModelAttribute("notAllowedWords")
-	public List<String> notAllowedWords() {
-		return new ArrayList<String>(Configuration.getInstance().getNotAllowedWords());
-	}
-	
 }

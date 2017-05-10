@@ -15,133 +15,133 @@ import es.uniovi.asw.parser.User;
 
 public class CitizenDaoMongoTest {
 
-	private User dummy;
-	private User dummy1;
-	private User dummy2;
-	private static CitizenDao dao;
+    private User dummy;
+    private User dummy1;
+    private User dummy2;
+    private static CitizenDao dao;
 
-	@BeforeClass
-	public static void setUp() {
-		dao = new CitizenDaoImplMongo("localhost", 27017, "test", "test");
-		dao.cleanDatabase();
-	}
+    @BeforeClass
+    public static void setUp() {
+	dao = new CitizenDaoImplMongo("localhost", 27017, "test", "test");
+	dao.cleanDatabase();
+    }
 
-	@Before
-	public void insertCitizen() {
-		dummy = new User("a", "b", "a@a.com", "10/10/2010", "a", "a",
-				"123456789Z", "132456789", 1234);
-		dummy1 = new User("a", "b", "b@a.com", "10/10/2010", "a", "a", "2",
-				"132456789", 1234);
-		dummy2 = new User("a", "b", "c@a.com", "10/10/2010", "a", "a", "3",
-				"132456789", 1234);
-	}
+    @Before
+    public void insertCitizen() {
+	dummy = new User("a", "b", "a@a.com", "10/10/2010", "a", "a",
+		"123456789Z", "132456789", 1234);
+	dummy1 = new User("a", "b", "b@a.com", "10/10/2010", "a", "a", "2",
+		"132456789", 1234);
+	dummy2 = new User("a", "b", "c@a.com", "10/10/2010", "a", "a", "3",
+		"132456789", 1234);
+    }
 
-	@After
-	public void deleteCitizens() {
-		dao.cleanDatabase();
-	}
+    @After
+    public void deleteCitizens() {
+	dao.cleanDatabase();
+    }
 
-	@Test
-	public void testInsert() {
+    @Test
+    public void testInsert() {
 
-		dao.insert(dummy);
-		List<User> citizens = dao.findAll();
+	dao.insert(dummy);
+	List<User> citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 1);
+	assertEquals(citizens.size(), 1);
 
-		dao.insert(dummy1);
-		dao.insert(dummy2);
+	dao.insert(dummy1);
+	dao.insert(dummy2);
 
-		citizens = dao.findAll();
+	citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 3);
+	assertEquals(citizens.size(), 3);
 
-	}
+    }
 
-	@Test
-	public void testFindAll() {
-		dao.insert(dummy);
-		dao.insert(dummy2);
-		dao.insert(dummy1);
+    @Test
+    public void testFindAll() {
+	dao.insert(dummy);
+	dao.insert(dummy2);
+	dao.insert(dummy1);
 
-		List<User> citizens = dao.findAll();
+	List<User> citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 3);
+	assertEquals(citizens.size(), 3);
 
-		assertTrue(citizens.contains(dummy));
-		assertTrue(citizens.contains(dummy1));
-		assertTrue(citizens.contains(dummy2));
-	}
+	assertTrue(citizens.contains(dummy));
+	assertTrue(citizens.contains(dummy1));
+	assertTrue(citizens.contains(dummy2));
+    }
 
-	@Test
-	public void testFindById() {
-		dao.insert(dummy);
+    @Test
+    public void testFindById() {
+	dao.insert(dummy);
 
-		User c = dao.findById("1");
+	User c = dao.findById("1");
 
-		assertNull(c);
+	assertNull(c);
 
-		c = dao.findById("123456789Z");
-		assertNotNull(c);
-		assertEquals(dummy, c);
-	}
+	c = dao.findById("123456789Z");
+	assertNotNull(c);
+	assertEquals(dummy, c);
+    }
 
-	@Test
-	public void testRemove() {
-		dao.insert(dummy);
-		dao.insert(dummy1);
-		dao.insert(dummy2);
+    @Test
+    public void testRemove() {
+	dao.insert(dummy);
+	dao.insert(dummy1);
+	dao.insert(dummy2);
 
-		List<User> citizens = dao.findAll();
+	List<User> citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 3);
+	assertEquals(citizens.size(), 3);
 
-		dao.remove("1");
+	dao.remove("1");
 
-		assertTrue(citizens.contains(dummy));
-		assertTrue(citizens.contains(dummy1));
-		assertTrue(citizens.contains(dummy2));
+	assertTrue(citizens.contains(dummy));
+	assertTrue(citizens.contains(dummy1));
+	assertTrue(citizens.contains(dummy2));
 
-		citizens = dao.findAll();
+	citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 3);
+	assertEquals(citizens.size(), 3);
 
-		assertTrue(citizens.contains(dummy));
-		assertTrue(citizens.contains(dummy1));
-		assertTrue(citizens.contains(dummy2));
+	assertTrue(citizens.contains(dummy));
+	assertTrue(citizens.contains(dummy1));
+	assertTrue(citizens.contains(dummy2));
 
-		dao.remove("2");
+	dao.remove("2");
 
-		citizens = dao.findAll();
+	citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 2);
+	assertEquals(citizens.size(), 2);
 
-		assertTrue(citizens.contains(dummy));
-		assertFalse(citizens.contains(dummy1));
-		assertTrue(citizens.contains(dummy2));
+	assertTrue(citizens.contains(dummy));
+	assertFalse(citizens.contains(dummy1));
+	assertTrue(citizens.contains(dummy2));
 
-		dao.remove("3");
+	dao.remove("3");
 
-		citizens = dao.findAll();
+	citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 1);
+	assertEquals(citizens.size(), 1);
 
-		assertTrue(citizens.contains(dummy));
-		assertFalse(citizens.contains(dummy1));
-		assertFalse(citizens.contains(dummy2));
+	assertTrue(citizens.contains(dummy));
+	assertFalse(citizens.contains(dummy1));
+	assertFalse(citizens.contains(dummy2));
 
-	}
+    }
 
-	@Test
-	public void testNoDuplicates() {
-		dao.insert(dummy);
-		dao.insert(dummy);
-		dao.insert(dummy);
-		dao.insert(dummy);
+    @Test
+    public void testNoDuplicates() {
+	dao.insert(dummy);
+	dao.insert(dummy);
+	dao.insert(dummy);
+	dao.insert(dummy);
 
-		List<User> citizens = dao.findAll();
+	List<User> citizens = dao.findAll();
 
-		assertEquals(citizens.size(), 1);
-	}
+	assertEquals(citizens.size(), 1);
+    }
 
 }

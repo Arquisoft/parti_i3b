@@ -18,41 +18,41 @@ import es.uniovi.asw.reportwriter.WriteReportDefault;
  */
 public abstract class AbstractReadList implements ReadList {
 
-	protected Set<User> census;
-	private LetterGenerator letterGen;
-	protected WriteReport wReport;
+    protected Set<User> census;
+    private LetterGenerator letterGen;
+    protected WriteReport wReport;
 
-	public AbstractReadList() {
-		this.letterGen = new ConsoleLetterGenerator();
-		this.wReport = new WriteReportDefault();
+    public AbstractReadList() {
+	this.letterGen = new ConsoleLetterGenerator();
+	this.wReport = new WriteReportDefault();
+    }
+
+    public AbstractReadList(LetterGenerator letterGenerator) {
+	this.letterGen = letterGenerator;
+	this.wReport = new WriteReportDefault();
+    }
+
+    @Override
+    public Set<User> parse(String ruta) {
+
+	doParse(ruta);
+
+	if (census != null && census.size() > 0) {
+	    PasswordGenerator.createPasswords(census);
+	    insertCitizens(census);
 	}
+	return census;
+    }
 
-	public AbstractReadList(LetterGenerator letterGenerator) {
-		this.letterGen = letterGenerator;
-		this.wReport = new WriteReportDefault();
+    private void insertCitizens(Set<User> census) {
+	CitizenDao dao = MongoPersistanceFactory.getCitizenDao();
+	for (User c : census) {
+	    if (dao.insert(c)) {
+		letterGen.generatePersonalLetter(c);
+	    }
 	}
+    }
 
-	@Override
-	public Set<User> parse(String ruta) {
-
-		doParse(ruta);
-
-		if (census != null && census.size() > 0) {
-			PasswordGenerator.createPasswords(census);
-			insertCitizens(census);
-		}
-		return census;
-	}
-
-	private void insertCitizens(Set<User> census) {
-		CitizenDao dao = MongoPersistanceFactory.getCitizenDao();
-		for (User c : census) {
-			if (dao.insert(c)) {
-				letterGen.generatePersonalLetter(c);
-			}
-		}
-	}
-
-	protected abstract void doParse(String ruta);
+    protected abstract void doParse(String ruta);
 
 }

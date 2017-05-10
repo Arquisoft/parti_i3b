@@ -13,13 +13,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = { "src/test/resources" })
 public class CucumberTest {
 
-	@BeforeClass
-	public static void setUp() {
-		CucumberActions.setUp();
-	}
+    @BeforeClass
+    public static void setUp() {
+	CucumberActions.setUp();
+    }
 
-	@AfterClass
-	public static void tearDown() {
-		CucumberActions.tearDown();
-	}
+    @AfterClass
+    public static void tearDown() {
+	CucumberActions.tearDown();
+    }
 }
