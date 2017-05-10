@@ -11,4 +11,6 @@ public interface DBService {
     void insertUser(UserInfo user);
 
     void deleteUser(UserInfo user);
+
+    void deleteAll();
 }

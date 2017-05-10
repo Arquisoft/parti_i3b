@@ -11,4 +11,6 @@ public interface UserInfoRepository extends MongoRepository<UserInfo, String> {
 
     UserInfo findByEmail(String email);
 
+    void deleteAll();
+
 }

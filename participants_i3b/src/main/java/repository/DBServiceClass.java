@@ -39,4 +39,9 @@ public class DBServiceClass implements DBService {
     public void deleteUser(UserInfo user) {
 	repository.delete(user);
     }
+
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
+    }
 }
