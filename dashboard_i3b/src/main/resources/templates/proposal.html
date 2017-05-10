@@ -6,14 +6,14 @@
 </head>
 <body>
 Title: <span th:text="${proposal.title}" /><br />
-Votes: <span th:text="${proposal.votes}" /> (+<span th:text="${proposal.upvotes}" />)/(-<span th:text="${proposal.downvotes}" />)<br />
-Comments: <span th:text="${proposal.comments.size()}" /><br />
+Votes: <span th:text="${proposal.voteBalance}" /> (+<span th:text="${proposal.upvotes}" />)/(-<span th:text="${proposal.downvotes}" />)<br />
+Comments: <span th:text="${proposal.commentsList.size()}" /><br />
 <table>
-    <tr th:each="comment,it : ${proposal.comments}">
+    <tr th:each="comment,it : ${proposal.commentsList}">
         <td><div align="center">
             <span th:text="${comment.user}"></span>
             <br />
-            <span th:text="${comment.commentString}"></span>
+            <span th:text="${comment.content}"></span>
         </div></td>
     </tr>
 </table>

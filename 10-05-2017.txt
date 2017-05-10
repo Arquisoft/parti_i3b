@@ -1,0 +1,6 @@
+ERROR 
+------------------------------
+Date and hour: 10-05-2017 12:08:16
+Error: No se ha encontrado el archivo solicitado
+Message exception: src\test\resources\test.xlsx (El sistema no puede encontrar la ruta especificada)
+

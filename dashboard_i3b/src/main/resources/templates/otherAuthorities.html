@@ -38,11 +38,11 @@
 <h1>List of proposals</h1>
 <div id="proposals_list">
     <table>
-        <tr th:each="prop,it : ${proposals}" th:class="${prop.votes>=0}? 'positive' : 'negative'">
+        <tr th:each="prop,it : ${proposals}" th:class="${prop.voteBalance>=0}? 'positive' : 'negative'">
             <td><div class="dashboard-element" align="center">
                 <a th:href="@{'/proposals/' + ${prop.id}}"><span th:text="${prop.title}"></span></a>
                 <br />
-                <span th:text="${prop.votes}"></span>
+                <span th:text="${prop.voteBalance}"></span>
             </div></td>
         </tr>
     </table>

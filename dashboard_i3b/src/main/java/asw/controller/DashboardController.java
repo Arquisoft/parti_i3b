@@ -23,9 +23,15 @@ public class DashboardController {
     }
 
     private void createMockDatabaseContent() {
-        service.insertProposal(new Proposal("Test"));
-        service.insertProposal(new Proposal("Test2"));
-        service.insertProposal(new Proposal("Test create"));
+        Proposal test = new Proposal();
+        test.setTitle("Test");
+        service.insertProposal(test);
+        Proposal test2 = new Proposal();
+        test2.setTitle("Test2");
+        service.insertProposal(test2);
+        Proposal test3 = new Proposal();
+        test3.setTitle("Test create");
+        service.insertProposal(test3);
     }
 
     @RequestMapping(path = "/councilstaff")

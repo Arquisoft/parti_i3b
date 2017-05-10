@@ -59,33 +59,33 @@ public class DBServiceClass implements DBService {
 		}
 	}
 
-	@Override
-	public void upvoteProposal(String title) {
-		Proposal proposal = proposalRepository.findByTitle(title);
-		proposal.addUpvote();
-
-		proposalRepository.save(proposal);
-	}
-
-	@Override
-	public void downvoteProposal(String title) {
-		Proposal proposal = proposalRepository.findByTitle(title);
-		proposal.addDownvote();
-
-		proposalRepository.save(proposal);
-	}
+//	@Override
+//	public void upvoteProposal(String title) {
+//		Proposal proposal = proposalRepository.findByTitle(title);
+//		proposal.addUpvote();
+//
+//		proposalRepository.save(proposal);
+//	}
+//
+//	@Override
+//	public void downvoteProposal(String title) {
+//		Proposal proposal = proposalRepository.findByTitle(title);
+//		proposal.addDownvote();
+//
+//		proposalRepository.save(proposal);
+//	}
 
 	@Override
 	public void insertProposal(Proposal proposal) {
 		proposalRepository.insert(proposal);
 	}
 
-	@Override
-	public void addCommentToProposal(String title, Comment comment) {
-		Proposal proposal = proposalRepository.findByTitle(title);
-		proposal.addComment(comment);
-
-		proposalRepository.save(proposal);
-
-	}
+//	@Override
+//	public void addCommentToProposal(String title, Comment comment) {
+//		Proposal proposal = proposalRepository.findByTitle(title);
+//		proposal.addComment(comment);
+//
+//		proposalRepository.save(proposal);
+//
+//	}
 }

@@ -17,12 +17,12 @@ public interface DBService {
 	List<Proposal> getAllProposal();
 
 	void insertProposal(Proposal proposal);
-
-	void upvoteProposal(String title);
-
-	void downvoteProposal(String title);
+//
+//	void upvoteProposal(String title);
+//
+//	void downvoteProposal(String title);
 
 	Proposal getProposal(String title);
 
-	void addCommentToProposal(String title, Comment comment);
+//	void addCommentToProposal(String title, Comment comment);
 }
