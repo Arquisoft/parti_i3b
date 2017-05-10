@@ -1,14 +1,11 @@
 package hello;
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import cucumber.api.java.After;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.apache.commons.lang3.SystemUtils;
+import static org.junit.Assert.assertTrue;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import org.bson.BsonDocument;
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -16,29 +13,28 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.Select;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 
-import static org.junit.Assert.assertTrue;
+import cucumber.api.java.After;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 /**
  * Created by Oriol on 01/04/2017.
  */
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = Application.class)
-@SpringBootTest(
-		classes = Application.class,
-		webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class CucumberActions {
 	private static FirefoxDriver driver;
 	private static MongoClient mongoClient = new MongoClient("localhost",
@@ -47,14 +43,7 @@ public class CucumberActions {
 	private static MongoCollection<Document> users = db.getCollection("user");
 
 	public static void setUp() {
-		FirefoxBinary ffBinary = null;
-		if (SystemUtils.IS_OS_WINDOWS) {
-			ffBinary = new FirefoxBinary(
-					new File("FirefoxPortable\\FirefoxPortable.exe"));
-		}
-
-		FirefoxProfile firefoxProfile = new FirefoxProfile();
-		driver = new FirefoxDriver(ffBinary, firefoxProfile);
+		driver = new FirefoxDriver();
 	}
 
 	public static void tearDown() {
@@ -127,9 +116,8 @@ public class CucumberActions {
 	@Then("^a comment appears with content \"([^\"]*)\"$")
 	public void commentAppears(String content) throws Throwable {
 		Thread.sleep(500);
-		assertTrue(driver
-				.findElementsByXPath("//*[contains(text(), '" + content + "')]")
-				.size() > 0);
+		assertTrue(driver.findElementsByXPath("//*[contains(text(), '" + content
+				+ "')]").size() > 0);
 	}
 
 	@Given("^database is loaded$")
@@ -142,11 +130,10 @@ public class CucumberActions {
 			JSONObject user = (JSONObject) parse.get(0);
 
 			users.deleteMany(new BsonDocument());
-			users.insertOne(new Document()
-					.append("_id", new ObjectId(user.getString("_id")))
-					.append("name", user.getString("name"))
-					.append("password", user.getString("password"))
-					.append("isAdmin", user.getString("isAdmin")));
+			users.insertOne(new Document().append("_id", new ObjectId(user
+					.getString("_id"))).append("name", user.getString("name"))
+					.append("password", user.getString("password")).append(
+							"isAdmin", user.getString("isAdmin")));
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -154,8 +141,8 @@ public class CucumberActions {
 	}
 
 	private JSONArray parseArray(String name) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-				this.getClass().getClassLoader().getResourceAsStream(name)));
+		BufferedReader br = new BufferedReader(new InputStreamReader(this
+				.getClass().getClassLoader().getResourceAsStream(name)));
 		String line;
 		StringBuilder result = new StringBuilder();
 
