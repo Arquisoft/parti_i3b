@@ -40,7 +40,7 @@ public class MainController {
 
     @RequestMapping("/councilmen_logs")
     protected SseEmitter subscribeCouncilmen() {
-	SseEmitter sseEmitter = new SseEmitter();
+	SseEmitter sseEmitter = new SseEmitter(100000L);
 	synchronized (this.logsCouncilmen) {
 	    this.logsCouncilmen.add(sseEmitter);
 	    sseEmitter.onCompletion(() -> {
@@ -54,7 +54,7 @@ public class MainController {
 
     @RequestMapping("/otherAuthorities_logs")
     protected SseEmitter subscribeOtherAuthorities() {
-	SseEmitter sseEmitter = new SseEmitter();
+	SseEmitter sseEmitter = new SseEmitter(100000L);
 	synchronized (this.logsOtherAuthorities) {
 	    this.logsOtherAuthorities.add(sseEmitter);
 	    sseEmitter.onCompletion(() -> {
@@ -68,7 +68,7 @@ public class MainController {
 
     @RequestMapping("/councilstaff_logs")
     protected SseEmitter subscribeLogs() {
-	SseEmitter log = new SseEmitter();
+	SseEmitter log = new SseEmitter(100000L);
 	synchronized (this.logsCouncilStaff) {
 	    this.logsCouncilStaff.add(log);
 	    log.onCompletion(() -> {
@@ -80,7 +80,6 @@ public class MainController {
 	return log;
     }
 
-    @RequestMapping(path = "/", method = RequestMethod.POST)
     public String showMessage(String data, String topic) {
 	switch (topic) {
 	case "councilStaff":

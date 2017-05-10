@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <title>Proposal information</title>
 </head>
 <body>
+<script>
+    (function pollServer() {
+        setTimeout(function () {
+            $.ajax(document.location.pathname, {
+                success: function (data) {
+                    $('body').load(window.location.pathname);
+                }
+            });
+        }, 2000);
+    })();
+</script>
 Title: <span th:text="${proposal.title}" /><br />
 Votes: <span th:text="${proposal.voteBalance}" /> (+<span th:text="${proposal.upvotes}" />)/(-<span th:text="${proposal.downvotes}" />)<br />
 Comments: <span th:text="${proposal.commentsList.size()}" /><br />
