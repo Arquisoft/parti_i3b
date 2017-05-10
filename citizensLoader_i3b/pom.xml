@@ -108,6 +108,14 @@
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.10</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.alb.util</groupId>
+			<artifactId>com.alb.util</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/albUtilJ7.jar</systemPath>
+		</dependency>
 	</dependencies>
 	<!--Build plugins -->
 	<build>
