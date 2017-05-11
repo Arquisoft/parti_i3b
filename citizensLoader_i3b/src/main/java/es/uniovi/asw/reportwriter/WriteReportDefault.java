@@ -8,8 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
-
 /**
  * 
  * WriteReport implementation. Detected errors during the parsing of the Excel
@@ -26,8 +24,6 @@ public class WriteReportDefault implements WriteReport {
 	    Locale.getDefault());
     private SimpleDateFormat reportHourFormat = new SimpleDateFormat(
 	    "dd-MM-yyyy HH:mm:ss", Locale.getDefault());
-
-    private Logger log = Logger.getRootLogger();
 
     /**
      * 
@@ -80,7 +76,7 @@ public class WriteReportDefault implements WriteReport {
 	    error.append("Error: " + errorMessage + "\n\n");
 
 	    writer.append(error);
-	    log.info(error);
+	    System.err.println(error.toString());
 
 	    writer.close();
 	} catch (IOException e1) {
@@ -116,7 +112,7 @@ public class WriteReportDefault implements WriteReport {
 	    error.append("Message exception: " + e.getMessage() + "\n\n");
 
 	    writer.append(error);
-	    log.info(error);
+	    System.err.println(error.toString());
 
 	    writer.close();
 	} catch (IOException e1) {
@@ -126,8 +122,8 @@ public class WriteReportDefault implements WriteReport {
     }
 
     public void logDatabaseInsertion(Object inserted) {
-	log.info("NEW DATABASE INSERTION \n");
-	log.info("------------------------------\n");
-	log.info(inserted + "\n");
+	System.out.println("NEW DATABASE INSERTION \n");
+	System.out.println("------------------------------\n");
+	System.out.println(inserted + "\n");
     }
 }

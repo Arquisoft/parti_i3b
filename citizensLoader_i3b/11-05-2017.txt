@@ -1,0 +1,18 @@
+ERROR 
+------------------------------
+Date and hour: 11-05-2017 19:37:11
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "testid" }'
+
+ERROR 
+------------------------------
+Date and hour: 11-05-2017 20:18:49
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "testid" }'
+
+ERROR 
+------------------------------
+Date and hour: 11-05-2017 20:20:01
+Error: Error inserting in the database: The inserted Key is in the database
+Message exception: Write failed with error code 11000 and error message 'E11000 duplicate key error collection: test.users index: id_1 dup key: { : "testid" }'
+

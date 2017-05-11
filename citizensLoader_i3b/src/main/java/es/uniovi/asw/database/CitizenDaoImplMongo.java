@@ -1,11 +1,8 @@
 package es.uniovi.asw.database;
 
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
-
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -31,7 +28,7 @@ public class CitizenDaoImplMongo implements CitizenDao {
     private DB db;
     private DBCollection users;
     private WriteReport reporter;
-    private Properties properties;
+    //private Properties properties;
 
     /**
      * Default constructor that initializes the database from the constants
@@ -40,13 +37,12 @@ public class CitizenDaoImplMongo implements CitizenDao {
     @SuppressWarnings("deprecation")
     public CitizenDaoImplMongo() {
 
-	if (loadProperties()) {
+	if (/*loadProperties()*/true) {
 
 	    this.reporter = new WriteReportDefault();
-	    this.mongo = new MongoClient(properties.getProperty("host"),
-		    Integer.parseInt(properties.getProperty("port")));
-	    this.db = mongo.getDB(properties.getProperty("database"));
-	    this.users = db.getCollection(properties.getProperty("collection"));
+	    this.mongo = new MongoClient("localhost", 27017);
+	    this.db = mongo.getDB("test");
+	    this.users = db.getCollection("users");
 
 	    users.createIndex(new BasicDBObject("id", 1),
 		    new BasicDBObject("unique", true));
@@ -58,7 +54,7 @@ public class CitizenDaoImplMongo implements CitizenDao {
      * 
      * @return True if we could load the file without problems, false otherwise
      */
-    private boolean loadProperties() {
+    /*private boolean loadProperties() {
 	try {
 	    FileInputStream input = new FileInputStream(
 		    "src/main/resources/database.properties");
@@ -69,7 +65,7 @@ public class CitizenDaoImplMongo implements CitizenDao {
 	    reporter.report(e, "Error loading database.properties file");
 	    return false;
 	}
-    }
+    }*/
 
     /**
      * This method is used in the test (for using the database for test)
